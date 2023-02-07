@@ -1,10 +1,10 @@
 
-![enter image description here](https://media.giphy.com/media/WOIGpnJ3ye445BUQl4/giphy.gif)
+<p align="center"> <img src="https://media.giphy.com/media/WOIGpnJ3ye445BUQl4/giphy.gif" /> </p>
 
-# Catch-Up
+<h1 align="center"> Catch-Up </h1>
 
-Do you feel like you’re losing touch with your friends? Or want to meet up but can never find the time? This app helps you catch up with friends, both old and new! Each user in a group can record videos and voice notes. At a chosen time, these clips will compile into a vlog style movie allowing you to relive everyone’s day together.
- 
+<div align="center"> Do you feel like you’re losing touch with your friends? Or want to meet up but can never find the time? This app helps you catch up with friends, both old and new! Each user in a group can record videos and voice notes. At a chosen time, these clips will compile into a vlog style movie allowing you to relive everyone’s day together. </div>
+
 
 ## MVP 💰
 
