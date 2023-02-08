@@ -68,6 +68,23 @@ Options for clip stitching:
   
 [How to be Successful in Projects](https://docs.google.com/document/d/18Zi3DrKG5e6g5Bojr8iqxIu6VIGl86YBSFlsnJnlM88/edit)
 
+## GitHub Cheat Sheet ᛘ
+(Thanks Emily ^-^)
+
+General Use
+
+| Command | Description |
+| ------ | ------ |
+| cd "RememberMe" | Change directories over to our repository |
+| git branch | Lists branches for you |
+| git branch "branch name" | Makes new branch |
+| git checkout "branch name" | Switch to branch |
+| git checkout -b "branch name" | Same as 2 previous commands together |
+| git add . | Finds all changed files |
+| git commit -m "Testing123" | Commit with message |
+| git push origin "branch" | Push to branch |
+| git pull origin "branch" | Pull updates from a specific branch |
+
 ## Developers 
 Reiki Hingorani  
 Sai Kanchan Javalkar  
