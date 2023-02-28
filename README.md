@@ -88,7 +88,7 @@ General Use
 ## Developers 
 Reiki Hingorani  
 Sai Kanchan Javalkar  
-Gabrielle Kuruvilla  
+Gabrielle Kuruvilla  :)
 Ridwan Amin  
 
 Safa Mohammed - *Project Manager*  
