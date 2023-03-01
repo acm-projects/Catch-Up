@@ -86,7 +86,7 @@ General Use
 | git pull origin "branch" | Pull updates from a specific branch |
 
 ## Developers 
-Reiki Hingorani  
+Reiki Hingorani  :)  
 Sai Kanchan Javalkar  
 Gabrielle Kuruvilla  :)  
 Ridwan Amin  
