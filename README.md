@@ -61,10 +61,8 @@ Tutorials:
 [Git Tutorial](https://www.youtube.com/watch?v=USjZcfj8yxE)  
 [Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf)  
 
-Options for clip stitching:  
- - [Amazon Elastic Transcoder](https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/clip-stitching.html)   
- - [Google Transcoder API](https://pub.dev/packages/googleapis)  
- - [FFmpeg](https://shotstack.io/learn/use-ffmpeg-to-concatenate-video/)  
+clip stitching:  
+ - [FFmpeg](https://pub.dev/packages/ffmpeg_kit_flutter)  
   
 [How to be Successful in Projects](https://docs.google.com/document/d/18Zi3DrKG5e6g5Bojr8iqxIu6VIGl86YBSFlsnJnlM88/edit)
 
