@@ -1,0 +1,34 @@
+dependencies: \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCore/FirebaseCore/Sources/FIRApp.m \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCore.build/module.modulemap \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FIRApp.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCore/FirebaseCore/Sources/FIRAnalyticsConfiguration.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCore/FirebaseCore/Sources/FIRBundleUtil.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCore/FirebaseCore/Sources/FIRComponentContainerInternal.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCore/FirebaseCore/Extension/FIRComponentContainer.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCore/FirebaseCore/Extension/FIRLibrary.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCore/FirebaseCore/Sources/FIRConfigurationInternal.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FIRConfiguration.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FIRLoggerLevel.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCore/FirebaseCore/Sources/FIRFirebaseUserAgent.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCore/FirebaseCore/Extension/FIRAppInternal.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCore/FirebaseCore/Extension/FIRHeartbeatLogger.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCore/FirebaseCore/Extension/FIRLogger.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCore/FirebaseCore/Extension/FIROptionsInternal.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FIROptions.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FIRVersion.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/build/macos/Build/Intermediates.noindex/Pods.build/Debug/GoogleUtilities.build/module.modulemap \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/GoogleUtilities/GoogleUtilities/NSData+zlib/Public/GoogleUtilities/GULNSData+zlib.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/GoogleUtilities/GoogleUtilities/Logger/Public/GoogleUtilities/GULLoggerLevel.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/GoogleUtilities/GoogleUtilities/Logger/Public/GoogleUtilities/GULLogger.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/GoogleUtilities/GoogleUtilities/Environment/Public/GoogleUtilities/NSURLSession+GULPromises.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/GoogleUtilities/GoogleUtilities/Environment/Public/GoogleUtilities/GULURLSessionDataResponse.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/GoogleUtilities/GoogleUtilities/Environment/Public/GoogleUtilities/GULSecureCoding.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/GoogleUtilities/GoogleUtilities/Environment/Public/GoogleUtilities/GULNetworkInfo.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/GoogleUtilities/GoogleUtilities/Environment/Public/GoogleUtilities/GULKeychainUtils.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/GoogleUtilities/GoogleUtilities/Environment/Public/GoogleUtilities/GULKeychainStorage.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/GoogleUtilities/GoogleUtilities/Environment/Public/GoogleUtilities/GULHeartbeatDateStorageUserDefaults.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/GoogleUtilities/GoogleUtilities/Environment/Public/GoogleUtilities/GULHeartbeatDateStorage.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/GoogleUtilities/GoogleUtilities/Environment/Public/GoogleUtilities/GULHeartbeatDateStorable.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/GoogleUtilities/GoogleUtilities/Environment/Public/GoogleUtilities/GULAppEnvironmentUtil.h \
+  /Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/Target\ Support\ Files/GoogleUtilities/GoogleUtilities-umbrella.h

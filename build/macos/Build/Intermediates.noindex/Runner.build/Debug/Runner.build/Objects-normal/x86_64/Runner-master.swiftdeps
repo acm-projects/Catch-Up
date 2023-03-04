@@ -1,0 +1,8 @@
+version: "Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)"
+options: "1fe33a10475be410cedc30921faed70038dd9ded0c4f24f4a489eb4385065d0a"
+build_start_time: [1677887502, 526690006]
+build_end_time: [1677887524, 89087009]
+inputs:
+  "/Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Flutter/GeneratedPluginRegistrant.swift": [1677887416, 165701866]
+  "/Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Runner/AppDelegate.swift": [1677622503, 786693096]
+  "/Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Runner/MainFlutterWindow.swift": [1677622503, 795776128]

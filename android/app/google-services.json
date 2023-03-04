@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1000446987238",
+    "project_id": "catch-up-b338c",
+    "storage_bucket": "catch-up-b338c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1000446987238:android:27fc31eedb3d5033502427",
+        "android_client_info": {
+          "package_name": "com.example.catch_up"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1000446987238-jrqhl498vf8sb86b42hiihmtlovikk7b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBe_GbCSVyop0NI3I3glWUu5IUmbvTND8w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1000446987238-jrqhl498vf8sb86b42hiihmtlovikk7b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

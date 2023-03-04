@@ -1,0 +1,27 @@
+version: "Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)"
+options: "b0e54e4a6b1406b0f18b48a138ac0808d0623bd6983b9850105d3181be64a6c5"
+build_start_time: [1677887464, 501627922]
+build_end_time: [1677887468, 467777967]
+inputs:
+  ? "/Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/Heartbeat.swift"
+  : [1677887421, 637508869]
+  ? "/Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/HeartbeatController.swift"
+  : [1677887421, 639429092]
+  ? "/Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/HeartbeatStorage.swift"
+  : [1677887421, 642174959]
+  ? "/Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/HeartbeatsBundle.swift"
+  : [1677887421, 643482208]
+  ? "/Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/HeartbeatsPayload.swift"
+  : [1677887421, 645141363]
+  ? "/Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/RingBuffer.swift"
+  : [1677887421, 638173103]
+  ? "/Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/Storage.swift"
+  : [1677887421, 636527538]
+  ? "/Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/StorageFactory.swift"
+  : [1677887421, 645827293]
+  ? "/Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/WeakContainer.swift"
+  : [1677887421, 644258022]
+  ? "/Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/_ObjC_HeartbeatController.swift"
+  : [1677887421, 638772010]
+  ? "/Users/kanchanj/Desktop/ACM_Projects/Catch-Up/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/_ObjC_HeartbeatsPayload.swift"
+  : [1677887421, 641211032]
