@@ -85,7 +85,7 @@ General Use
 
 ## Developers 
 Reiki Hingorani  :)  
-Sai Kanchan Javalkar  
+Sai Kanchan Javalkar  :)
 Gabrielle Kuruvilla  :)  
 Ridwan Amin  
 
