@@ -2,20 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart'; //firebase core dependency
 import 'package:catch_up/Widgets/widgetTree.dart'; //Widget Tree file
 
-/*import 'package:catch_up/screens/wrapper.dart';
-import 'package:catch_up/services/auth.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:provider/provider.dart';
-import 'package:catch_up/models/user.dart';
-*/
-
-
-
-
-//void main() {
- // runApp(MyApp());
-//}
-
 
 //initializing Firebase
 Future<void> main() async {
