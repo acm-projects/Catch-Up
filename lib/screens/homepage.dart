@@ -2,7 +2,7 @@
 import 'package:catch_up/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
+import 'package:catch_up/screens/profile.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
@@ -47,9 +47,18 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
+      //just a test button to take you to edit profile page
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (BuildContext context) {
+                return const EditProfilePage();
+              },
+            ),
+          );
+        },
+      ),
     );
   }
 }
-
-
-
