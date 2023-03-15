@@ -29,6 +29,13 @@
             {
               "client_id": "1000446987238-jrqhl498vf8sb86b42hiihmtlovikk7b.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "1000446987238-9e96mhiqq68rvg9fjj9d7ms3b0l7r1a4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.catchUp"
+              }
             }
           ]
         }

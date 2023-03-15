@@ -1,7 +1,7 @@
 # This is a generated file; do not edit or check into version control.
-cloud_firestore=/Users/kanchanj/.pub-cache/hosted/pub.dev/cloud_firestore-4.4.4/
-cloud_firestore_web=/Users/kanchanj/.pub-cache/hosted/pub.dev/cloud_firestore_web-3.3.4/
-firebase_auth=/Users/kanchanj/.pub-cache/hosted/pub.dev/firebase_auth-4.2.10/
-firebase_auth_web=/Users/kanchanj/.pub-cache/hosted/pub.dev/firebase_auth_web-5.2.9/
-firebase_core=/Users/kanchanj/.pub-cache/hosted/pub.dev/firebase_core-2.7.1/
-firebase_core_web=/Users/kanchanj/.pub-cache/hosted/pub.dev/firebase_core_web-2.2.2/
+cloud_firestore=/Users/safamohammed/.pub-cache/hosted/pub.dev/cloud_firestore-4.4.4/
+cloud_firestore_web=/Users/safamohammed/.pub-cache/hosted/pub.dev/cloud_firestore_web-3.3.4/
+firebase_auth=/Users/safamohammed/.pub-cache/hosted/pub.dev/firebase_auth-4.2.10/
+firebase_auth_web=/Users/safamohammed/.pub-cache/hosted/pub.dev/firebase_auth_web-5.2.9/
+firebase_core=/Users/safamohammed/.pub-cache/hosted/pub.dev/firebase_core-2.7.1/
+firebase_core_web=/Users/safamohammed/.pub-cache/hosted/pub.dev/firebase_core_web-2.2.2/

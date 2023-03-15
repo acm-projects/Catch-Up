@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart'; //firebase core dependency
 import 'package:catch_up/Widgets/widgetTree.dart'; //Widget Tree file
-
+import 'firebase_options.dart';
 
 //initializing Firebase
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+     options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
   

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1000446987238-9e96mhiqq68rvg9fjj9d7ms3b0l7r1a4.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1000446987238-9e96mhiqq68rvg9fjj9d7ms3b0l7r1a4</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBCDIVZAYnQg5OLusNikCTQR_5ez17ks-w</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1000446987238</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.catchUp</string>
+	<key>PROJECT_ID</key>
+	<string>catch-up-b338c</string>
+	<key>STORAGE_BUCKET</key>
+	<string>catch-up-b338c.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1000446987238:ios:76a7e05b10f0caa6502427</string>
+</dict>
+</plist>
