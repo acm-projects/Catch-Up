@@ -85,9 +85,9 @@ General Use
 | git pull origin "branch" | Pull updates from a specific branch |
 
 ## Developers 
-Reiki Hingorani  :)  
-Sai Kanchan Javalkar  :)
-Gabrielle Kuruvilla  :)  
+Reiki Hingorani  :)    
+Sai Kanchan Javalkar  :)  
+Gabrielle Kuruvilla  :)    
 Ridwan Amin  
 
 Safa Mohammed - *Project Manager*  
