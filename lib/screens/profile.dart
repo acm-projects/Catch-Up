@@ -95,19 +95,27 @@ class _EditProfilePageState extends State<EditProfilePage> {
               const SizedBox(
                 height: 35, // space between profile pic and first text field
               ),
-              Column(
-                children: [
-                  buildUserInfoField("First Name", "Ridwan Amin", false),
-                  buildUserInfoField("Last Name", "Amin", false),
-                  buildUserInfoField(
-                      "Edit Email", "someEmail@gmail.com", false),
-                  buildUserInfoField("Edit Password", "**********", true),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  Column(
-                    children: [
-                      ElevatedButton(
+              Container(
+                margin: EdgeInsets.all(10),
+                alignment: Alignment.bottomCenter,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.circular(10)),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    buildUserInfoField("First Name", "Ridwan Amin", false),
+                    buildUserInfoField("Last Name", "Amin", false),
+                    buildUserInfoField(
+                        "Edit Email", "someEmail@gmail.com", false),
+                    buildUserInfoField("Edit Password", "**********", true),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Container(
+                      alignment: Alignment.bottomCenter,
+                      child: ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
                           backgroundColor:
@@ -126,9 +134,9 @@ class _EditProfilePageState extends State<EditProfilePage> {
                           ),
                         ),
                       ),
-                    ],
-                  ),
-                ],
+                    ),
+                  ],
+                ),
               )
             ],
           ),
