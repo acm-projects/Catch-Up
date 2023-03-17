@@ -57,6 +57,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   "Edit Profile",
                   style: TextStyle(
                       fontSize: 25,
+                      fontFamily: 'Cartis-Beautyful-serif',
                       fontWeight: FontWeight.w500,
                       color: Colors.white),
                 ),
@@ -156,6 +157,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                           "Save",
                           style: TextStyle(
                             fontSize: 14,
+                            fontFamily: 'Poppins',
                             letterSpacing: 2.2,
                             color: Colors.white,
                           ),

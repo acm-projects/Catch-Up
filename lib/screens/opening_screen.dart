@@ -25,6 +25,7 @@ class SplashScreen extends StatelessWidget {
                   'Catch Up',
                   style: TextStyle(
                     fontSize: 40,
+                    fontFamily: 'Cartis-Beautyful-serif',
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),

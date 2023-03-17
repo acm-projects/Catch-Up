@@ -1,3 +1,4 @@
 #ignore all file in .dart_tool
 .dart_tool/
 build/
+.flutter-plugins-dependencies
