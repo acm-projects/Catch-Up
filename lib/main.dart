@@ -1,8 +1,10 @@
+import 'package:catch_up/screens/login_register_page.dart';
 import 'package:catch_up/screens/opening_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart'; //firebase core dependency
 import 'package:catch_up/Widgets/widgetTree.dart'; //Widget Tree file
 import 'firebase_options.dart';
+import 'screens/login_options.dart';
 
 //initializing Firebase
 Future<void> main() async {
@@ -25,6 +27,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.orange,
       ),
       home: const SplashScreen(),
+      //home: const LoginOptions(),
     );
   }
 }
