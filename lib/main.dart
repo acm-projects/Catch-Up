@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.orange,
       ),
       //home: const SplashScreen(),
-      home: const LoginOptions(),
+      home: const SplashScreen(),
       //home: const SignUpPage(),
       //home: const SignIpPage(),
     );

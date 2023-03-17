@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_local_variable, unnecessary_new, sort_child_properties_last, sized_box_for_whitespace
 
+import 'package:catch_up/screens/sign_in_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginOptions extends StatefulWidget {
@@ -114,16 +115,25 @@ class _LoginOptionsState extends State<LoginOptions> {
                   SizedBox(height: 25),
 
                   //sign in button
-                  Padding(
+                  Container(
                     padding: const EdgeInsets.symmetric(horizontal: 150.0),
-                    child: Container(
-                      padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        color: const Color(0xff82B977),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Center(
-                          child: Text(
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) {
+                              return const SignInPage();
+                            },
+                          ),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          backgroundColor: const Color(0xff82B977),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          )),
+                      child: Text(
                         'Sign In',
                         style: TextStyle(
                           color: const Color(0xffEFEDE7),
@@ -131,7 +141,7 @@ class _LoginOptionsState extends State<LoginOptions> {
                           fontSize: 14,
                           fontFamily: 'Poppins',
                         ),
-                      )),
+                      ),
                     ),
                   ),
 
