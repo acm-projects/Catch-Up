@@ -1,5 +1,6 @@
 import 'package:catch_up/screens/login_register_page.dart';
 import 'package:catch_up/screens/opening_screen.dart';
+import 'package:catch_up/screens/sign_up_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart'; //firebase core dependency
 import 'package:catch_up/Widgets/widgetTree.dart'; //Widget Tree file
@@ -28,6 +29,8 @@ class MyApp extends StatelessWidget {
       ),
       //home: const SplashScreen(),
       home: const LoginOptions(),
+      //home: const SignUpPage(),
+      //home: const SignIpPage(),
     );
   }
 }

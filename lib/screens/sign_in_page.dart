@@ -2,14 +2,14 @@
 
 import 'package:flutter/material.dart';
 
-class LoginOptions extends StatefulWidget {
-  const LoginOptions({Key? key}) : super(key: key);
+class SignInPage extends StatefulWidget {
+  const SignInPage({Key? key}) : super(key: key);
 
   @override
-  State<LoginOptions> createState() => _LoginOptionsState();
+  State<SignInPage> createState() => _SignInPageState();
 }
 
-class _LoginOptionsState extends State<LoginOptions> {
+class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,7 +57,7 @@ class _LoginOptionsState extends State<LoginOptions> {
 
                   SizedBox(height: 120),
 
-                  //Login button
+                  //email textfield
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 35.0),
                     child: Container(
@@ -85,7 +85,7 @@ class _LoginOptionsState extends State<LoginOptions> {
                   //Spacing between the two boxes
                   SizedBox(height: 20),
 
-                  //Create account button
+                  //password textfield
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 35.0),
                     child: Container(

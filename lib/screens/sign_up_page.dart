@@ -2,14 +2,14 @@
 
 import 'package:flutter/material.dart';
 
-class LoginOptions extends StatefulWidget {
-  const LoginOptions({Key? key}) : super(key: key);
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({Key? key}) : super(key: key);
 
   @override
-  State<LoginOptions> createState() => _LoginOptionsState();
+  State<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _LoginOptionsState extends State<LoginOptions> {
+class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,9 +55,37 @@ class _LoginOptionsState extends State<LoginOptions> {
                         color: Color(0xffEFEDE7),
                       )),
 
-                  SizedBox(height: 120),
+                  SizedBox(height: 90),
 
-                  //Login button
+                  //name textfield
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 35.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: const Color(0xffD79784),
+                        //border: Border.all(color: Colors.white),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 20.0),
+                        child: TextField(
+                          decoration: InputDecoration(
+                            hintStyle: TextStyle(
+                              //fontWeight: FontWeight.w500,
+                              fontFamily: 'Poppins',
+                            ),
+                            border: InputBorder.none,
+                            hintText: 'Full Name*',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  //Spacing between the two boxes
+                  SizedBox(height: 10),
+
+                  //email textfield
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 35.0),
                     child: Container(
@@ -83,9 +111,9 @@ class _LoginOptionsState extends State<LoginOptions> {
                   ),
 
                   //Spacing between the two boxes
-                  SizedBox(height: 20),
+                  SizedBox(height: 10),
 
-                  //Create account button
+                  //password textfield
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 35.0),
                     child: Container(
@@ -111,6 +139,37 @@ class _LoginOptionsState extends State<LoginOptions> {
                     ),
                   ),
 
+                  //Spacing between the two boxes
+                  SizedBox(height: 10),
+
+                  //Re-enter password textfield
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 35.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: const Color(0xffD79784),
+                        //border: Border.all(color: Colors.white),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 20.0),
+                        child: TextField(
+                          decoration: InputDecoration(
+                            hintStyle: TextStyle(
+                              //fontWeight: FontWeight.w500,
+                              fontFamily: 'Poppins',
+                            ),
+                            border: InputBorder.none,
+                            hintText: 'Re-enter Password*',
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  //Spacing between the two boxes
+                  SizedBox(height: 20),
+
                   SizedBox(height: 25),
 
                   //sign in button
@@ -124,7 +183,7 @@ class _LoginOptionsState extends State<LoginOptions> {
                       ),
                       child: Center(
                           child: Text(
-                        'Sign In',
+                        'Sign Up',
                         style: TextStyle(
                           color: const Color(0xffEFEDE7),
                           fontWeight: FontWeight.bold,
