@@ -58,63 +58,7 @@ class _LoginOptionsState extends State<LoginOptions> {
 
                   SizedBox(height: 120),
 
-                  //Login button
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 35.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: const Color(0xffD79784),
-                        //border: Border.all(color: Colors.white),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 20.0),
-                        child: TextField(
-                          decoration: InputDecoration(
-                            hintStyle: TextStyle(
-                              //fontWeight: FontWeight.w500,
-                              fontFamily: 'Poppins',
-                            ),
-                            border: InputBorder.none,
-                            hintText: 'Email*',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-
-                  //Spacing between the two boxes
-                  SizedBox(height: 20),
-
-                  //Create account button
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 35.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: const Color(0xffD79784),
-                        //border: Border.all(color: Colors.white),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 20.0),
-                        child: TextField(
-                          obscureText: true,
-                          decoration: InputDecoration(
-                            hintStyle: TextStyle(
-                              //fontWeight: FontWeight.w500,
-                              fontFamily: 'Poppins',
-                            ),
-                            border: InputBorder.none,
-                            hintText: 'Password*',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-
-                  SizedBox(height: 25),
-
-                  //sign in button
+                  //log in button
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 150.0),
                     child: ElevatedButton(
@@ -145,9 +89,39 @@ class _LoginOptionsState extends State<LoginOptions> {
                     ),
                   ),
 
+                  //Spacing between the two buttons
                   SizedBox(height: 20),
 
-                  //register button
+                  //Create account button
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 150.0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) {
+                              return const SignInPage();
+                            },
+                          ),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          backgroundColor: const Color(0xffD79784),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          )),
+                      child: Text(
+                        'Sign In',
+                        style: TextStyle(
+                          color: const Color(0xffEFEDE7),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                          fontFamily: 'Poppins',
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
