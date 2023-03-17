@@ -1,3 +1,4 @@
+import "package:catch_up/screens/main_profile.dart";
 import "package:flutter/material.dart";
 
 class EditProfilePage extends StatefulWidget {
@@ -24,9 +25,26 @@ class _EditProfilePageState extends State<EditProfilePage> {
             color: Colors.white,
           ),
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return const ProfilePage();
+                  },
+                ),
+              );
+            },
+            icon: const Icon(
+              Icons.arrow_forward_ios,
+              color: Colors.white,
+            ),
+          )
+        ],
       ),
       body: Container(
-        padding: const EdgeInsets.only(left: 16, top: 15, right: 16),
+        padding: const EdgeInsets.only(left: 0, top: 0, right: 0),
         child: GestureDetector(
           // allows user to unselect text field
           onTap: () {
@@ -50,13 +68,13 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 child: Stack(
                   children: [
                     Container(
-                      width: 130,
-                      height: 130,
+                      width: 150,
+                      height: 150,
                       decoration: BoxDecoration(
                         border: Border.all(
                           // border color and width around the profile image
                           width: 4,
-                          color: const Color.fromRGBO(130, 185, 119, 1),
+                          color: Colors.white,
                         ),
                         boxShadow: [
                           BoxShadow(
@@ -82,7 +100,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                           shape: BoxShape.circle,
                           border: Border.all(
                             width: 4,
-                            color: const Color.fromRGBO(130, 185, 119, 1),
+                            color: Color.fromRGBO(130, 185, 119, 1),
                           ),
                           color: Colors.white,
                         ),
@@ -93,41 +111,59 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 ),
               ),
               const SizedBox(
-                height: 35, // space between profile pic and first text field
+                height: 40, // space between profile pic and first text field
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  buildUserInfoField("First Name", "Ridwan Amin", false),
-                  buildUserInfoField("Last Name", "Amin", false),
-                  buildUserInfoField(
-                      "Edit Email", "someEmail@gmail.com", false),
-                  buildUserInfoField("Edit Password", "**********", true),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  Container(
-                    alignment: Alignment.bottomCenter,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color.fromRGBO(215, 151, 132, 1),
-                        padding: const EdgeInsets.symmetric(horizontal: 50),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
+              Container(
+                padding: const EdgeInsets.only(
+                    left: 16, top: 30, right: 16, bottom: 95),
+                decoration: BoxDecoration(
+                  shape: BoxShape.rectangle,
+                  borderRadius: BorderRadius.circular(15),
+                  color: Colors.white,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    buildUserInfoField("First Name", "Ridwan Amin", false),
+                    buildUserInfoField("Last Name", "Amin", false),
+                    buildUserInfoField(
+                        "Edit Email", "someEmail@gmail.com", false),
+                    buildUserInfoField("Edit Password", "**********", true),
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    Container(
+                      alignment: Alignment.bottomCenter,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (BuildContext context) {
+                                return const ProfilePage();
+                              },
+                            ),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor:
+                              const Color.fromRGBO(215, 151, 132, 1),
+                          padding: const EdgeInsets.symmetric(horizontal: 50),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                         ),
-                      ),
-                      child: const Text(
-                        "Save",
-                        style: TextStyle(
-                          fontSize: 14,
-                          letterSpacing: 2.2,
-                          color: Colors.white,
+                        child: const Text(
+                          "Save",
+                          style: TextStyle(
+                            fontSize: 14,
+                            letterSpacing: 2.2,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ],
           ),
