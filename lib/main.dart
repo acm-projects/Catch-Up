@@ -26,8 +26,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      //home: const SplashScreen(),
-      home: const LoginOptions(),
+      home: const SplashScreen(),
+      //home: const LoginOptions(),
     );
   }
 }

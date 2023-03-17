@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:catch_up/Widgets/widgetTree.dart';
 import 'package:flutter/material.dart';
@@ -20,14 +22,19 @@ class SplashScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset('assets/splash.png'),
+                Image.asset(
+                  'assets/cream-logo.png',
+                  height: 109,
+                  width: 109,
+                ),
+                SizedBox(height: 5),
                 const Text(
-                  'Catch Up',
+                  'catch up',
                   style: TextStyle(
-                    fontSize: 40,
+                    fontSize: 64,
                     fontFamily: 'Cartis-Beautyful-serif',
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    //fontWeight: FontWeight.normal,
+                    color: Color(0xffEFEDE7),
                   ),
                 )
               ],

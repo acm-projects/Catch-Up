@@ -38,7 +38,7 @@ class _LoginOptionsState extends State<LoginOptions> {
                   SizedBox(height: 10),
 
                   //Catch up + motto
-                  Text('Catch Up',
+                  Text('catch up',
                       style: TextStyle(
                         fontWeight: FontWeight.normal,
                         fontSize: 64,
