@@ -26,7 +26,7 @@ class _LoginOptionsState extends State<LoginOptions> {
                 //mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   //top spacing
-                  SizedBox(height: 30),
+                  SizedBox(height: 15),
 
                   //logo
                   Image.asset(
@@ -54,7 +54,7 @@ class _LoginOptionsState extends State<LoginOptions> {
                         color: Color(0xffEFEDE7),
                       )),
 
-                  SizedBox(height: 100),
+                  SizedBox(height: 120),
 
                   //email textfield
                   Padding(
