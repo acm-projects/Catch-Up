@@ -60,64 +60,100 @@ class _LoginOptionsState extends State<LoginOptions> {
 
                   //log in button
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 150.0),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (BuildContext context) {
-                              return const SignInPage();
-                            },
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    child: SizedBox(
+                      width: 315,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (BuildContext context) {
+                                return const SignInPage();
+                              },
+                            ),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(horizontal: 10),
+                            backgroundColor: const Color(0xff82B977),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                            )),
+                        child: Text(
+                          'Log In',
+                          style: TextStyle(
+                            color: const Color(0xffEFEDE7),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                            fontFamily: 'Poppins',
                           ),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
-                          backgroundColor: const Color(0xff82B977),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          )),
-                      child: Text(
-                        'Sign In',
-                        style: TextStyle(
-                          color: const Color(0xffEFEDE7),
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
-                          fontFamily: 'Poppins',
                         ),
                       ),
                     ),
                   ),
 
                   //Spacing between the two buttons
-                  SizedBox(height: 20),
+                  SizedBox(height: 5),
+
+                  Row(
+                    children: [
+                      //left line
+                      Expanded(
+                          child: Divider(
+                        thickness: 1,
+                        indent: 60,
+                        endIndent: 5,
+                      )),
+
+                      Text('or',
+                          style: TextStyle(
+                            color: Color(0xffC3C3C3),
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Poppins',
+                          )),
+
+                      //right line
+                      Expanded(
+                          child: Divider(
+                        thickness: 1,
+                        endIndent: 60,
+                        indent: 5,
+                      )),
+                    ],
+                  ),
+
+                  SizedBox(height: 5),
 
                   //Create account button
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 150.0),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (BuildContext context) {
-                              return const SignInPage();
-                            },
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    child: SizedBox(
+                      width: 315,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (BuildContext context) {
+                                return const SignInPage();
+                              },
+                            ),
+                          );
+                        },
+                        style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(horizontal: 10),
+                            backgroundColor: const Color(0xffD79784),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                            )),
+                        child: Text(
+                          'Create Account',
+                          style: TextStyle(
+                            color: const Color(0xffEFEDE7),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                            fontFamily: 'Poppins',
                           ),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
-                          backgroundColor: const Color(0xffD79784),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          )),
-                      child: Text(
-                        'Sign In',
-                        style: TextStyle(
-                          color: const Color(0xffEFEDE7),
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
-                          fontFamily: 'Poppins',
                         ),
                       ),
                     ),
