@@ -141,7 +141,7 @@ class ProfilePage extends StatelessWidget {
                         );
                       },
                       icon: const Icon(
-                        Icons.account_circle,
+                        Icons.people,
                         color: Colors.white,
                       ),
                       style: ElevatedButton.styleFrom(
@@ -181,7 +181,7 @@ class ProfilePage extends StatelessWidget {
                         );
                       },
                       icon: const Icon(
-                        Icons.account_circle,
+                        Icons.link_sharp,
                         color: Colors.white,
                       ),
                       style: ElevatedButton.styleFrom(
