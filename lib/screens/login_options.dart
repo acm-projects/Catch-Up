@@ -108,7 +108,7 @@ class _LoginOptionsState extends State<LoginOptions> {
                       Text('or',
                           style: TextStyle(
                             color: Color(0xffC3C3C3),
-                            fontSize: 12,
+                            fontSize: 13,
                             fontWeight: FontWeight.bold,
                             fontFamily: 'Poppins',
                           )),
