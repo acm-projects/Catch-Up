@@ -11,6 +11,8 @@ class EditProfilePage extends StatefulWidget {
 class _EditProfilePageState extends State<EditProfilePage> {
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Color.fromRGBO(130, 185, 119, 1),
       appBar: AppBar(
@@ -56,7 +58,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 child: Text(
                   "Edit Profile",
                   style: TextStyle(
-                      fontSize: 25,
+                      fontSize: 40,
                       fontFamily: 'Cartis-Beautyful-serif',
                       fontWeight: FontWeight.w500,
                       color: Colors.white),
