@@ -3,6 +3,8 @@
 import 'package:catch_up/screens/sign_in_page.dart';
 import 'package:flutter/material.dart';
 
+import 'sign_up_page.dart';
+
 class LoginOptions extends StatefulWidget {
   const LoginOptions({Key? key}) : super(key: key);
 
@@ -135,7 +137,7 @@ class _LoginOptionsState extends State<LoginOptions> {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (BuildContext context) {
-                                return const SignInPage();
+                                return const SignUpPage();
                               },
                             ),
                           );
