@@ -39,7 +39,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       },
                       icon: const Icon(
                         Icons.arrow_back_ios,
-                        color: Colors.white,
+                        color: Color(0xffEFEDE7),
                       ),
                     ),
                   ),

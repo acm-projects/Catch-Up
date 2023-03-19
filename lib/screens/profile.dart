@@ -24,7 +24,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
           },
           icon: const Icon(
             Icons.arrow_back_ios,
-            color: Colors.white,
+            color: Color(0xffEFEDE7),
           ),
         ),
         actions: [
@@ -40,7 +40,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
             },
             icon: const Icon(
               Icons.arrow_forward_ios,
-              color: Colors.white,
+              color: Color(0xffEFEDE7),
             ),
           )
         ],

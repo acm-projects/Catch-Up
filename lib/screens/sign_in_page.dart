@@ -38,7 +38,7 @@ class _SignInPageState extends State<SignInPage> {
                     },
                     icon: const Icon(
                       Icons.arrow_back_ios,
-                      color: Colors.white,
+                      color: Color(0xffEFEDE7),
                     ),
                   ),
                 ),
