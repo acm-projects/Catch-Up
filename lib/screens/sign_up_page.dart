@@ -28,7 +28,21 @@ class _SignUpPageState extends State<SignUpPage> {
                 //mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   //top spacing
-                  SizedBox(height: 15),
+                  //SizedBox(height: 10),
+
+                  //back arrow
+                  Padding(
+                    padding: const EdgeInsets.only(right: 325),
+                    child: IconButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      icon: const Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
 
                   //logo
                   Image.asset(
@@ -37,7 +51,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     width: 109,
                   ),
 
-                  SizedBox(height: 10),
+                  //SizedBox(height: 10),
 
                   //Catch up + motto
                   Text('catch up',

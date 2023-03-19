@@ -30,7 +30,7 @@ class _LoginOptionsState extends State<LoginOptions> {
                 //mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   //top spacing
-                  SizedBox(height: 15),
+                  SizedBox(height: 60),
 
                   //logo
                   Image.asset(
@@ -58,7 +58,7 @@ class _LoginOptionsState extends State<LoginOptions> {
                         color: Color(0xffEFEDE7),
                       )),
 
-                  SizedBox(height: 120),
+                  SizedBox(height: 130),
 
                   //log in button
                   Container(
