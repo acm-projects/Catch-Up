@@ -2,6 +2,8 @@
 
 import 'package:catch_up/screens/homepage.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:catch_up/services/auth.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -11,6 +13,85 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
+  String? errorMessage = '';
+  bool isLogin = true;
+
+  //Text Editing for Email and Password
+  final TextEditingController _controllerEmail = TextEditingController();
+  final TextEditingController _controllerPassword = TextEditingController();
+
+  //Sign In
+  Future<void> signInWithEmailAndPassword() async {
+    try {
+      await AuthService().signInWithEmailAndPassword(
+        email: _controllerEmail.text,
+        password: _controllerPassword.text,
+      );
+    } on FirebaseAuthException catch (e) {
+      setState(() {
+        errorMessage = e.message;
+      });
+    }
+  }
+
+  //Register
+  Future<void> createUserWithEmailAndPassword() async {
+    try {
+      await AuthService().createUserWithEmailAndPassword(
+        email: _controllerEmail.text,
+        password: _controllerPassword.text,
+      );
+    } on FirebaseAuthException catch (e) {
+      setState(() {
+        errorMessage = e.message;
+      });
+    }
+  }
+
+  Widget _title() {
+    return const Text('Firebase Auth');
+  }
+
+  Widget _entryField(
+    String title,
+    TextEditingController controller,
+  ) {
+    return TextField(
+      controller: controller,
+      decoration: InputDecoration(
+        hintStyle: TextStyle(
+          //fontWeight: FontWeight.w500,
+          fontFamily: 'Poppins',
+        ),
+        border: InputBorder.none,
+        hintText: title,
+      ),
+    );
+  }
+
+  Widget _errorMessage() {
+    return Text(errorMessage == '' ? '' : 'Humm ? $errorMessage');
+  }
+
+  Widget _submitButton() {
+    return ElevatedButton(
+      onPressed:
+          isLogin ? signInWithEmailAndPassword : createUserWithEmailAndPassword,
+      child: Text(isLogin ? 'Login' : 'Register'),
+    );
+  }
+
+  Widget _loginOrRegisterButton() {
+    return TextButton(
+      onPressed: () {
+        setState(() {
+          isLogin = !isLogin;
+        });
+      },
+      child: Text(isLogin ? 'Register instead' : 'Login instead'),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,8 +165,9 @@ class _SignInPageState extends State<SignInPage> {
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 20.0),
-                      child: TextField(
+                        padding: const EdgeInsets.only(left: 20.0),
+                        child: _entryField('Email*', _controllerPassword)
+                        /*TextField(
                         decoration: InputDecoration(
                           hintStyle: TextStyle(
                             //fontWeight: FontWeight.w500,
@@ -94,8 +176,8 @@ class _SignInPageState extends State<SignInPage> {
                           border: InputBorder.none,
                           hintText: 'Email*',
                         ),
-                      ),
-                    ),
+                      ),*/
+                        ),
                   ),
                 ),
 
@@ -112,8 +194,9 @@ class _SignInPageState extends State<SignInPage> {
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 20.0),
-                      child: TextField(
+                        padding: const EdgeInsets.only(left: 20.0),
+                        child: _entryField('Password*', _controllerEmail)
+                        /*TextField(
                         obscureText: true,
                         decoration: InputDecoration(
                           hintStyle: TextStyle(
@@ -123,8 +206,8 @@ class _SignInPageState extends State<SignInPage> {
                           border: InputBorder.none,
                           hintText: 'Password*',
                         ),
-                      ),
-                    ),
+                      ),*/
+                        ),
                   ),
                 ),
 
