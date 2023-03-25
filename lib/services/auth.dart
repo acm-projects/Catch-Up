@@ -12,10 +12,10 @@ class AuthService {
 
 //sign in with email and password
 Future<void> signInWithEmailAndPassword({
-  required String email, 
+  required String email,  // user needs these
   required String password
   }) async {
-    await _auth.signInWithEmailAndPassword(
+    await _auth.signInWithEmailAndPassword( // state of user
       email: email, 
       password: password,
     );

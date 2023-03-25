@@ -3,6 +3,7 @@ import 'package:catch_up/services/auth.dart'; //auth services class
 import 'package:flutter/material.dart'; 
 import 'package:firebase_auth/firebase_auth.dart'; //auth package
 
+// state of whether they are logged in or not
 //class LoginPage
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -12,6 +13,7 @@ class LoginPage extends StatefulWidget {
 
 }
 
+// if logged in, display error
 class _LoginPageState extends State<LoginPage> {
   String? errorMessage = '';
   bool isLogin = true;
@@ -28,12 +30,13 @@ class _LoginPageState extends State<LoginPage> {
         password: _controllerPassword.text,
       );
     } on FirebaseAuthException catch (e) {
-      setState(() {
+      setState(() { 
         errorMessage = e.message;
       });
     }
   }
-
+  // set state if logged in
+  // set state if registered
   //Register
   Future<void> createUserWithEmailAndPassword() async {
     try {
@@ -79,6 +82,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget _loginOrRegisterButton() {
     return TextButton(
       onPressed: () {
+        // saves in database ? 
         setState(() {
           isLogin = !isLogin;
         });
