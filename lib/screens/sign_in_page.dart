@@ -1,7 +1,8 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_local_variable, unnecessary_new, sort_child_properties_last, sized_box_for_whitespace
 
-import 'package:catch_up/screens/camerapage.dart';
+import 'package:catch_up/screens/home.dart';
 import 'package:catch_up/screens/homepage.dart';
+import 'package:catch_up/screens/main_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:catch_up/services/auth.dart';
@@ -222,7 +223,7 @@ class _SignInPageState extends State<SignInPage> {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (BuildContext context) {
-                            return HomePage();
+                            return Home();
                           },
                         ),
                       );
