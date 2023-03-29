@@ -12,23 +12,326 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      backgroundColor: const Color(0xffEFEDE7),
-      body: Container(
-        decoration: const BoxDecoration(
+        resizeToAvoidBottomInset: false,
+        backgroundColor: const Color(0xffEFEDE7),
+        extendBody: true,
+        bottomNavigationBar: const SafeArea(
+          child: BottomAppBar(
+            color: Colors.transparent,
+            elevation: 0,
+          ),
+        ),
+        body: Container(
+          decoration: const BoxDecoration(
             image: DecorationImage(
-          image: AssetImage('assets/Top.png'),
-          fit: BoxFit.cover,
-        )),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: ((BuildContext context) {
-            return const ProfilePage();
-          })));
-        },
-      ),
-    );
+              image: AssetImage('assets/Top.png'),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: SafeArea(
+            child: Center(
+              child: Column(
+                children: <Widget>[
+                  const SizedBox(
+                    height: 0,
+                  ),
+                  Image.asset(
+                    'assets/cream-logo.png',
+                    height: 75,
+                    width: 75,
+                  ),
+                  const SizedBox(height: 5),
+                  const Text(
+                    'Todays hot topic:',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 32,
+                      fontFamily: 'Poppins',
+                      color: Color(0xffEFEDE7),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 0,
+                  ),
+                  const Text(
+                    'Good news',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 40,
+                      fontFamily: 'Poppins',
+                      shadows: [
+                        Shadow(
+                            offset: Offset(0, 4),
+                            blurRadius: 4,
+                            // ignore: use_full_hex_values_for_flutter_colors
+                            color: Color(0xff40000000))
+                      ],
+                      color: Color(0xffE9CFC3),
+                    ),
+                  ),
+                  const SizedBox(height: 120),
+                  SizedBox(
+                    height: 192.54,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: <Widget>[
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.transparent,
+                            elevation: 0,
+                          ),
+                          child: Container(
+                            width: 142.0,
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(14),
+                              ),
+                              color: Color(0xffE9CFC3),
+                            ),
+                            child: Column(
+                              children: [
+                                SizedBox(height: 25),
+                                Container(
+                                  width: 90,
+                                  height: 90,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      // border color and width around the profile image
+                                      width: 4,
+                                      color: Color(0xffD79784),
+                                    ),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          spreadRadius: 2,
+                                          blurRadius: 5,
+                                          color: Colors.black.withOpacity(0.1),
+                                          offset: const Offset(0, 10))
+                                    ],
+                                    shape: BoxShape.circle,
+                                    image: const DecorationImage(
+                                      image: AssetImage('assets/group1.png'),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 19),
+                                const Text(
+                                  'Group #1',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w800,
+                                    fontSize: 20,
+                                    fontFamily: 'Poppins',
+                                    color: Color(0xffEFEDE7),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 0),
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.transparent,
+                            elevation: 0,
+                          ),
+                          child: Container(
+                            width: 142.0,
+                            decoration: const BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(14)),
+                              color: Color(0xffE9CFC3),
+                            ),
+                            child: Column(
+                              children: [
+                                SizedBox(height: 25),
+                                Container(
+                                  width: 90,
+                                  height: 90,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      // border color and width around the profile image
+                                      width: 4,
+                                      color: Color(0xffD79784),
+                                    ),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          spreadRadius: 2,
+                                          blurRadius: 5,
+                                          color: Colors.black.withOpacity(0.1),
+                                          offset: const Offset(0, 10))
+                                    ],
+                                    shape: BoxShape.circle,
+                                    image: const DecorationImage(
+                                      image: AssetImage('assets/group1.png'),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 19),
+                                const Text(
+                                  'Group #2',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w800,
+                                    fontSize: 20,
+                                    fontFamily: 'Poppins',
+                                    color: Color(0xffEFEDE7),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 0),
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.transparent,
+                            elevation: 0,
+                          ),
+                          child: Container(
+                            width: 142.0,
+                            decoration: const BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(14)),
+                              color: Color(0xffE9CFC3),
+                            ),
+                            child: SizedBox(
+                              child: Center(
+                                child: Column(
+                                  children: [
+                                    SizedBox(height: 25),
+                                    Container(
+                                      width: 90,
+                                      height: 90,
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                          // border color and width around the profile image
+                                          width: 4,
+                                          color: Color(0xffD79784),
+                                        ),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            spreadRadius: 2,
+                                            blurRadius: 5,
+                                            color:
+                                                Colors.black.withOpacity(0.1),
+                                            offset: const Offset(0, 10),
+                                          )
+                                        ],
+                                        shape: BoxShape.circle,
+                                        image: const DecorationImage(
+                                          image:
+                                              AssetImage('assets/group1.png'),
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(height: 19),
+                                    const Text(
+                                      'Group #3',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w800,
+                                        fontSize: 20,
+                                        fontFamily: 'Poppins',
+                                        color: Color(0xffEFEDE7),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(width: 0),
+                        FloatingActionButton(
+                          onPressed: () {},
+                          backgroundColor: Color(0xffD79784),
+                          child:
+                              const Icon(Icons.add, color: Color(0xffEFEDE7)),
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 24),
+                  Container(
+                    height: 260,
+                    width: 367,
+                    decoration: BoxDecoration(
+                        color: Color(0xffB9D3AF),
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                        boxShadow: [
+                          BoxShadow(
+                            spreadRadius: 2,
+                            blurRadius: 5,
+                            color: Colors.black.withOpacity(0.1),
+                            offset: const Offset(0, 10),
+                          ),
+                        ]),
+                    child: Column(
+                      // ignore: prefer_const_literals_to_create_immutables
+                      children: <Widget>[
+                        SizedBox(height: 40),
+                        const Text(
+                          'Next Catch Up in...',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 30,
+                            fontFamily: 'Poppins',
+                            color: Color(0xffEFEDE7),
+                          ),
+                        ),
+                        SizedBox(height: 30),
+                        const Text(
+                          '7:31 hours',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 50,
+                            fontFamily: 'Cartis-Beautyful-serif',
+                            color: Color(0xffD79784),
+                            shadows: [
+                              Shadow(
+                                  offset: Offset(0, 2),
+                                  blurRadius: 4,
+                                  // ignore: use_full_hex_values_for_flutter_colors
+                                  color: Color(0xff40000000))
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+        ),
+        floatingActionButton: SizedBox(
+          height: 70,
+          width: 70,
+          child: FittedBox(
+            child: FloatingActionButton(
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: ((BuildContext context) {
+                  return const ProfilePage();
+                })));
+              },
+              backgroundColor: Color(0xffD79784),
+              child: Image.asset(
+                'assets/cream-logo.png',
+                height: 45,
+                width: 45,
+              ),
+            ),
+          ),
+        ));
   }
 }
