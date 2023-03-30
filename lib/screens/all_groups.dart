@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_local_variable, unnecessary_new, sort_child_properties_last, sized_box_for_whitespace, library_private_types_in_public_api
 
-import 'package:catch_up/screens/homepage.dart';
+import 'package:catch_up/screens/home.dart';
 import 'package:flutter/material.dart';
 
 class AllGroups extends StatefulWidget {
@@ -92,7 +92,7 @@ class _AllGroupsState extends State<AllGroups> {
               Column(
                 children: [
                   SizedBox(
-                    height: 600,
+                    height: 500,
                     width: 400,
                     child: ListView(
                       children: const <Widget>[
@@ -104,109 +104,23 @@ class _AllGroupsState extends State<AllGroups> {
                           color: Color(0xffEFEDE7),
                           child: ListTile(
                             leading: CircleAvatar(
-                                backgroundColor: Color(0xff82B977),
-                                radius: 40.0,
-                                child: CircleAvatar(
-                                  backgroundImage: AssetImage('group1.png'),
-                                  radius: 38.0,
-                                )),
-                            title: Text('Group #1'),
-                            trailing: Icon(
-                              Icons.arrow_forward_ios,
-                              color: Color(0xff82B977),
+                              radius: 40.0,
+                              backgroundColor: Color(0xff82B977),
+                              child: CircleAvatar(
+                                radius: 35.0,
+                                backgroundImage:
+                                    AssetImage('assets/group1.png'),
+                              ),
                             ),
-                          ),
-                        ),
-                        Expanded(
-                            child: Divider(
-                          thickness: 1,
-                          indent: 30,
-                          endIndent: 30,
-                        )),
-                        Card(
-                          elevation: 0,
-                          color: Color(0xffEFEDE7),
-                          child: ListTile(
-                            leading: CircleAvatar(
-                                backgroundColor: Color(0xff82B977),
-                                radius: 40.0,
-                                child: CircleAvatar(
-                                  backgroundImage: AssetImage('group1.png'),
-                                  radius: 38.0,
-                                )),
-                            title: Text('Group #2'),
-                            trailing: Icon(
-                              Icons.arrow_forward_ios,
-                              color: Color(0xff82B977),
+                            title: Text(
+                              'Group #1',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.normal,
+                                fontSize: 26,
+                                color: Color(0xff82B977),
+                              ),
                             ),
-                          ),
-                        ),
-                        Expanded(
-                            child: Divider(
-                          thickness: 1,
-                          indent: 30,
-                          endIndent: 30,
-                        )),
-                        Card(
-                          elevation: 0,
-                          color: Color(0xffEFEDE7),
-                          child: ListTile(
-                            leading: CircleAvatar(
-                                backgroundColor: Color(0xff82B977),
-                                radius: 40.0,
-                                child: CircleAvatar(
-                                  backgroundImage: AssetImage('group1.png'),
-                                  radius: 38.0,
-                                )),
-                            title: Text('Group #3'),
-                            trailing: Icon(
-                              Icons.arrow_forward_ios,
-                              color: Color(0xff82B977),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                            child: Divider(
-                          thickness: 1,
-                          indent: 30,
-                          endIndent: 30,
-                        )),
-                        Card(
-                          elevation: 0,
-                          color: Color(0xffEFEDE7),
-                          child: ListTile(
-                            leading: CircleAvatar(
-                                backgroundColor: Color(0xff82B977),
-                                radius: 40.0,
-                                child: CircleAvatar(
-                                  backgroundImage: AssetImage('group1.png'),
-                                  radius: 38.0,
-                                )),
-                            title: Text('Group #4'),
-                            trailing: Icon(
-                              Icons.arrow_forward_ios,
-                              color: Color(0xff82B977),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                            child: Divider(
-                          thickness: 1,
-                          indent: 30,
-                          endIndent: 30,
-                        )),
-                        Card(
-                          elevation: 0,
-                          color: Color(0xffEFEDE7),
-                          child: ListTile(
-                            leading: CircleAvatar(
-                                backgroundColor: Color(0xff82B977),
-                                radius: 40.0,
-                                child: CircleAvatar(
-                                  backgroundImage: AssetImage('group1.png'),
-                                  radius: 38.0,
-                                )),
-                            title: Text('Group #5'),
                             trailing: Icon(
                               Icons.arrow_forward_ios,
                               color: Color(0xff82B977),
