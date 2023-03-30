@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_local_variable, unnecessary_new, sort_child_properties_last, sized_box_for_whitespace
 
+import 'package:catch_up/screens/camerapage.dart';
 import 'package:catch_up/screens/home.dart';
 import 'package:catch_up/screens/homepage.dart';
 import 'package:catch_up/screens/main_profile.dart';

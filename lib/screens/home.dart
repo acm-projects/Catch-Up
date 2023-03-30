@@ -151,7 +151,7 @@ class _HomeState extends State<Home> {
                   ),
                   const SizedBox(height: 5),
                   const Text(
-                    'Todays hot topic:',
+                    'Today\'s hot topic:',
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 32,

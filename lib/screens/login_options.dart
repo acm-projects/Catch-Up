@@ -165,38 +165,38 @@ class _LoginOptionsState extends State<LoginOptions> {
                   // TESTER BUTTON
                   // REMOVE WHEN DONE WITH ALL TESTING
 
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                    child: SizedBox(
-                      width: 315,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (BuildContext context) {
-                                return AllGroups();
-                              },
-                            ),
-                          );
-                        },
-                        style: ElevatedButton.styleFrom(
-                            padding: EdgeInsets.symmetric(horizontal: 10),
-                            backgroundColor: const Color(0xff82B977),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
-                            )),
-                        child: Text(
-                          'Groups Page',
-                          style: TextStyle(
-                            color: const Color(0xffEFEDE7),
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14,
-                            fontFamily: 'Poppins',
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  // Container(
+                  //   padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                  //   child: SizedBox(
+                  //     width: 315,
+                  //     child: ElevatedButton(
+                  //       onPressed: () {
+                  //         Navigator.of(context).push(
+                  //           MaterialPageRoute(
+                  //             builder: (BuildContext context) {
+                  //               return AllGroups();
+                  //             },
+                  //           ),
+                  //         );
+                  //       },
+                  //       style: ElevatedButton.styleFrom(
+                  //           padding: EdgeInsets.symmetric(horizontal: 10),
+                  //           backgroundColor: const Color(0xff82B977),
+                  //           shape: RoundedRectangleBorder(
+                  //             borderRadius: BorderRadius.circular(20),
+                  //           )),
+                  //       child: Text(
+                  //         'Groups Page',
+                  //         style: TextStyle(
+                  //           color: const Color(0xffEFEDE7),
+                  //           fontWeight: FontWeight.bold,
+                  //           fontSize: 14,
+                  //           fontFamily: 'Poppins',
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
                 ],
               ),
             ),
