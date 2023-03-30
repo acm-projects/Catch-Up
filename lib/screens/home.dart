@@ -1,5 +1,114 @@
+import 'package:catch_up/screens/all_groups.dart';
 import 'package:catch_up/screens/main_profile.dart';
 import 'package:flutter/material.dart';
+
+class ExpandableFAB extends StatefulWidget {
+  const ExpandableFAB({
+    super.key,
+    this.initialOpen,
+    required this.distance,
+    required this.children,
+  });
+  final bool? initialOpen;
+  final double distance;
+  final List<Widget> children;
+
+  @override
+  State<ExpandableFAB> createState() => _ExpandableFABState();
+}
+
+class _ExpandableFABState extends State<ExpandableFAB> {
+  bool _open = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _open = widget.initialOpen ?? false;
+  }
+
+  void _toggle() {
+    setState(() {
+      _open = !_open;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox.expand(
+      child: Stack(
+        alignment: Alignment.bottomRight,
+        clipBehavior: Clip.none,
+        children: [
+          _buildTapToCloseFab(),
+          _buildTapToOpenFab(),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildTapToCloseFab() {
+    return SizedBox(
+      width: 56.0,
+      height: 56.0,
+      child: Center(
+        child: Material(
+          shape: const CircleBorder(),
+          clipBehavior: Clip.antiAlias,
+          elevation: 4.0,
+          child: InkWell(
+            onTap: _toggle,
+            // ignore: prefer_const_constructors
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              // ignore: prefer_const_constructors
+              child: Icon(
+                Icons.close,
+                // ignore: prefer_const_constructors
+                color: Color(0xffD79784),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTapToOpenFab() {
+    return IgnorePointer(
+      ignoring: _open,
+      child: AnimatedContainer(
+        transformAlignment: Alignment.center,
+        transform: Matrix4.diagonal3Values(
+          _open ? 0.7 : 1.0,
+          _open ? 0.7 : 1.0,
+          1.0,
+        ),
+        duration: const Duration(milliseconds: 250),
+        curve: const Interval(0.0, 0.5, curve: Curves.easeOut),
+        child: AnimatedOpacity(
+          opacity: _open ? 0.0 : 1.0,
+          curve: const Interval(0.25, 1.0, curve: Curves.easeInOut),
+          duration: const Duration(milliseconds: 250),
+          child: SizedBox(
+            height: 70,
+            width: 70,
+            child: FittedBox(
+              child: FloatingActionButton(
+                onPressed: _toggle,
+                backgroundColor: Color(0xffD79784),
+                child: Image.asset(
+                  'assets/cream-logo.png',
+                  height: 45,
+                  width: 45,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -70,14 +179,19 @@ class _HomeState extends State<Home> {
                       color: Color(0xffE9CFC3),
                     ),
                   ),
-                  const SizedBox(height: 120),
+                  const SizedBox(height: 105),
                   SizedBox(
                     height: 192.54,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: <Widget>[
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: ((BuildContext context) {
+                              return const AllGroups();
+                            })));
+                          },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.transparent,
                             elevation: 0,
@@ -133,7 +247,12 @@ class _HomeState extends State<Home> {
                         ),
                         const SizedBox(width: 0),
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: ((BuildContext context) {
+                              return const AllGroups();
+                            })));
+                          },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.transparent,
                             elevation: 0,
@@ -188,7 +307,12 @@ class _HomeState extends State<Home> {
                         ),
                         const SizedBox(width: 0),
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: ((BuildContext context) {
+                              return const AllGroups();
+                            })));
+                          },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.transparent,
                             elevation: 0,
