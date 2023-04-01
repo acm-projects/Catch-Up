@@ -134,8 +134,8 @@ class _ExpandableFabState extends State<ExpandableFab>
             curve: const Interval(0.25, 1.0, curve: Curves.easeInOut),
             duration: const Duration(milliseconds: 250),
             child: SizedBox(
-              height: 70,
-              width: 70,
+              height: 65,
+              width: 65,
               child: FittedBox(
                 child: FloatingActionButton(
                   onPressed: () {

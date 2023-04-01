@@ -34,7 +34,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		a/fpsADmEe6nPBsrchUAiAaxXwA=
+		JuTsejLGj0oEJhRnxIeLKtklStE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -45,10 +45,6 @@
 	<dict>
 		<key>Headers/FIRApp.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			RVUhkr39XRyPMnen0ismAtN9W7w=
-			</data>
 			<key>hash2</key>
 			<data>
 			YaQpnvfHBb3FvLR78xqLhcJDteQLXyXgXxwoIr8Zz+g=
@@ -56,10 +52,6 @@
 		</dict>
 		<key>Headers/FIRConfiguration.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			nAQ0+tts+cDkPKImQw4tpJa2JUo=
-			</data>
 			<key>hash2</key>
 			<data>
 			gnE5tNgjY4oWsq1cfP5YE6b+7lvX4SjY2PzCD21KBPM=
@@ -67,10 +59,6 @@
 		</dict>
 		<key>Headers/FIRLoggerLevel.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			VlN6UfvmnqD8Dn1khwZXHiro2u8=
-			</data>
 			<key>hash2</key>
 			<data>
 			pS/fGCYP2V0x+wDCLTZ+8DQLrO8Jy7OyU4GgV0LlmQU=
@@ -78,10 +66,6 @@
 		</dict>
 		<key>Headers/FIROptions.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			CWN/sTe8dimQRHLPACDTOeBCz5g=
-			</data>
 			<key>hash2</key>
 			<data>
 			HyS/BEob7PUuCvAIOZ8fQCAz74kG2zBmi1v+R0lj+C0=
@@ -89,10 +73,6 @@
 		</dict>
 		<key>Headers/FIRVersion.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			HcSd1GES9ysOBTf5qT7L6hxRfqQ=
-			</data>
 			<key>hash2</key>
 			<data>
 			NG9j3x+7eoaNIbVlDwc+g0Seqt3pCsQBAtTZslx6/xg=
@@ -100,10 +80,6 @@
 		</dict>
 		<key>Headers/FirebaseCore-umbrella.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			9mUW0slJTxtirtcy67uYxFP7BnA=
-			</data>
 			<key>hash2</key>
 			<data>
 			iwHinUnNhI7vMXN2pesmKujJ+nDOc+v+J537rjLL2o4=
@@ -111,10 +87,6 @@
 		</dict>
 		<key>Headers/FirebaseCore.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			1cV5ZW/3+cyH6+oNi4QffBtH4j4=
-			</data>
 			<key>hash2</key>
 			<data>
 			LGQ1nF3qjoVSkAkKAwJcNkfrSCqnDmEQ/6NBPHCg1Ug=
@@ -122,10 +94,6 @@
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			5t1Th/TpACsGlSSRS5aPmiC+gmk=
-			</data>
 			<key>hash2</key>
 			<data>
 			mwdNKv/bQHLE4+4DLZyrM0eG0bAvIJ2ryk6LX1F5olA=
