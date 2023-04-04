@@ -1,11 +1,13 @@
 //New Login Page
+import 'package:catch_up/screens/createGroupPage.dart';
 import 'package:catch_up/services/auth.dart'; //auth services class
+import 'package:cloud_firestore/cloud_firestore.dart'; //firestore
 import 'package:flutter/material.dart'; 
 import 'package:firebase_auth/firebase_auth.dart'; //auth package
 
-// state of whether they are logged in or not
-//class LoginPage
+
 class LoginPage extends StatefulWidget {
+  static late String uid;
   const LoginPage({Key? key}) : super(key: key);
 
   @override
@@ -13,8 +15,8 @@ class LoginPage extends StatefulWidget {
 
 }
 
-// if logged in, display error
 class _LoginPageState extends State<LoginPage> {
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   String? errorMessage = '';
   bool isLogin = true;
 
@@ -35,15 +37,24 @@ class _LoginPageState extends State<LoginPage> {
       });
     }
   }
-  // set state if logged in
-  // set state if registered
-  //Register
+  
   Future<void> createUserWithEmailAndPassword() async {
     try {
+      //create User for Auth
       await AuthService().createUserWithEmailAndPassword(
         email: _controllerEmail.text,
         password: _controllerPassword.text,
       );
+      
+      //Data to save in a user's document
+      Map<String, dynamic> userDataToSave = {
+      'email': _controllerEmail.text,
+      };
+       
+       //Add user data to user document in user collection
+       DocumentReference _docRef = await _firestore.collection('users').add(userDataToSave);
+       LoginPage.uid = _docRef.id;
+
     } on FirebaseAuthException catch (e) {
       setState(() {
         errorMessage = e.message;
@@ -79,10 +90,25 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  Widget _createGroupButton() {
+    return ElevatedButton(
+      onPressed: () {
+        Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) {
+                            return CreateGroup();
+                          },
+                        ),
+                      );
+
+      },
+      child: Text('Create Group'),
+    );
+  }
+
   Widget _loginOrRegisterButton() {
     return TextButton(
       onPressed: () {
-        // saves in database ? 
         setState(() {
           isLogin = !isLogin;
         });
@@ -110,6 +136,7 @@ class _LoginPageState extends State<LoginPage> {
             _errorMessage(),
             _submitButton(),
             _loginOrRegisterButton(),
+            _createGroupButton(),
           ], 
         ),
       ),
