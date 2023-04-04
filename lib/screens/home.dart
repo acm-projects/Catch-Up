@@ -1,7 +1,13 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:catch_up/screens/all_groups.dart';
 import 'package:catch_up/screens/main_profile.dart';
+import 'package:catch_up/screens/videopage.dart';
+import 'package:catch_up/screens/voice_page.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
+
+import 'friends.dart';
 
 @immutable
 class ExpandableFab extends StatefulWidget {
@@ -134,8 +140,8 @@ class _ExpandableFabState extends State<ExpandableFab>
             curve: const Interval(0.25, 1.0, curve: Curves.easeInOut),
             duration: const Duration(milliseconds: 250),
             child: SizedBox(
-              height: 65,
-              width: 65,
+              height: 80,
+              width: 80,
               child: FittedBox(
                 child: FloatingActionButton(
                   onPressed: () {
@@ -144,8 +150,8 @@ class _ExpandableFabState extends State<ExpandableFab>
                   backgroundColor: Color(0xffD79784),
                   child: Image.asset(
                     'assets/cream-logo.png',
-                    height: 45,
-                    width: 45,
+                    height: 42,
+                    width: 42,
                   ),
                 ),
               ),
@@ -482,16 +488,22 @@ class _HomeState extends State<Home> {
                       ),
                       const SizedBox(width: 0),
                       FloatingActionButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: ((BuildContext context) {
+                            return const AllGroups();
+                          })));
+                        },
                         backgroundColor: Color(0xffD79784),
                         child: const Icon(Icons.add, color: Color(0xffEFEDE7)),
-                      )
+                      ),
+                      SizedBox(width: 20),
                     ],
                   ),
                 ),
                 SizedBox(height: 24),
                 Container(
-                  height: 260,
+                  height: 220,
                   width: 367,
                   decoration: BoxDecoration(
                       color: Color(0xffB9D3AF),
@@ -548,15 +560,33 @@ class _HomeState extends State<Home> {
         distance: 112.0,
         children: [
           ActionButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: ((BuildContext context) {
+                return const VoicePage();
+              })));
+            },
             icon: const Icon(Icons.mic),
           ),
           ActionButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: ((BuildContext context) {
+                return const VideoPage(
+                  //add filePath after editing
+                  filePath: '',
+                );
+              })));
+            },
             icon: const Icon(Icons.camera_alt),
           ),
           ActionButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: ((BuildContext context) {
+                return const FriendsPage();
+              })));
+            },
             icon: const Icon(Icons.group),
           ),
         ],
