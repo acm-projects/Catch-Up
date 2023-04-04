@@ -1,5 +1,6 @@
 import 'package:catch_up/screens/all_groups.dart';
 import 'package:catch_up/screens/main_profile.dart';
+import 'package:catch_up/screens/voice_page.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
@@ -548,7 +549,12 @@ class _HomeState extends State<Home> {
         distance: 112.0,
         children: [
           ActionButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: ((BuildContext context) {
+                return const VoicePage();
+              })));
+            },
             icon: const Icon(Icons.mic),
           ),
           ActionButton(
@@ -565,7 +571,7 @@ class _HomeState extends State<Home> {
   }
 }
 
-/* 
+/*
 SizedBox(
           height: 70,
           width: 70,
