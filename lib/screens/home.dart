@@ -558,37 +558,58 @@ class _HomeState extends State<Home> {
         ),
       ),
       floatingActionButton: ExpandableFab(
-        distance: 112.0,
+        distance: 110.0,
         children: [
-          ActionButton(
-            onPressed: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: ((BuildContext context) {
-                return const VoicePage();
-              })));
-            },
-            icon: const Icon(Icons.mic),
+          SizedBox(
+            height: 55,
+            width: 55,
+            child: ActionButton(
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: ((BuildContext context) {
+                  return const VoicePage();
+                })));
+              },
+              icon: const Icon(
+                Icons.mic,
+                size: 35,
+              ),
+            ),
           ),
-          ActionButton(
-            onPressed: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: ((BuildContext context) {
-                return const VideoPage(
-                  //add filePath after editing
-                  filePath: '',
-                );
-              })));
-            },
-            icon: const Icon(Icons.camera_alt),
+          SizedBox(
+            height: 55,
+            width: 55,
+            child: ActionButton(
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: ((BuildContext context) {
+                  return const VideoPage(
+                    //add filePath after editing
+                    filePath: '',
+                  );
+                })));
+              },
+              icon: const Icon(
+                Icons.camera_alt,
+                size: 32,
+              ),
+            ),
           ),
-          ActionButton(
-            onPressed: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: ((BuildContext context) {
-                return const FriendsPage();
-              })));
-            },
-            icon: const Icon(Icons.group),
+          SizedBox(
+            height: 55,
+            width: 55,
+            child: ActionButton(
+              onPressed: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: ((BuildContext context) {
+                  return const FriendsPage();
+                })));
+              },
+              icon: const Icon(
+                Icons.group,
+                size: 33,
+              ),
+            ),
           ),
         ],
       ),
