@@ -1,8 +1,11 @@
 import 'package:catch_up/screens/all_groups.dart';
+import 'package:catch_up/screens/camerapage.dart';
 import 'package:catch_up/screens/main_profile.dart';
+import 'package:catch_up/screens/videopage.dart';
 import 'package:catch_up/screens/voice_page.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
+import 'package:camera/camera.dart';
 
 @immutable
 class ExpandableFab extends StatefulWidget {
@@ -558,7 +561,12 @@ class _HomeState extends State<Home> {
             icon: const Icon(Icons.mic),
           ),
           ActionButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: ((BuildContext context) {
+                return const CameraPage();
+              })));
+            },
             icon: const Icon(Icons.camera_alt),
           ),
           ActionButton(

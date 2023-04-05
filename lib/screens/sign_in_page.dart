@@ -169,7 +169,7 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                     child: Padding(
                         padding: const EdgeInsets.only(left: 20.0),
-                        child: _entryField('Email*', _controllerPassword)
+                        child: _entryField('Email*', _controllerEmail)
                         /*TextField(
                         decoration: InputDecoration(
                           hintStyle: TextStyle(
@@ -198,7 +198,7 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                     child: Padding(
                         padding: const EdgeInsets.only(left: 20.0),
-                        child: _entryField('Password*', _controllerEmail)
+                        child: _entryField('Password*', _controllerPassword)
                         /*TextField(
                         obscureText: true,
                         decoration: InputDecoration(
@@ -220,15 +220,9 @@ class _SignInPageState extends State<SignInPage> {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 150.0),
                   child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (BuildContext context) {
-                            return Home();
-                          },
-                        ),
-                      );
-                    },
+                    onPressed: signInWithEmailAndPassword,
+                    //isLogin = true;
+
                     style: ElevatedButton.styleFrom(
                         padding: EdgeInsets.symmetric(horizontal: 20),
                         backgroundColor: const Color(0xff82B977),
