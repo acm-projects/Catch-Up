@@ -6,6 +6,8 @@ import 'package:catch_up/screens/login_options.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
+import 'login_register_page.dart';
+
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 

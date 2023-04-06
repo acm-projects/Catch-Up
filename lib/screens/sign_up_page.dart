@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_local_variable, unnecessary_new, sort_child_properties_last, sized_box_for_whitespace
 
+import 'package:catch_up/screens/home.dart';
 import 'package:catch_up/screens/homepage.dart';
+import 'package:catch_up/services/auth.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -11,6 +14,85 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  String? errorMessage = '';
+  bool isLogin = true;
+
+  //Text Editing for Email and Password
+  final TextEditingController _controllerEmail = TextEditingController();
+  final TextEditingController _controllerPassword = TextEditingController();
+
+  //Sign In
+  Future<void> signInWithEmailAndPassword() async {
+    try {
+      await AuthService().signInWithEmailAndPassword(
+        email: _controllerEmail.text,
+        password: _controllerPassword.text,
+      );
+    } on FirebaseAuthException catch (e) {
+      setState(() {
+        errorMessage = e.message;
+      });
+    }
+  }
+
+  //Register
+  Future<void> createUserWithEmailAndPassword() async {
+    try {
+      await AuthService().createUserWithEmailAndPassword(
+        email: _controllerEmail.text,
+        password: _controllerPassword.text,
+      );
+    } on FirebaseAuthException catch (e) {
+      setState(() {
+        errorMessage = e.message;
+      });
+    }
+  }
+
+  Widget _title() {
+    return const Text('Firebase Auth');
+  }
+
+  Widget _entryField(
+    String title,
+    TextEditingController controller,
+  ) {
+    return TextField(
+      controller: controller,
+      decoration: InputDecoration(
+        hintStyle: TextStyle(
+          //fontWeight: FontWeight.w500,
+          fontFamily: 'Poppins',
+        ),
+        border: InputBorder.none,
+        hintText: title,
+      ),
+    );
+  }
+
+  Widget _errorMessage() {
+    return Text(errorMessage == '' ? '' : 'Humm ? $errorMessage');
+  }
+
+  Widget _submitButton() {
+    return ElevatedButton(
+      onPressed:
+          isLogin ? signInWithEmailAndPassword : createUserWithEmailAndPassword,
+      child: Text(isLogin ? 'Login' : 'Register'),
+    );
+  }
+
+  Widget _loginOrRegisterButton() {
+    return TextButton(
+      onPressed: () {
+        setState(() {
+          isLogin = !isLogin;
+        });
+      },
+      child: Text(isLogin ? 'Register instead' : 'Login instead'),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,18 +192,8 @@ class _SignUpPageState extends State<SignUpPage> {
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 20.0),
-                        child: TextField(
-                          decoration: InputDecoration(
-                            hintStyle: TextStyle(
-                              //fontWeight: FontWeight.w500,
-                              fontFamily: 'Poppins',
-                            ),
-                            border: InputBorder.none,
-                            hintText: 'Email*',
-                          ),
-                        ),
-                      ),
+                          padding: const EdgeInsets.only(left: 20.0),
+                          child: _entryField('Email*', _controllerEmail)),
                     ),
                   ),
 
@@ -138,19 +210,8 @@ class _SignUpPageState extends State<SignUpPage> {
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 20.0),
-                        child: TextField(
-                          obscureText: true,
-                          decoration: InputDecoration(
-                            hintStyle: TextStyle(
-                              //fontWeight: FontWeight.w500,
-                              fontFamily: 'Poppins',
-                            ),
-                            border: InputBorder.none,
-                            hintText: 'Password*',
-                          ),
-                        ),
-                      ),
+                          padding: const EdgeInsets.only(left: 20.0),
+                          child: _entryField('Password*', _controllerPassword)),
                     ),
                   ),
 
@@ -191,15 +252,15 @@ class _SignUpPageState extends State<SignUpPage> {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 150.0),
                     child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).push(
+                      onPressed: createUserWithEmailAndPassword,
+                      /*Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (BuildContext context) {
-                              return HomePage();
+                              return Home();
                             },
                           ),
-                        );
-                      },
+                        );*/
+
                       style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(horizontal: 20),
                           backgroundColor: const Color(0xff82B977),
