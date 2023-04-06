@@ -5,6 +5,8 @@ import 'package:catch_up/screens/individual_group.dart';
 import 'package:catch_up/screens/main_profile.dart';
 import 'package:catch_up/screens/videopage.dart';
 import 'package:catch_up/screens/voice_page.dart';
+import 'package:catch_up/screens/videopage.dart';
+import 'package:catch_up/screens/voice_page.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
@@ -617,7 +619,7 @@ class _HomeState extends State<Home> {
   }
 }
 
-/* 
+/*
 SizedBox(
           height: 70,
           width: 70,
