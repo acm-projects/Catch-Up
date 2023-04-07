@@ -20,7 +20,7 @@ class _WidgetTreeState extends State<WidgetTree> {
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           //If user, will go into homepage
-          return const Home();
+          return const Home(); //Home();
         } else {
           //If not, will go into LoginPage
           return const LoginOptions();
