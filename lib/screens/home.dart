@@ -265,10 +265,30 @@ class _HomeState extends State<Home> {
                 const SizedBox(
                   height: 0,
                 ),
-                Image.asset(
-                  'assets/cream-logo.png',
-                  height: 75,
-                  width: 75,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Spacer(),
+                    Image.asset(
+                      'assets/cream-logo.png',
+                      height: 75,
+                      width: 75,
+                    ),
+                    SizedBox(width: 107),
+                    FloatingActionButton.small(
+                      onPressed: () {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: ((BuildContext context) {
+                          return const ProfilePage();
+                        })));
+                      },
+                      elevation: 1,
+                      child: Icon(
+                        Icons.person,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 5),
                 const Text(
