@@ -33,7 +33,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (BuildContext context) {
-                    return const ProfilePage();
+                    return ProfilePage();
                   },
                 ),
               );
@@ -142,7 +142,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (BuildContext context) {
-                                return const ProfilePage();
+                                return ProfilePage();
                               },
                             ),
                           );

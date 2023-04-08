@@ -1,8 +1,30 @@
 import 'package:catch_up/screens/profile.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:catch_up/services/auth.dart';
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+  ProfilePage({super.key});
+  final User? user = AuthService().currentUser;
+
+  Future<void> signOut() async {
+    await AuthService().signOut();
+  }
+
+  Widget _title() {
+    return const Text('Firebase Auth');
+  }
+
+  Widget _userUid() {
+    return Text(user?.email ?? 'User email');
+  }
+
+  Widget _signOutButton() {
+    return ElevatedButton(
+      onPressed: signOut,
+      child: const Text('Sign Out'),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -204,6 +226,26 @@ class ProfilePage extends StatelessWidget {
                       ),
                     ),
                   ),
+                  const SizedBox(height: 30),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                        onPressed: signOut,
+                        style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10))),
+                        child: const Text(
+                          'Sign Out',
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             )

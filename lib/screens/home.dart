@@ -279,7 +279,7 @@ class _HomeState extends State<Home> {
                       onPressed: () {
                         Navigator.of(context).push(
                             MaterialPageRoute(builder: ((BuildContext context) {
-                          return const ProfilePage();
+                          return ProfilePage();
                         })));
                       },
                       elevation: 1,
