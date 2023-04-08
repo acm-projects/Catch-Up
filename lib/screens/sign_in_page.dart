@@ -60,6 +60,7 @@ class _SignInPageState extends State<SignInPage> {
     TextEditingController controller,
   ) {
     return TextField(
+      obscureText: true,
       controller: controller,
       decoration: InputDecoration(
         hintStyle: TextStyle(
@@ -73,7 +74,7 @@ class _SignInPageState extends State<SignInPage> {
   }
 
   Widget _errorMessage() {
-    return Text(errorMessage == '' ? '' : 'Humm ? $errorMessage');
+    return Text(errorMessage == '' ? '' : 'Uh oh ? $errorMessage');
   }
 
   Widget _submitButton() {
@@ -126,9 +127,6 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                   ),
                 ),
-
-                //top spacing
-                //SizedBox(height: 15),
 
                 //logo
                 Image.asset(

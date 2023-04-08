@@ -1,8 +1,9 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_local_variable, unnecessary_new, sort_child_properties_last, sized_box_for_whitespace, library_private_types_in_public_api
 
-import 'package:catch_up/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:catch_up/screens/individual_group.dart';
+
+import 'join_add_group.dart';
 
 class AllGroups extends StatefulWidget {
   const AllGroups({Key? key}) : super(key: key);
@@ -90,15 +91,25 @@ class _AllGroupsState extends State<AllGroups> {
                 ),
               ),
 
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                child: Container(
+                  height: 25,
+                  width: 350.0,
+                  decoration: const BoxDecoration(
+                    color: Color(0xffEFEDE7),
+                  ),
+                ),
+              ),
+
               //sliding cards
               SizedBox(
-                height: 610,
+                height: 585,
                 width: 400,
                 child: ListView(
                   scrollDirection: Axis.vertical,
                   children: <Widget>[
-                    SizedBox(height: 25),
-
+                    //SizedBox(height: 25),
                     //card #1
                     //first divider
                     Divider(
@@ -526,6 +537,21 @@ class _AllGroupsState extends State<AllGroups> {
                       indent: 30,
                       endIndent: 30,
                     ),
+
+                    SizedBox(height: 20),
+
+                    FloatingActionButton(
+                      onPressed: () {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: ((BuildContext context) {
+                          return const JoinAddGroup();
+                        })));
+                      },
+                      backgroundColor: Color(0xffD79784),
+                      child: const Icon(Icons.add, color: Color(0xffEFEDE7)),
+                    ),
+
+                    SizedBox(height: 30),
 
                     //end of all 6 cards for now
                   ],

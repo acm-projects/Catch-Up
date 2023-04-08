@@ -2,6 +2,7 @@
 
 import 'package:catch_up/screens/all_groups.dart';
 import 'package:catch_up/screens/individual_group.dart';
+import 'package:catch_up/screens/join_add_group.dart';
 import 'package:catch_up/screens/main_profile.dart';
 import 'package:catch_up/screens/videopage.dart';
 import 'package:catch_up/screens/voice_page.dart';
@@ -494,7 +495,7 @@ class _HomeState extends State<Home> {
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: ((BuildContext context) {
-                            return const AllGroups();
+                            return const JoinAddGroup();
                           })));
                         },
                         backgroundColor: Color(0xffD79784),
@@ -604,7 +605,7 @@ class _HomeState extends State<Home> {
               onPressed: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: ((BuildContext context) {
-                  return const FriendsPage();
+                  return const AllGroups();
                 })));
               },
               icon: const Icon(

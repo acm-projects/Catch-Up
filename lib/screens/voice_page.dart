@@ -13,16 +13,30 @@ class _VoicePageState extends State<VoicePage> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       backgroundColor: Color(0xffB9D3AF),
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-      ),
+      // appBar: AppBar(
+      //   elevation: 0,
+      //   backgroundColor: Colors.transparent,
+      // ),
       body: Container(
         child: SafeArea(
           child: Center(
             child: Column(
               // ignore: prefer_const_literals_to_create_immutables
               children: <Widget>[
+                //back arrow
+                Padding(
+                  padding: const EdgeInsets.only(right: 325),
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    icon: const Icon(
+                      Icons.arrow_back_ios,
+                      color: Color(0xffEFEDE7),
+                    ),
+                  ),
+                ),
+
                 const SizedBox(height: 30),
                 const Text(
                   'What\'s on your mind?',
@@ -33,27 +47,27 @@ class _VoicePageState extends State<VoicePage> {
                     color: Color(0xffEFEDE7),
                   ),
                 ),
-                const SizedBox(height: 17),
+                const SizedBox(height: 30),
                 const Text(
-                  'Share a voice note with',
+                  'Share a voice note with your friends',
                   style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 17,
-                    fontFamily: 'Poppins',
-                    color: Color(0xffEFEDE7),
-                  ),
-                ),
-                const SizedBox(height: 7),
-                const Text(
-                  'Group 1',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w900,
-                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
                     fontFamily: 'Poppins',
                     color: Color(0xffD79784),
                   ),
                 ),
-                const SizedBox(height: 440),
+                const SizedBox(height: 7),
+                // const Text(
+                //   'Group 1',
+                //   style: TextStyle(
+                //     fontWeight: FontWeight.w900,
+                //     fontSize: 20,
+                //     fontFamily: 'Poppins',
+                //     color: Color(0xffD79784),
+                //   ),
+                // ),
+                const SizedBox(height: 470),
                 const Text(
                   'Tap here to start recording',
                   style: TextStyle(
@@ -63,12 +77,19 @@ class _VoicePageState extends State<VoicePage> {
                     color: Color(0xffEFEDE7),
                   ),
                 ),
-                const SizedBox(height: 20),
-                FloatingActionButton(
-                  onPressed: () {},
-                  backgroundColor: const Color(0xffEFEDE7),
-                  child:
-                      const Icon(Icons.mic, color: Color(0xffB9D3AF), size: 30),
+                const SizedBox(height: 30),
+                SizedBox(
+                  height: 70,
+                  width: 70,
+                  child: FloatingActionButton(
+                    onPressed: () {},
+                    backgroundColor: const Color(0xffEFEDE7),
+                    child: const Icon(
+                      Icons.mic,
+                      color: Color(0xffB9D3AF),
+                      size: 50,
+                    ),
+                  ),
                 )
               ],
             ),
