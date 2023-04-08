@@ -60,7 +60,7 @@ class _SignInPageState extends State<SignInPage> {
     TextEditingController controller,
   ) {
     return TextField(
-      obscureText: true,
+      //obscureText: true,
       controller: controller,
       decoration: InputDecoration(
         hintStyle: TextStyle(
