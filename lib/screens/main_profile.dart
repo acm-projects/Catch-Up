@@ -1,3 +1,5 @@
+import 'package:catch_up/screens/join_group_page.dart';
+import 'package:catch_up/screens/login_options.dart';
 import 'package:catch_up/screens/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -16,7 +18,15 @@ class ProfilePage extends StatelessWidget {
   }
 
   Widget _userUid() {
-    return Text(user?.email ?? 'User email');
+    return Text(
+      user?.email ?? 'User email',
+      style: TextStyle(
+          fontSize: 15,
+          fontWeight: FontWeight.normal,
+          fontFamily: 'Poppins',
+          fontStyle: FontStyle.italic,
+          color: Colors.white),
+    );
   }
 
   Widget _signOutButton() {
@@ -84,16 +94,8 @@ class ProfilePage extends StatelessWidget {
             const SizedBox(
               height: 6, // creates space between text and profile image
             ),
-            const Center(
-              child: Text(
-                "someEmail@gmail.com",
-                style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.normal,
-                    fontFamily: 'Poppins',
-                    fontStyle: FontStyle.italic,
-                    color: Colors.white),
-              ),
+            Center(
+              child: _userUid(),
             ),
             const SizedBox(
               height: 40, // space between profile pic and first text field
@@ -197,7 +199,7 @@ class ProfilePage extends StatelessWidget {
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (BuildContext context) {
-                              return const EditProfilePage();
+                              return const JoinGroupPage();
                             },
                           ),
                         );

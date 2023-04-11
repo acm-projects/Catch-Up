@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:video_player/video_player.dart';
 import 'dart:io';
+import 'package:flutter_animated_button/flutter_animated_button.dart';
 
 class VideoPage extends StatefulWidget {
   final String filePath;
