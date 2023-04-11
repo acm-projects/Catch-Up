@@ -38,6 +38,15 @@ class _VideoPageState extends State<VideoPage> {
           style: TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.bold),
         ),
         elevation: 0,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
         backgroundColor: MainColor.DarkPink,
         actions: [
           IconButton(
