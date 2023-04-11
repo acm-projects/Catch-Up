@@ -1,12 +1,13 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_local_variable, unnecessary_new, sort_child_properties_last, sized_box_for_whitespace
 
-import 'package:catch_up/screens/home.dart';
 import 'package:catch_up/screens/homepage.dart';
-import 'package:catch_up/services/auth.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:catch_up/services/auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart'; //firestore
 
 class SignUpPage extends StatefulWidget {
+  static late String uid;
   const SignUpPage({Key? key}) : super(key: key);
 
   @override
@@ -14,34 +15,36 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   String? errorMessage = '';
   bool isLogin = true;
 
-  //Text Editing for Email and Password
-  final TextEditingController _controllerEmail = TextEditingController();
-  final TextEditingController _controllerPassword = TextEditingController();
+//Text Controllers
+final TextEditingController _controllerEmail = TextEditingController();
+final TextEditingController _controllerPassword = TextEditingController();
+final TextEditingController _controllerName = TextEditingController();
 
-  //Sign In
-  Future<void> signInWithEmailAndPassword() async {
-    try {
-      await AuthService().signInWithEmailAndPassword(
-        email: _controllerEmail.text,
-        password: _controllerPassword.text,
-      );
-    } on FirebaseAuthException catch (e) {
-      setState(() {
-        errorMessage = e.message;
-      });
-    }
-  }
 
-  //Register
+
+  ///Register
   Future<void> createUserWithEmailAndPassword() async {
     try {
+      //create User for Auth
       await AuthService().createUserWithEmailAndPassword(
         email: _controllerEmail.text,
         password: _controllerPassword.text,
       );
+      
+      //Data to save in a user's document
+      Map<String, dynamic> userDataToSave = {
+      'email': _controllerEmail.text,
+      'name': _controllerName.text,
+      };
+       
+       //Add user data to user document in user collection
+       DocumentReference _docRef = await _firestore.collection('users').add(userDataToSave);
+       SignUpPage.uid = _docRef.id;
+
     } on FirebaseAuthException catch (e) {
       setState(() {
         errorMessage = e.message;
@@ -58,6 +61,7 @@ class _SignUpPageState extends State<SignUpPage> {
     TextEditingController controller,
   ) {
     return TextField(
+      //obscureText: true,
       controller: controller,
       decoration: InputDecoration(
         hintStyle: TextStyle(
@@ -71,13 +75,13 @@ class _SignUpPageState extends State<SignUpPage> {
   }
 
   Widget _errorMessage() {
-    return Text(errorMessage == '' ? '' : 'Humm ? $errorMessage');
+    return Text(errorMessage == '' ? '' : 'Uh oh ? $errorMessage');
   }
 
   Widget _submitButton() {
     return ElevatedButton(
-      onPressed:
-          isLogin ? signInWithEmailAndPassword : createUserWithEmailAndPassword,
+      onPressed: createUserWithEmailAndPassword,
+
       child: Text(isLogin ? 'Login' : 'Register'),
     );
   }
@@ -92,6 +96,11 @@ class _SignUpPageState extends State<SignUpPage> {
       child: Text(isLogin ? 'Register instead' : 'Login instead'),
     );
   }
+
+
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -192,8 +201,18 @@ class _SignUpPageState extends State<SignUpPage> {
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Padding(
-                          padding: const EdgeInsets.only(left: 20.0),
-                          child: _entryField('Email*', _controllerEmail)),
+                        padding: const EdgeInsets.only(left: 20.0),
+                        child: TextField(
+                          decoration: InputDecoration(
+                            hintStyle: TextStyle(
+                              //fontWeight: FontWeight.w500,
+                              fontFamily: 'Poppins',
+                            ),
+                            border: InputBorder.none,
+                            hintText: 'Email*',
+                          ),
+                        ),
+                      ),
                     ),
                   ),
 
@@ -210,8 +229,19 @@ class _SignUpPageState extends State<SignUpPage> {
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Padding(
-                          padding: const EdgeInsets.only(left: 20.0),
-                          child: _entryField('Password*', _controllerPassword)),
+                        padding: const EdgeInsets.only(left: 20.0),
+                        child: TextField(
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            hintStyle: TextStyle(
+                              //fontWeight: FontWeight.w500,
+                              fontFamily: 'Poppins',
+                            ),
+                            border: InputBorder.none,
+                            hintText: 'Password*',
+                          ),
+                        ),
+                      ),
                     ),
                   ),
 
@@ -252,15 +282,15 @@ class _SignUpPageState extends State<SignUpPage> {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 150.0),
                     child: ElevatedButton(
-                      onPressed: createUserWithEmailAndPassword,
-                      /*Navigator.of(context).push(
+                      onPressed: () {
+                        Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (BuildContext context) {
-                              return Home();
+                              return HomePage();
                             },
                           ),
-                        );*/
-
+                        );
+                      },
                       style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.symmetric(horizontal: 20),
                           backgroundColor: const Color(0xff82B977),
