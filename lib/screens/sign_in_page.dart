@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_local_variable, unnecessary_new, sort_child_properties_last, sized_box_for_whitespace
 
+import 'package:catch_up/screens/camerapage.dart';
 import 'package:catch_up/screens/home.dart';
 import 'package:catch_up/screens/homepage.dart';
 import 'package:catch_up/screens/main_profile.dart';
@@ -34,6 +35,10 @@ class _SignInPageState extends State<SignInPage> {
         errorMessage = e.message;
       });
     }
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: ((BuildContext context) {
+      return const Home();
+    })));
   }
 
   //Register
@@ -59,6 +64,7 @@ class _SignInPageState extends State<SignInPage> {
     TextEditingController controller,
   ) {
     return TextField(
+      //obscureText: true,
       controller: controller,
       decoration: InputDecoration(
         hintStyle: TextStyle(
@@ -72,7 +78,7 @@ class _SignInPageState extends State<SignInPage> {
   }
 
   Widget _errorMessage() {
-    return Text(errorMessage == '' ? '' : 'Humm ? $errorMessage');
+    return Text(errorMessage == '' ? '' : 'Uh oh ? $errorMessage');
   }
 
   Widget _submitButton() {
@@ -126,9 +132,6 @@ class _SignInPageState extends State<SignInPage> {
                   ),
                 ),
 
-                //top spacing
-                //SizedBox(height: 15),
-
                 //logo
                 Image.asset(
                   'assets/cream-logo.png',
@@ -168,7 +171,7 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                     child: Padding(
                         padding: const EdgeInsets.only(left: 20.0),
-                        child: _entryField('Email*', _controllerPassword)
+                        child: _entryField('Email*', _controllerEmail)
                         /*TextField(
                         decoration: InputDecoration(
                           hintStyle: TextStyle(
@@ -197,7 +200,7 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                     child: Padding(
                         padding: const EdgeInsets.only(left: 20.0),
-                        child: _entryField('Password*', _controllerEmail)
+                        child: _entryField('Password*', _controllerPassword)
                         /*TextField(
                         obscureText: true,
                         decoration: InputDecoration(
@@ -219,15 +222,9 @@ class _SignInPageState extends State<SignInPage> {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 150.0),
                   child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (BuildContext context) {
-                            return Home();
-                          },
-                        ),
-                      );
-                    },
+                    onPressed: signInWithEmailAndPassword,
+                    //isLogin = true;
+
                     style: ElevatedButton.styleFrom(
                         padding: EdgeInsets.symmetric(horizontal: 20),
                         backgroundColor: const Color(0xff82B977),

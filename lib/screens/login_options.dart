@@ -3,6 +3,7 @@
 import 'package:catch_up/screens/sign_in_page.dart';
 import 'package:flutter/material.dart';
 
+import 'all_groups.dart';
 import 'sign_up_page.dart';
 
 class LoginOptions extends StatefulWidget {
@@ -161,8 +162,8 @@ class _LoginOptionsState extends State<LoginOptions> {
                     ),
                   ),
 
-                  //TESTER BUTTON
-                  //REMOVE WHEN DONE WITH ALL TESTING
+                  // TESTER BUTTON
+                  // REMOVE WHEN DONE WITH ALL TESTING
 
                   // Container(
                   //   padding: const EdgeInsets.symmetric(horizontal: 10.0),

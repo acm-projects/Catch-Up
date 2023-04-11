@@ -1,8 +1,9 @@
+import 'package:catch_up/Theme/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:camera/camera.dart'; 
-import 'package:video_player/video_player.dart'; 
+import 'package:camera/camera.dart';
+import 'package:video_player/video_player.dart';
 import 'dart:io';
-
+import 'package:flutter_animated_button/flutter_animated_button.dart';
 
 class VideoPage extends StatefulWidget {
   final String filePath;
@@ -12,6 +13,7 @@ class VideoPage extends StatefulWidget {
   @override
   _VideoPageState createState() => _VideoPageState();
 }
+
 class _VideoPageState extends State<VideoPage> {
   late VideoPlayerController _videoPlayerController;
 
@@ -28,35 +30,48 @@ class _VideoPageState extends State<VideoPage> {
     await _videoPlayerController.play();
   }
 
-  
-@override
-Widget build(BuildContext context) {
-  return Scaffold(
-    appBar: AppBar(
-      title: const Text('Preview'),
-      elevation: 0,
-      backgroundColor: Colors.black26,
-      actions: [
-        IconButton(
-          icon: const Icon(Icons.check),
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Preview',
+          style: TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.bold),
+        ),
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
           onPressed: () {
-            print('do something with the file');
+            Navigator.of(context).pop();
           },
-        )
-      ],
-    ),
-    extendBodyBehindAppBar: true,
-    body: FutureBuilder(
-      future: _initVideoPlayer(),
-      builder: (context, state) {
-        if (state.connectionState == ConnectionState.waiting) {
-          return const Center(child: CircularProgressIndicator());
-        } else {
-          return VideoPlayer(_videoPlayerController);
-        }
-      },
-    ),
-  );
-
+        ),
+        backgroundColor: MainColor.DarkPink,
+        actions: [
+          IconButton(
+            icon: const Icon(
+              Icons.check,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              print('do something with the file');
+            },
+          )
+        ],
+      ),
+      extendBodyBehindAppBar: true,
+      body: FutureBuilder(
+        future: _initVideoPlayer(),
+        builder: (context, state) {
+          if (state.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          } else {
+            return VideoPlayer(_videoPlayerController);
+          }
+        },
+      ),
+    );
   }
 }

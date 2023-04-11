@@ -1,3 +1,4 @@
+import 'package:catch_up/Theme/theme.dart';
 import 'package:catch_up/screens/login_register_page.dart';
 import 'package:catch_up/screens/opening_screen.dart';
 import 'package:catch_up/screens/sign_up_page.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.orange,
+        primarySwatch: MainColor.DarkPink,
       ),
       home: const SplashScreen(),
       //home: const LoginOptions(),

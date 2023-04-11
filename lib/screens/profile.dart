@@ -33,7 +33,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (BuildContext context) {
-                    return const ProfilePage();
+                    return ProfilePage();
                   },
                 ),
               );
@@ -127,8 +127,8 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    buildUserInfoField("First Name", "Ridwan Amin", false),
-                    buildUserInfoField("Last Name", "Amin", false),
+                    buildUserInfoField("First Name", "John", false),
+                    buildUserInfoField("Last Name", "Doe", false),
                     buildUserInfoField(
                         "Edit Email", "someEmail@gmail.com", false),
                     buildUserInfoField("Edit Password", "**********", true),
@@ -142,7 +142,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (BuildContext context) {
-                                return const ProfilePage();
+                                return ProfilePage();
                               },
                             ),
                           );
