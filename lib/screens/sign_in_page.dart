@@ -35,6 +35,10 @@ class _SignInPageState extends State<SignInPage> {
         errorMessage = e.message;
       });
     }
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: ((BuildContext context) {
+      return const Home();
+    })));
   }
 
   //Register

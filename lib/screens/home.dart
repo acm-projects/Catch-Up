@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:catch_up/screens/all_groups.dart';
+import 'package:catch_up/screens/camerapage.dart';
 import 'package:catch_up/screens/individual_group.dart';
 import 'package:catch_up/screens/join_add_group.dart';
 import 'package:catch_up/screens/main_profile.dart';
@@ -266,10 +267,30 @@ class _HomeState extends State<Home> {
                 const SizedBox(
                   height: 0,
                 ),
-                Image.asset(
-                  'assets/cream-logo.png',
-                  height: 75,
-                  width: 75,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Spacer(),
+                    Image.asset(
+                      'assets/cream-logo.png',
+                      height: 75,
+                      width: 75,
+                    ),
+                    SizedBox(width: 107),
+                    FloatingActionButton.small(
+                      onPressed: () {
+                        Navigator.of(context).push(
+                            MaterialPageRoute(builder: ((BuildContext context) {
+                          return ProfilePage();
+                        })));
+                      },
+                      elevation: 1,
+                      child: Icon(
+                        Icons.person,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 5),
                 const Text(
@@ -586,10 +607,10 @@ class _HomeState extends State<Home> {
               onPressed: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: ((BuildContext context) {
-                  return const VideoPage(
-                    //add filePath after editing
-                    filePath: '',
-                  );
+                  return const CameraPage(
+                      //add filePath after editing
+                      //filePath: '',
+                      );
                 })));
               },
               icon: const Icon(

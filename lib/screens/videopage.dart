@@ -1,3 +1,4 @@
+import 'package:catch_up/Theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:video_player/video_player.dart';
@@ -32,15 +33,20 @@ class _VideoPageState extends State<VideoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Preview'),
+        title: const Text(
+          'Preview',
+          style: TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.bold),
+        ),
         elevation: 0,
-        backgroundColor: Colors.black26,
+        backgroundColor: MainColor.DarkPink,
         actions: [
           IconButton(
-            icon: const Icon(Icons.check),
+            icon: const Icon(
+              Icons.check,
+              color: Colors.white,
+            ),
             onPressed: () {
               print('do something with the file');
-              //also go to send to groups page
             },
           )
         ],
