@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:catch_up/screens/all_groups.dart';
+import 'package:catch_up/screens/camerapage.dart';
 import 'package:catch_up/screens/individual_group.dart';
 import 'package:catch_up/screens/main_profile.dart';
 import 'package:catch_up/screens/videopage.dart';
@@ -605,10 +606,10 @@ class _HomeState extends State<Home> {
               onPressed: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: ((BuildContext context) {
-                  return const VideoPage(
-                    //add filePath after editing
-                    filePath: '',
-                  );
+                  return const CameraPage(
+                      //add filePath after editing
+                      //filePath: '',
+                      );
                 })));
               },
               icon: const Icon(
