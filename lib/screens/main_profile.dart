@@ -4,6 +4,7 @@ import 'package:catch_up/screens/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:catch_up/services/auth.dart';
+import 'package:catch_up/screens/sign_up_page.dart';
 
 class ProfilePage extends StatelessWidget {
   ProfilePage({super.key});
@@ -25,6 +26,17 @@ class ProfilePage extends StatelessWidget {
           fontWeight: FontWeight.normal,
           fontFamily: 'Poppins',
           fontStyle: FontStyle.italic,
+          color: Colors.white),
+    );
+  }
+
+  Widget _userName() {
+    return Text(
+      'John Doe',
+      style: TextStyle(
+          fontSize: 45,
+          fontWeight: FontWeight.bold,
+          fontFamily: 'Cartis-Beautyful-serif',
           color: Colors.white),
     );
   }
@@ -81,15 +93,8 @@ class ProfilePage extends StatelessWidget {
             const SizedBox(
               height: 15, // creates space between text and profile image
             ),
-            const Center(
-              child: Text(
-                "John Doe",
-                style: TextStyle(
-                    fontSize: 45,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Cartis-Beautyful-serif',
-                    color: Colors.white),
-              ),
+            Center(
+              child: _userName(),
             ),
             const SizedBox(
               height: 6, // creates space between text and profile image
