@@ -24,6 +24,21 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _controllerEmail = TextEditingController();
   final TextEditingController _controllerPassword = TextEditingController();
 
+
+   //Get Uid for Login
+  Future<void> getUid() async {
+
+  //find user doc that matches entered email
+   await _firestore.collection('users').where("email", isEqualTo: _controllerEmail.text).get().then(
+      (querySnapshot) {
+        for (var docSnapshot in querySnapshot.docs) {
+          LoginPage.uid = docSnapshot.id; //set the doc Id equal to the user Id
+        }
+      }
+    );
+
+  }
+
   //Sign In
   Future<void> signInWithEmailAndPassword() async {
     try {
@@ -31,6 +46,9 @@ class _LoginPageState extends State<LoginPage> {
         email: _controllerEmail.text, 
         password: _controllerPassword.text,
       );
+
+      getUid();
+
     } on FirebaseAuthException catch (e) {
       setState(() { 
         errorMessage = e.message;
