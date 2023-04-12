@@ -6,17 +6,20 @@ import 'package:catch_up/screens/videopage.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:video_player/video_player.dart';
 import 'dart:io';
+
 class FeatureButtonsView extends StatefulWidget {
   final Function onUploadComplete;
   final String filePath;
   const FeatureButtonsView({
-     Key?  key,
-    required this.onUploadComplete, required this.filePath,
+    Key? key,
+    required this.onUploadComplete,
+    required this.filePath,
   }) : super(key: key); // requires the file path
   @override
-  State <FeatureButtonsView> createState() =>  _FeatureButtonsViewState();
+  State<FeatureButtonsView> createState() => _FeatureButtonsViewState();
 }
-class  _FeatureButtonsViewState extends State <FeatureButtonsView> {
+
+class _FeatureButtonsViewState extends State<FeatureButtonsView> {
   late bool _isPlaying;
   late bool _isUploading;
   late bool _isRecorded;
@@ -25,55 +28,59 @@ class  _FeatureButtonsViewState extends State <FeatureButtonsView> {
   late VideoPlayerController _videoPlayerController;
   late CameraController _cameraController;
   @override
-   void initState(){ // initialize bools to false
+  void initState() {
+    // initialize bools to false
     super.initState();
     _isPlaying = false;
     _isUploading = false;
     _isRecorded = false;
     _isRecording = false;
-    _videoPlayerController = VideoPlayerController.file(File( widget.filePath));
-   }
-    Widget build(BuildContext context) {
+    _videoPlayerController = VideoPlayerController.file(File(widget.filePath));
+  }
+
+  Widget build(BuildContext context) {
     return Center(
-      child:  _isUploading
-              ? Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: LinearProgressIndicator()),
-                    Text('Uplaoding to Firebase'),
-                  ],
-                )
-              : Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    // IconButton(
-                    //   icon: Icon(Icons.replay),
-                    //   onPressed: _onRecordAgainButtonPressed,
-                    // ),
-                    // IconButton(
-                    //   icon: Icon(_isPlaying ? Icons.pause : Icons.play_arrow),
-                    //   onPressed: _onPlayButtonPressed,
-                    // ),
-                    ElevatedButton.icon( // upload video button (frontend)
-                      //color:Colors.green,
-                      icon: Icon(Icons.rectangle),//Icons.upload_file),
-                      label : Text ("Upload"),
-                      onPressed: _onFileUploadButtonPressed,
-                    ),
-                  ],
-                )
+        child: _isUploading
+            ? Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: LinearProgressIndicator()),
+                  Text('Uplaoding to Firebase'),
+                ],
+              )
+            : Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  // IconButton(
+                  //   icon: Icon(Icons.replay),
+                  //   onPressed: _onRecordAgainButtonPressed,
+                  // ),
+                  // IconButton(
+                  //   icon: Icon(_isPlaying ? Icons.pause : Icons.play_arrow),
+                  //   onPressed: _onPlayButtonPressed,
+                  // ),
+                  ElevatedButton.icon(
+                    // upload video button (frontend)
+                    //color:Colors.green,
+                    icon: Icon(Icons.rectangle), //Icons.upload_file),
+                    label: Text("Upload"),
+                    onPressed: _onFileUploadButtonPressed,
+                  ),
+                ],
+              )
         //  :  IconButton(
         //       icon: _isRecording
         //           ? Icon(Icons.pause)
         //           : Icon(Icons.fiber_manual_record),
         //       onPressed: _onRecordButtonPressed,
         //     ),
-    );
+        );
   }
+
   Future<void> _onFileUploadButtonPressed() async {
     FirebaseStorage firebaseStorage = FirebaseStorage.instance;
     setState(() {
@@ -82,11 +89,12 @@ class  _FeatureButtonsViewState extends State <FeatureButtonsView> {
     try {
       await firebaseStorage
           .ref('upload-video-firebase')
-          .child(
-               widget.filePath.substring( widget.filePath.lastIndexOf('/'),  widget.filePath.length))
-          .putFile(File( widget.filePath));
+          .child(widget.filePath.substring(
+              widget.filePath.lastIndexOf('/'), widget.filePath.length))
+          .putFile(File(widget.filePath));
       widget.onUploadComplete();
-    } catch (error) { // error, only execute if it does not upload
+    } catch (error) {
+      // error, only execute if it does not upload
       print('Error occured while uplaoding to Firebase ${error.toString()}');
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
@@ -99,6 +107,7 @@ class  _FeatureButtonsViewState extends State <FeatureButtonsView> {
       });
     }
   }
+
   // void _onRecordAgainButtonPressed() {
   //   setState(() {
   //     _isRecorded = false;
@@ -106,7 +115,8 @@ class  _FeatureButtonsViewState extends State <FeatureButtonsView> {
   // }
   Future<void> _onRecordButtonPressed() async {
     if (_isRecording) {
-         final file = await _cameraController.stopVideoRecording(); // stop the video recording
+      final file = await _cameraController
+          .stopVideoRecording(); // stop the video recording
       _isRecording = false;
       _isRecorded = true;
     } else {
@@ -116,6 +126,7 @@ class  _FeatureButtonsViewState extends State <FeatureButtonsView> {
     }
     setState(() {});
   }
+
   // void _onPlayButtonPressed() {
   //   if (!_isPlaying) {
   //     _isPlaying = true;
@@ -132,20 +143,23 @@ class  _FeatureButtonsViewState extends State <FeatureButtonsView> {
   //   setState(() {});
   // }
   Future<void> _startRecording() async {
-    if (_isRecorded ?? false) {   // true ?
+    if (_isRecorded) {
+      // true ?
       Directory directory = await getApplicationDocumentsDirectory();
       String filepath = directory.path +
           '/' +
           DateTime.now().millisecondsSinceEpoch.toString() +
           '.mp4';
-      _videoPlayerController = VideoPlayerController.file(File( widget.filePath));
-          //FlutterAudioRecorder2(filepath, audioFormat: AudioFormat.AAC);
+      _videoPlayerController =
+          VideoPlayerController.file(File(widget.filePath));
+      //FlutterAudioRecorder2(filepath, audioFormat: AudioFormat.AAC);
       await _videoPlayerController.initialize;
       _videoPlayerController.play();
       //_filePath = filepath;
       setState(() {});
     } else {
-          content: Center(child: Text('The video was not able to be recorded'));
+      content:
+      Center(child: Text('The video was not able to be recorded'));
     }
   }
 }
