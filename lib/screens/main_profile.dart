@@ -1,3 +1,4 @@
+import 'package:catch_up/screens/friends.dart';
 import 'package:catch_up/screens/join_group_page.dart';
 import 'package:catch_up/screens/login_options.dart';
 import 'package:catch_up/screens/profile.dart';
@@ -164,7 +165,7 @@ class ProfilePage extends StatelessWidget {
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (BuildContext context) {
-                              return const EditProfilePage();
+                              return const FriendsPage();
                             },
                           ),
                         );
