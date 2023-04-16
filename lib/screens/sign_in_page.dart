@@ -62,9 +62,10 @@ class _SignInPageState extends State<SignInPage> {
   Widget _entryField(
     String title,
     TextEditingController controller,
+    bool hide,
   ) {
     return TextField(
-      //obscureText: true,
+      obscureText: hide,
       controller: controller,
       decoration: InputDecoration(
         hintStyle: TextStyle(
@@ -171,7 +172,7 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                     child: Padding(
                         padding: const EdgeInsets.only(left: 20.0),
-                        child: _entryField('Email*', _controllerEmail)
+                        child: _entryField('Email*', _controllerEmail, false)
                         /*TextField(
                         decoration: InputDecoration(
                           hintStyle: TextStyle(
@@ -200,7 +201,8 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                     child: Padding(
                         padding: const EdgeInsets.only(left: 20.0),
-                        child: _entryField('Password*', _controllerPassword)
+                        child:
+                            _entryField('Password*', _controllerPassword, true)
                         /*TextField(
                         obscureText: true,
                         decoration: InputDecoration(
