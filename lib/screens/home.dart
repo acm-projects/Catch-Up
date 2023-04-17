@@ -5,6 +5,7 @@ import 'package:catch_up/screens/camerapage.dart';
 import 'package:catch_up/screens/individual_group.dart';
 import 'package:catch_up/screens/join_add_group.dart';
 import 'package:catch_up/screens/main_profile.dart';
+import 'package:catch_up/screens/send_page.dart';
 import 'package:catch_up/screens/videopage.dart';
 import 'package:catch_up/screens/voice_page.dart';
 import 'package:catch_up/screens/videopage.dart';
@@ -344,7 +345,9 @@ class _HomeState extends State<Home> {
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: ((BuildContext context) {
-                            return const IndividualGroup();
+                            //change back when done testing
+                            //return const IndividualGroup();
+                            return const SendPage();
                           })));
                         },
                         style: ElevatedButton.styleFrom(

@@ -1,0 +1,520 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_local_variable, unnecessary_new, sort_child_properties_last, sized_box_for_whitespace, library_private_types_in_public_api
+
+import 'package:flutter/material.dart';
+import 'package:catch_up/screens/individual_group.dart';
+
+import 'join_add_group.dart';
+
+class SendPage extends StatefulWidget {
+  const SendPage({Key? key}) : super(key: key);
+
+  @override
+  State<SendPage> createState() => _SendPageState();
+}
+
+class _SendPageState extends State<SendPage> {
+  String? errorMessage = '';
+  bool isLogin = true;
+  bool click1 = false;
+  bool click2 = false;
+  bool click3 = false;
+  bool click4 = false;
+  bool click5 = false;
+  bool click6 = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      backgroundColor: const Color(0xffEFEDE7),
+      extendBody: true,
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/Top.png'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: SafeArea(
+          child: Center(
+            child: Column(
+              children: <Widget>[
+                SizedBox(height: 10),
+
+                //back arrow
+                Padding(
+                  padding: const EdgeInsets.only(right: 325),
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    icon: const Icon(
+                      Icons.arrow_back_ios,
+                      color: Color(0xffEFEDE7),
+                    ),
+                  ),
+                ),
+
+                //Header box
+                Column(
+                  children: [
+                    //logo
+                    Container(
+                      width: 110,
+                      height: 110,
+                      decoration: BoxDecoration(
+                        image: const DecorationImage(
+                          image: AssetImage('assets/cream-logo.png'),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+
+                    //space between text and bottom of box
+                    SizedBox(height: 20),
+                  ],
+                ),
+
+                //sliding cards
+                SizedBox(
+                  height: 585,
+                  width: 400,
+                  child: ListView(
+                    scrollDirection: Axis.vertical,
+                    children: <Widget>[
+                      //card #1
+                      ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            click1 = !click1;
+                          });
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.transparent,
+                          elevation: 0,
+                        ),
+                        //how the card looks
+                        child: Material(
+                          elevation: 7,
+                          borderRadius: BorderRadius.all(Radius.circular(14)),
+                          child: Container(
+                            height: 100,
+                            width: 350,
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(14),
+                              ),
+                              color: Color(0xffE9CFC3),
+                            ),
+                            child: Row(
+                              children: [
+                                //avatar
+                                SizedBox(width: 10),
+                                Container(
+                                  width: 60,
+                                  height: 60,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      // border color and width around the profile image
+                                      width: 4,
+                                      color: Color(0xffD79784),
+                                    ),
+                                    shape: BoxShape.circle,
+                                    image: const DecorationImage(
+                                      image: AssetImage('assets/group1.png'),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 25),
+                                const Text(
+                                  'Group #1',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 24,
+                                    fontFamily: 'Poppins',
+                                    color: Color(0xffEFEDE7),
+                                  ),
+                                ),
+                                SizedBox(width: 75),
+                                Icon(
+                                  (click1 == false)
+                                      ? Icons.radio_button_unchecked
+                                      : Icons.check_circle,
+                                  color: Color(0xffEFEDE7),
+                                  size: 40,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      SizedBox(height: 20),
+
+                      //card #2
+                      ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            click2 = !click2;
+                          });
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.transparent,
+                          elevation: 0,
+                        ),
+                        //how the card looks
+                        child: Material(
+                          elevation: 7,
+                          borderRadius: BorderRadius.all(Radius.circular(14)),
+                          child: Container(
+                            height: 100,
+                            width: 350,
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(14),
+                              ),
+                              color: Color(0xffE9CFC3),
+                            ),
+                            child: Row(
+                              children: [
+                                //avatar
+                                SizedBox(width: 10),
+                                Container(
+                                  width: 60,
+                                  height: 60,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      // border color and width around the profile image
+                                      width: 4,
+                                      color: Color(0xffD79784),
+                                    ),
+                                    shape: BoxShape.circle,
+                                    image: const DecorationImage(
+                                      image: AssetImage('assets/group1.png'),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 25),
+                                const Text(
+                                  'Group #2',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 24,
+                                    fontFamily: 'Poppins',
+                                    color: Color(0xffEFEDE7),
+                                  ),
+                                ),
+                                SizedBox(width: 75),
+                                Icon(
+                                  (click2 == false)
+                                      ? Icons.radio_button_unchecked
+                                      : Icons.check_circle,
+                                  color: Color(0xffEFEDE7),
+                                  size: 40,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      SizedBox(height: 20),
+
+                      //card #3
+                      ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            click3 = !click3;
+                          });
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.transparent,
+                          elevation: 0,
+                        ),
+                        //how the card looks
+                        child: Material(
+                          elevation: 7,
+                          borderRadius: BorderRadius.all(Radius.circular(14)),
+                          child: Container(
+                            height: 100,
+                            width: 350,
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(14),
+                              ),
+                              color: Color(0xffE9CFC3),
+                            ),
+                            child: Row(
+                              children: [
+                                //avatar
+                                SizedBox(width: 10),
+                                Container(
+                                  width: 60,
+                                  height: 60,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      // border color and width around the profile image
+                                      width: 4,
+                                      color: Color(0xffD79784),
+                                    ),
+                                    shape: BoxShape.circle,
+                                    image: const DecorationImage(
+                                      image: AssetImage('assets/group1.png'),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 25),
+                                const Text(
+                                  'Group #3',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 24,
+                                    fontFamily: 'Poppins',
+                                    color: Color(0xffEFEDE7),
+                                  ),
+                                ),
+                                SizedBox(width: 75),
+                                Icon(
+                                  (click3 == false)
+                                      ? Icons.radio_button_unchecked
+                                      : Icons.check_circle,
+                                  color: Color(0xffEFEDE7),
+                                  size: 40,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      SizedBox(height: 20),
+
+                      //card #4
+                      ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            click4 = !click4;
+                          });
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.transparent,
+                          elevation: 0,
+                        ),
+                        //how the card looks
+                        child: Material(
+                          elevation: 7,
+                          borderRadius: BorderRadius.all(Radius.circular(14)),
+                          child: Container(
+                            height: 100,
+                            width: 350,
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(14),
+                              ),
+                              color: Color(0xffE9CFC3),
+                            ),
+                            child: Row(
+                              children: [
+                                //avatar
+                                SizedBox(width: 10),
+                                Container(
+                                  width: 60,
+                                  height: 60,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      // border color and width around the profile image
+                                      width: 4,
+                                      color: Color(0xffD79784),
+                                    ),
+                                    shape: BoxShape.circle,
+                                    image: const DecorationImage(
+                                      image: AssetImage('assets/group1.png'),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 25),
+                                const Text(
+                                  'Group #4',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 24,
+                                    fontFamily: 'Poppins',
+                                    color: Color(0xffEFEDE7),
+                                  ),
+                                ),
+                                SizedBox(width: 75),
+                                Icon(
+                                  (click4 == false)
+                                      ? Icons.radio_button_unchecked
+                                      : Icons.check_circle,
+                                  color: Color(0xffEFEDE7),
+                                  size: 40,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      SizedBox(height: 20),
+
+                      //card #5
+                      ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            click5 = !click5;
+                          });
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.transparent,
+                          elevation: 0,
+                        ),
+                        //how the card looks
+                        child: Material(
+                          elevation: 7,
+                          borderRadius: BorderRadius.all(Radius.circular(14)),
+                          child: Container(
+                            height: 100,
+                            width: 350,
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(14),
+                              ),
+                              color: Color(0xffE9CFC3),
+                            ),
+                            child: Row(
+                              children: [
+                                //avatar
+                                SizedBox(width: 10),
+                                Container(
+                                  width: 60,
+                                  height: 60,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      // border color and width around the profile image
+                                      width: 4,
+                                      color: Color(0xffD79784),
+                                    ),
+                                    shape: BoxShape.circle,
+                                    image: const DecorationImage(
+                                      image: AssetImage('assets/group1.png'),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 25),
+                                const Text(
+                                  'Group #5',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 24,
+                                    fontFamily: 'Poppins',
+                                    color: Color(0xffEFEDE7),
+                                  ),
+                                ),
+                                SizedBox(width: 75),
+                                Icon(
+                                  (click5 == false)
+                                      ? Icons.radio_button_unchecked
+                                      : Icons.check_circle,
+                                  color: Color(0xffEFEDE7),
+                                  size: 40,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      SizedBox(height: 20),
+
+                      //card #6
+                      ElevatedButton(
+                        onPressed: () {
+                          setState(() {
+                            click6 = !click6;
+                          });
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.transparent,
+                          elevation: 0,
+                        ),
+                        //how the card looks
+                        child: Material(
+                          elevation: 7,
+                          borderRadius: BorderRadius.all(Radius.circular(14)),
+                          child: Container(
+                            height: 100,
+                            width: 350,
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(14),
+                              ),
+                              color: Color(0xffE9CFC3),
+                            ),
+                            child: Row(
+                              children: [
+                                //avatar
+                                SizedBox(width: 10),
+                                Container(
+                                  width: 60,
+                                  height: 60,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                      // border color and width around the profile image
+                                      width: 4,
+                                      color: Color(0xffD79784),
+                                    ),
+                                    shape: BoxShape.circle,
+                                    image: const DecorationImage(
+                                      image: AssetImage('assets/group1.png'),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 25),
+                                const Text(
+                                  'Group #6',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 24,
+                                    fontFamily: 'Poppins',
+                                    color: Color(0xffEFEDE7),
+                                  ),
+                                ),
+                                SizedBox(width: 75),
+                                Icon(
+                                  (click6 == false)
+                                      ? Icons.radio_button_unchecked
+                                      : Icons.check_circle,
+                                  color: Color(0xffEFEDE7),
+                                  size: 40,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      //end of all 6 cards for now
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
