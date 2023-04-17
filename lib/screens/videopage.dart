@@ -52,13 +52,23 @@ Widget build(BuildContext context) {
           children: [
             Expanded(
               flex: 4,
-              child: references.isEmpty
-                  ? Center(
-                      child: Text('No File uploaded yet'),
-                    )
-                  : CloudRecordListView(
-                      references: references, filePath: widget.filePath,
-                    ),
+              child: FutureBuilder(
+                future: _initVideoPlayer(),
+                builder: (context, state) {
+                  if (state.connectionState == ConnectionState.waiting) {
+                    return const Center(child: CircularProgressIndicator());
+                  } else {
+                    return VideoPlayer(_videoPlayerController);
+                  }
+                },
+              ),
+              // references.isEmpty
+              //     ? Center(
+              //         child: Text('No File uploaded yet'),
+              //       )
+              //     : CloudRecordListView(
+              //         references: references, filePath: widget.filePath,
+              //       ),
             ),
             Expanded(
               flex: 2,

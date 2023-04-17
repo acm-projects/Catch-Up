@@ -7,6 +7,15 @@ import 'package:path_provider/path_provider.dart';
 import 'package:video_player/video_player.dart';
 import 'dart:io';
 
+
+/*
+For merging videos:
+- merge as each video uploads
+- return the final video at release time
+
+
+*/
+
 class FeatureButtonsView extends StatefulWidget {
   final Function onUploadComplete;
   final String filePath;
@@ -81,6 +90,7 @@ class _FeatureButtonsViewState extends State<FeatureButtonsView> {
         );
   }
 
+//Uploads Video File to Firebase
   Future<void> _onFileUploadButtonPressed() async {
     FirebaseStorage firebaseStorage = FirebaseStorage.instance;
     setState(() {
