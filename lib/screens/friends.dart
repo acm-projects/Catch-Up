@@ -104,7 +104,7 @@ class _FriendsPageState extends State<FriendsPage> {
 
               //sliding cards
               SizedBox(
-                height: 585,
+                height: 555,
                 width: 400,
                 child: ListView(
                   scrollDirection: Axis.vertical,

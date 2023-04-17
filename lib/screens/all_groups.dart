@@ -104,7 +104,7 @@ class _AllGroupsState extends State<AllGroups> {
 
               //sliding cards
               SizedBox(
-                height: 585,
+                height: 555,
                 width: 400,
                 child: ListView(
                   scrollDirection: Axis.vertical,
