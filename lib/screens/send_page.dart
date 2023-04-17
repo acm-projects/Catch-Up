@@ -1,8 +1,10 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_local_variable, unnecessary_new, sort_child_properties_last, sized_box_for_whitespace, library_private_types_in_public_api
 
+import 'package:catch_up/screens/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:catch_up/screens/individual_group.dart';
 
+import 'home.dart';
 import 'join_add_group.dart';
 
 class SendPage extends StatefulWidget {
@@ -506,6 +508,54 @@ class _SendPageState extends State<SendPage> {
                         ),
                       ),
 
+                      SizedBox(height: 20),
+
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 130.0),
+                        child: SizedBox(
+                          height: 40,
+                          width: 150,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) {
+                                    return const Home();
+                                  },
+                                ),
+                              );
+                            },
+                            style: ElevatedButton.styleFrom(
+                                padding: EdgeInsets.symmetric(horizontal: 10),
+                                backgroundColor: const Color(0xffD79784),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                )),
+                            child: Row(
+                              children: [
+                                SizedBox(width: 25),
+                                Text(
+                                  'Send',
+                                  style: TextStyle(
+                                    color: const Color(0xffEFEDE7),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
+                                    fontFamily: 'Poppins',
+                                  ),
+                                ),
+                                SizedBox(width: 15),
+                                Icon(
+                                  Icons.send,
+                                  color: Color(0xffEFEDE7),
+                                  size: 20,
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      SizedBox(height: 20),
                       //end of all 6 cards for now
                     ],
                   ),
