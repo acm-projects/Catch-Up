@@ -1,4 +1,7 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:catch_up/screens/friends.dart';
+import 'package:catch_up/screens/join_add_group.dart';
 import 'package:catch_up/screens/join_group_page.dart';
 import 'package:catch_up/screens/login_options.dart';
 import 'package:catch_up/screens/profile.dart';
@@ -118,131 +121,145 @@ class ProfilePage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Align(
-                    alignment: Alignment.center,
-                    child: ElevatedButton.icon(
+                  //edit profile button
+                  Container(
+                    height: 60,
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    child: ElevatedButton(
+                      //make it go to group page
                       onPressed: () {
                         Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (BuildContext context) {
-                              return const EditProfilePage();
-                            },
-                          ),
-                        );
+                            MaterialPageRoute(builder: ((BuildContext context) {
+                          return const EditProfilePage();
+                        })));
                       },
-                      icon: const Icon(
-                        Icons.account_circle,
-                        color: Colors.white,
-                      ),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color.fromRGBO(215, 151, 132, 1),
-                        padding: const EdgeInsets.only(
-                            top: 15, bottom: 15, right: 200, left: 10),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                      ),
-                      label: const Text(
-                        "Edit Profile",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 2.2,
-                          color: Colors.white,
-                        ),
+                          padding: EdgeInsets.only(right: 100, left: 20),
+                          backgroundColor: const Color(0xffD79784),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          )),
+                      child: Row(
+                        // ignore: prefer_const_literals_to_create_immutables
+                        children: [
+                          Icon(
+                            Icons.person_rounded,
+                            color: Color(0xffEFEDE7),
+                            size: 30,
+                          ),
+                          SizedBox(width: 20),
+                          Text(
+                            'Edit Profile',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              fontFamily: 'Poppins',
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
-                  const SizedBox(
-                      height:
-                          65 // space between profile pic and first text field
-                      ),
-                  Align(
-                    alignment: Alignment.center,
-                    child: ElevatedButton.icon(
+
+                  SizedBox(height: 20),
+
+                  //Friends button
+                  Container(
+                    height: 60,
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    child: ElevatedButton(
+                      //make it go to group page
                       onPressed: () {
                         Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (BuildContext context) {
-                              return const FriendsPage();
-                            },
-                          ),
-                        );
+                            MaterialPageRoute(builder: ((BuildContext context) {
+                          return const FriendsPage();
+                        })));
                       },
-                      icon: const Icon(
-                        Icons.people,
-                        color: Colors.white,
-                      ),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color.fromRGBO(215, 151, 132, 1),
-                        padding: const EdgeInsets.only(
-                            top: 15, bottom: 15, right: 240, left: 10),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                      ),
-                      label: const Text(
-                        "Friends",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 2.2,
-                          color: Colors.white,
-                        ),
+                          padding: EdgeInsets.only(right: 100, left: 20),
+                          backgroundColor: const Color(0xffD79784),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          )),
+                      child: Row(
+                        // ignore: prefer_const_literals_to_create_immutables
+                        children: [
+                          Icon(
+                            Icons.people_alt_rounded,
+                            color: Color(0xffEFEDE7),
+                            size: 30,
+                          ),
+                          SizedBox(width: 20),
+                          Text(
+                            'Friends',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              fontFamily: 'Poppins',
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
-                  const SizedBox(
-                      height:
-                          65 // space between profile pic and first text field
-                      ),
-                  Align(
-                    alignment: Alignment.center,
-                    child: ElevatedButton.icon(
+
+                  SizedBox(height: 20),
+
+                  //Join group button
+                  Container(
+                    height: 60,
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    child: ElevatedButton(
+                      //make it go to group page
                       onPressed: () {
                         Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (BuildContext context) {
-                              return const JoinGroupPage();
-                            },
-                          ),
-                        );
+                            MaterialPageRoute(builder: ((BuildContext context) {
+                          return const JoinAddGroup();
+                        })));
                       },
-                      icon: const Icon(
-                        Icons.link_sharp,
-                        color: Colors.white,
-                      ),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color.fromRGBO(215, 151, 132, 1),
-                        padding: const EdgeInsets.only(
-                            top: 15, bottom: 15, right: 275, left: 10),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                      ),
-                      label: const Text(
-                        "Link",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 2.2,
-                          color: Colors.white,
-                        ),
+                          padding: EdgeInsets.only(right: 100, left: 20),
+                          backgroundColor: const Color(0xffD79784),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          )),
+                      child: Row(
+                        // ignore: prefer_const_literals_to_create_immutables
+                        children: [
+                          Icon(
+                            Icons.group_add_rounded,
+                            color: Color(0xffEFEDE7),
+                            size: 30,
+                          ),
+                          SizedBox(width: 20),
+                          Text(
+                            'Join Group',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              fontFamily: 'Poppins',
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
+
                   const SizedBox(height: 30),
+
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       ElevatedButton(
                         onPressed: signOut,
                         style: ElevatedButton.styleFrom(
+                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            backgroundColor: Color(0xff82B977),
                             shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10))),
+                                borderRadius: BorderRadius.circular(22))),
                         child: const Text(
                           'Sign Out',
                           style: TextStyle(
