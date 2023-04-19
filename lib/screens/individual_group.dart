@@ -4,6 +4,7 @@ import 'package:catch_up/screens/all_groups.dart';
 import 'package:catch_up/screens/friends.dart';
 import 'package:catch_up/screens/individual_group_catchup.dart';
 import 'package:catch_up/screens/main_profile.dart';
+import 'package:catch_up/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
@@ -17,6 +18,7 @@ class IndividualGroup extends StatefulWidget {
 class _IndividualGroupState extends State<IndividualGroup> {
   @override
   Widget build(BuildContext context) {
+    int totalTime = (3 * 3600) + (30 * 60) + 15;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xffEFEDE7),
@@ -345,6 +347,10 @@ class _IndividualGroupState extends State<IndividualGroup> {
                         ],
                       ),
                       SizedBox(height: 10),
+                      CountdownTimer(
+                        duration: totalTime,
+                      ),
+                      /*
                       const Text(
                         '7:31 hours',
                         textAlign: TextAlign.center,
@@ -361,7 +367,7 @@ class _IndividualGroupState extends State<IndividualGroup> {
                                 color: Color(0xff40000000))
                           ],
                         ),
-                      ),
+                      ),*/
                       SizedBox(height: 10),
                       Row(
                         // ignore: prefer_const_literals_to_create_immutables

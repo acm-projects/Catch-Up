@@ -235,6 +235,7 @@ class ActionButton extends StatelessWidget {
 
 class CountdownTimer extends StatefulWidget {
   final int duration;
+  final int totalTime = (3 * 3600) + (30 * 60) + 15;
   CountdownTimer({this.duration = 60});
 
   @override
@@ -270,7 +271,7 @@ class _CountdownTimerState extends State<CountdownTimer> {
         fontWeight: FontWeight.bold,
         fontSize: 70,
         fontFamily: 'Cartis-Beautyful-serif',
-        color: Color(0xffD79784),
+        color: Colors.white,
         shadows: [
           Shadow(
               offset: Offset(0, 2),

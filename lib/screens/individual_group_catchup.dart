@@ -4,6 +4,7 @@ import 'package:catch_up/screens/all_groups.dart';
 import 'package:catch_up/screens/friends.dart';
 import 'package:catch_up/screens/main_profile.dart';
 import 'package:flutter/material.dart';
+import 'package:catch_up/screens/home.dart';
 import 'dart:math' as math;
 
 class GroupCatchUp extends StatefulWidget {
@@ -16,6 +17,7 @@ class GroupCatchUp extends StatefulWidget {
 class _GroupCatchUpState extends State<GroupCatchUp> {
   @override
   Widget build(BuildContext context) {
+    int totalTime = (3 * 3600) + (30 * 60) + 15;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xffEFEDE7),
@@ -44,7 +46,6 @@ class _GroupCatchUpState extends State<GroupCatchUp> {
                     ),
                   ),
                 ),
-
                 const SizedBox(height: 5),
                 const Text(
                   'Group #1',
