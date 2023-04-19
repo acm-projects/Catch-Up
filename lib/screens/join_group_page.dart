@@ -90,7 +90,7 @@ class _JoinGroupPageState extends State<JoinGroupPage> {
                   ),
                 ),
 
-                SizedBox(height: 25),
+                SizedBox(height: 15),
 
                 //Join group button
                 Container(
@@ -116,7 +116,71 @@ class _JoinGroupPageState extends State<JoinGroupPage> {
                   ),
                 ),
 
-                SizedBox(height: 20),
+                SizedBox(height: 10),
+
+                Row(
+                  children: [
+                    //left line
+                    Expanded(
+                        child: Divider(
+                      thickness: 1,
+                      indent: 60,
+                      endIndent: 5,
+                    )),
+
+                    Text('or',
+                        style: TextStyle(
+                          color: Color(0xffC3C3C3),
+                          fontSize: 13,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Poppins',
+                        )),
+
+                    //right line
+                    Expanded(
+                        child: Divider(
+                      thickness: 1,
+                      endIndent: 60,
+                      indent: 5,
+                    )),
+                  ],
+                ),
+
+                SizedBox(height: 10),
+
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 70.0),
+                  child: SizedBox(
+                    width: 315,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (BuildContext context) {
+                              //change to new page
+                              return const JoinGroupPage();
+                            },
+                          ),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(horizontal: 10),
+                          backgroundColor: const Color(0xff82B977),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          )),
+                      child: Text(
+                        'Join Group with QR Code',
+                        style: TextStyle(
+                          color: const Color(0xffEFEDE7),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                          fontFamily: 'Poppins',
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

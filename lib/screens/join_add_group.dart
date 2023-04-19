@@ -90,7 +90,7 @@ class _JoinAddGroupState extends State<JoinAddGroup> {
                               borderRadius: BorderRadius.circular(20),
                             )),
                         child: Text(
-                          'Join Group With ID',
+                          'Join Group',
                           style: TextStyle(
                             color: const Color(0xffEFEDE7),
                             fontWeight: FontWeight.bold,
