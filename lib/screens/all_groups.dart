@@ -1,7 +1,12 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_local_variable, unnecessary_new, sort_child_properties_last, sized_box_for_whitespace, library_private_types_in_public_api
 
+import 'package:catch_up/screens/individual_group_catchup.dart';
+import 'package:catch_up/screens/random_group1.dart';
+import 'package:catch_up/screens/random_group2.dart';
 import 'package:flutter/material.dart';
-import 'package:catch_up/screens/existing_group_ridwan.dart';
+import 'package:catch_up/screens/individual_group.dart';
+import 'random_group3.dart';
+import 'random_group4.dart';
 
 import 'join_add_group.dart';
 
@@ -153,14 +158,14 @@ class _AllGroupsState extends State<AllGroups> {
                                 ),
                                 shape: BoxShape.circle,
                                 image: const DecorationImage(
-                                  image: AssetImage('assets/group1.png'),
+                                  image: AssetImage('assets/acm-logo.png'),
                                   fit: BoxFit.cover,
                                 ),
                               ),
                             ),
                             SizedBox(width: 25),
                             const Text(
-                              'Group #1',
+                              'ACM Overlords',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontWeight: FontWeight.normal,
@@ -169,7 +174,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 color: Color(0xff82B977),
                               ),
                             ),
-                            SizedBox(width: 105),
+                            SizedBox(width: 48),
                             Icon(
                               Icons.arrow_forward_ios,
                               color: Color(0xff82B977),
@@ -193,7 +198,7 @@ class _AllGroupsState extends State<AllGroups> {
                       onPressed: () {
                         Navigator.of(context).push(
                             MaterialPageRoute(builder: ((BuildContext context) {
-                          return const ExistingGroup();
+                          return const RandomGroup1();
                         })));
                       },
                       style: ElevatedButton.styleFrom(
@@ -230,7 +235,7 @@ class _AllGroupsState extends State<AllGroups> {
                             ),
                             SizedBox(width: 25),
                             const Text(
-                              'Group #2',
+                              'Basketball',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontWeight: FontWeight.normal,
@@ -263,7 +268,7 @@ class _AllGroupsState extends State<AllGroups> {
                       onPressed: () {
                         Navigator.of(context).push(
                             MaterialPageRoute(builder: ((BuildContext context) {
-                          return const ExistingGroup();
+                          return const RandomGroup2();
                         })));
                       },
                       style: ElevatedButton.styleFrom(
@@ -300,7 +305,7 @@ class _AllGroupsState extends State<AllGroups> {
                             ),
                             SizedBox(width: 25),
                             const Text(
-                              'Group #3',
+                              'Roommates',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontWeight: FontWeight.normal,
@@ -309,7 +314,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 color: Color(0xff82B977),
                               ),
                             ),
-                            SizedBox(width: 105),
+                            SizedBox(width: 86),
                             Icon(
                               Icons.arrow_forward_ios,
                               color: Color(0xff82B977),
@@ -334,7 +339,7 @@ class _AllGroupsState extends State<AllGroups> {
                       onPressed: () {
                         Navigator.of(context).push(
                             MaterialPageRoute(builder: ((BuildContext context) {
-                          return const ExistingGroup();
+                          return const RandomGroup3();
                         })));
                       },
                       style: ElevatedButton.styleFrom(
@@ -371,7 +376,7 @@ class _AllGroupsState extends State<AllGroups> {
                             ),
                             SizedBox(width: 25),
                             const Text(
-                              'Group #4',
+                              'Familia',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontWeight: FontWeight.normal,
@@ -380,7 +385,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 color: Color(0xff82B977),
                               ),
                             ),
-                            SizedBox(width: 105),
+                            SizedBox(width: 145),
                             Icon(
                               Icons.arrow_forward_ios,
                               color: Color(0xff82B977),
@@ -404,7 +409,7 @@ class _AllGroupsState extends State<AllGroups> {
                       onPressed: () {
                         Navigator.of(context).push(
                             MaterialPageRoute(builder: ((BuildContext context) {
-                          return const ExistingGroup();
+                          return const RandomGroup4();
                         })));
                       },
                       style: ElevatedButton.styleFrom(
@@ -441,7 +446,7 @@ class _AllGroupsState extends State<AllGroups> {
                             ),
                             SizedBox(width: 25),
                             const Text(
-                              'Group #5',
+                              'CS 1337',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontWeight: FontWeight.normal,
@@ -450,7 +455,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 color: Color(0xff82B977),
                               ),
                             ),
-                            SizedBox(width: 105),
+                            SizedBox(width: 127),
                             Icon(
                               Icons.arrow_forward_ios,
                               color: Color(0xff82B977),
@@ -474,7 +479,7 @@ class _AllGroupsState extends State<AllGroups> {
                       onPressed: () {
                         Navigator.of(context).push(
                             MaterialPageRoute(builder: ((BuildContext context) {
-                          return const ExistingGroup();
+                          return const GroupCatchUp();
                         })));
                       },
                       style: ElevatedButton.styleFrom(
@@ -511,7 +516,7 @@ class _AllGroupsState extends State<AllGroups> {
                             ),
                             SizedBox(width: 25),
                             const Text(
-                              'Group #6',
+                              'Ridwan Hate Club',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontWeight: FontWeight.normal,
@@ -520,7 +525,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 color: Color(0xff82B977),
                               ),
                             ),
-                            SizedBox(width: 105),
+                            SizedBox(width: 13),
                             Icon(
                               Icons.arrow_forward_ios,
                               color: Color(0xff82B977),

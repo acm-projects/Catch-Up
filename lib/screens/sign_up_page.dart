@@ -20,11 +20,9 @@ class _SignUpPageState extends State<SignUpPage> {
   bool isLogin = true;
 
 //Text Controllers
-final TextEditingController _controllerEmail = TextEditingController();
-final TextEditingController _controllerPassword = TextEditingController();
-final TextEditingController _controllerName = TextEditingController();
-
-
+  final TextEditingController _controllerEmail = TextEditingController();
+  final TextEditingController _controllerPassword = TextEditingController();
+  final TextEditingController _controllerName = TextEditingController();
 
   ///Register
   Future<void> createUserWithEmailAndPassword() async {
@@ -34,17 +32,17 @@ final TextEditingController _controllerName = TextEditingController();
         email: _controllerEmail.text,
         password: _controllerPassword.text,
       );
-      
+
       //Data to save in a user's document
       Map<String, dynamic> userDataToSave = {
-      'email': _controllerEmail.text,
-      'name': _controllerName.text,
+        'email': _controllerEmail.text,
+        'name': _controllerName.text,
       };
-       
-       //Add user data to user document in user collection
-       DocumentReference _docRef = await _firestore.collection('users').add(userDataToSave);
-       SignUpPage.uid = _docRef.id;
 
+      //Add user data to user document in user collection
+      DocumentReference _docRef =
+          await _firestore.collection('users').add(userDataToSave);
+      SignUpPage.uid = _docRef.id;
     } on FirebaseAuthException catch (e) {
       setState(() {
         errorMessage = e.message;
@@ -81,7 +79,6 @@ final TextEditingController _controllerName = TextEditingController();
   Widget _submitButton() {
     return ElevatedButton(
       onPressed: createUserWithEmailAndPassword,
-
       child: Text(isLogin ? 'Login' : 'Register'),
     );
   }
@@ -96,11 +93,6 @@ final TextEditingController _controllerName = TextEditingController();
       child: Text(isLogin ? 'Register instead' : 'Login instead'),
     );
   }
-
-
-
-
-
 
   @override
   Widget build(BuildContext context) {

@@ -1,11 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:catch_up/screens/all_groups.dart';
 import 'package:catch_up/screens/friends.dart';
-import 'package:catch_up/screens/main_profile.dart';
 import 'package:flutter/material.dart';
-import 'package:catch_up/screens/home.dart';
-import 'dart:math' as math;
 
 class GroupCatchUp extends StatefulWidget {
   const GroupCatchUp({super.key});
@@ -48,7 +44,7 @@ class _GroupCatchUpState extends State<GroupCatchUp> {
                 ),
                 const SizedBox(height: 5),
                 const Text(
-                  'Group #1',
+                  'Ridwan Hate Club',
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 32,
@@ -78,7 +74,7 @@ class _GroupCatchUpState extends State<GroupCatchUp> {
                         ),
                         //how the card looks
                         child: Container(
-                          width: 520.0,
+                          width: 390.0,
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(
                               Radius.circular(14),
@@ -88,76 +84,6 @@ class _GroupCatchUpState extends State<GroupCatchUp> {
                           child: Row(
                             children: [
                               //avatar
-                              Column(
-                                children: [
-                                  Container(
-                                    width: 65,
-                                    height: 65,
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        // border color and width around the profile image
-                                        width: 4,
-                                        color: Color(0xffE9CFC3),
-                                      ),
-                                      shape: BoxShape.circle,
-                                      image: const DecorationImage(
-                                        image: AssetImage('assets/group1.png'),
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(height: 10),
-                                  const Text(
-                                    'Safa',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 15,
-                                      fontFamily: 'Poppins',
-                                      color: Color(0xffEFEDE7),
-                                    ),
-                                  ),
-                                ],
-                              ),
-
-                              SizedBox(width: 25),
-
-                              //group member 2
-                              Column(
-                                children: [
-                                  Container(
-                                    width: 65,
-                                    height: 65,
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        // border color and width around the profile image
-                                        width: 4,
-                                        color: Color(0xffE9CFC3),
-                                      ),
-                                      shape: BoxShape.circle,
-                                      image: const DecorationImage(
-                                        image: AssetImage('assets/group1.png'),
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(height: 10),
-                                  const Text(
-                                    'Kanchan',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 15,
-                                      fontFamily: 'Poppins',
-                                      color: Color(0xffEFEDE7),
-                                    ),
-                                  ),
-                                ],
-                              ),
-
-                              SizedBox(width: 25),
-
-                              //group member 3
                               Column(
                                 children: [
                                   Container(
@@ -192,7 +118,42 @@ class _GroupCatchUpState extends State<GroupCatchUp> {
 
                               SizedBox(width: 25),
 
-                              //group member 4
+                              //group member 2
+                              Column(
+                                children: [
+                                  Container(
+                                    width: 65,
+                                    height: 65,
+                                    decoration: BoxDecoration(
+                                      border: Border.all(
+                                        // border color and width around the profile image
+                                        width: 4,
+                                        color: Color(0xffE9CFC3),
+                                      ),
+                                      shape: BoxShape.circle,
+                                      image: const DecorationImage(
+                                        image: AssetImage('assets/gabby.jpg'),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(height: 10),
+                                  const Text(
+                                    'Gabby',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 15,
+                                      fontFamily: 'Poppins',
+                                      color: Color(0xffEFEDE7),
+                                    ),
+                                  ),
+                                ],
+                              ),
+
+                              SizedBox(width: 25),
+
+                              //group member 3
                               Column(
                                 children: [
                                   Container(
@@ -227,7 +188,7 @@ class _GroupCatchUpState extends State<GroupCatchUp> {
 
                               SizedBox(width: 25),
 
-                              //group member 5
+                              //group member 4
                               Column(
                                 children: [
                                   Container(
@@ -248,7 +209,7 @@ class _GroupCatchUpState extends State<GroupCatchUp> {
                                   ),
                                   SizedBox(height: 10),
                                   const Text(
-                                    'Gabby',
+                                    'Kanchan',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       fontWeight: FontWeight.w600,
@@ -261,39 +222,6 @@ class _GroupCatchUpState extends State<GroupCatchUp> {
                               ),
 
                               SizedBox(width: 25),
-
-                              //group member 6
-                              Column(
-                                children: [
-                                  Container(
-                                    width: 65,
-                                    height: 65,
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        // border color and width around the profile image
-                                        width: 4,
-                                        color: Color(0xffE9CFC3),
-                                      ),
-                                      shape: BoxShape.circle,
-                                      image: const DecorationImage(
-                                        image: AssetImage('assets/group1.png'),
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(height: 10),
-                                  const Text(
-                                    'Jessie',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 15,
-                                      fontFamily: 'Poppins',
-                                      color: Color(0xffEFEDE7),
-                                    ),
-                                  ),
-                                ],
-                              ),
                             ],
                           ),
                         ),

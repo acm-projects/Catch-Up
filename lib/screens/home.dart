@@ -2,17 +2,16 @@
 
 import 'package:catch_up/screens/all_groups.dart';
 import 'package:catch_up/screens/camerapage.dart';
-import 'package:catch_up/screens/existing_group_ridwan.dart';
+import 'package:catch_up/screens/individual_group.dart';
 import 'package:catch_up/screens/join_add_group.dart';
 import 'package:catch_up/screens/main_profile.dart';
-import 'package:catch_up/screens/videopage.dart';
-import 'package:catch_up/screens/voice_page.dart';
-import 'package:catch_up/screens/videopage.dart';
+import 'package:catch_up/screens/random_group2.dart';
 import 'package:catch_up/screens/voice_page.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import 'dart:async';
-import 'friends.dart';
+
+import 'random_group1.dart';
 
 @immutable
 class ExpandableFab extends StatefulWidget {
@@ -468,14 +467,14 @@ class _HomeState extends State<Home> {
                                   ],
                                   shape: BoxShape.circle,
                                   image: const DecorationImage(
-                                    image: AssetImage('assets/group1.png'),
+                                    image: AssetImage('assets/acm-logo.png'),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
                               ),
                               SizedBox(height: 19),
                               const Text(
-                                'Group #1',
+                                'ACM Overlords',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontWeight: FontWeight.w800,
@@ -493,7 +492,7 @@ class _HomeState extends State<Home> {
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: ((BuildContext context) {
-                            return const ExistingGroup();
+                            return RandomGroup1();
                           })));
                         },
                         style: ElevatedButton.styleFrom(
@@ -534,7 +533,7 @@ class _HomeState extends State<Home> {
                               ),
                               SizedBox(height: 19),
                               const Text(
-                                'Group #2',
+                                'Basketball',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontWeight: FontWeight.w800,
@@ -552,7 +551,7 @@ class _HomeState extends State<Home> {
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: ((BuildContext context) {
-                            return const ExistingGroup();
+                            return const RandomGroup2();
                           })));
                         },
                         style: ElevatedButton.styleFrom(
@@ -596,7 +595,7 @@ class _HomeState extends State<Home> {
                                   ),
                                   SizedBox(height: 19),
                                   const Text(
-                                    'Group #3',
+                                    'Roommates',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       fontWeight: FontWeight.w800,
