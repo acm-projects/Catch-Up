@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_local_variable, unnecessary_new, sort_child_properties_last, sized_box_for_whitespace, library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
-import 'package:catch_up/screens/individual_group.dart';
+import 'package:catch_up/screens/existing_group_ridwan.dart';
 
 import 'join_add_group.dart';
 
@@ -123,7 +123,7 @@ class _AllGroupsState extends State<AllGroups> {
                       onPressed: () {
                         Navigator.of(context).push(
                             MaterialPageRoute(builder: ((BuildContext context) {
-                          return const IndividualGroup();
+                          return const ExistingGroup();
                         })));
                       },
                       style: ElevatedButton.styleFrom(
@@ -193,7 +193,7 @@ class _AllGroupsState extends State<AllGroups> {
                       onPressed: () {
                         Navigator.of(context).push(
                             MaterialPageRoute(builder: ((BuildContext context) {
-                          return const IndividualGroup();
+                          return const ExistingGroup();
                         })));
                       },
                       style: ElevatedButton.styleFrom(
@@ -263,7 +263,7 @@ class _AllGroupsState extends State<AllGroups> {
                       onPressed: () {
                         Navigator.of(context).push(
                             MaterialPageRoute(builder: ((BuildContext context) {
-                          return const IndividualGroup();
+                          return const ExistingGroup();
                         })));
                       },
                       style: ElevatedButton.styleFrom(
@@ -334,7 +334,7 @@ class _AllGroupsState extends State<AllGroups> {
                       onPressed: () {
                         Navigator.of(context).push(
                             MaterialPageRoute(builder: ((BuildContext context) {
-                          return const IndividualGroup();
+                          return const ExistingGroup();
                         })));
                       },
                       style: ElevatedButton.styleFrom(
@@ -404,7 +404,7 @@ class _AllGroupsState extends State<AllGroups> {
                       onPressed: () {
                         Navigator.of(context).push(
                             MaterialPageRoute(builder: ((BuildContext context) {
-                          return const IndividualGroup();
+                          return const ExistingGroup();
                         })));
                       },
                       style: ElevatedButton.styleFrom(
@@ -474,7 +474,7 @@ class _AllGroupsState extends State<AllGroups> {
                       onPressed: () {
                         Navigator.of(context).push(
                             MaterialPageRoute(builder: ((BuildContext context) {
-                          return const IndividualGroup();
+                          return const ExistingGroup();
                         })));
                       },
                       style: ElevatedButton.styleFrom(

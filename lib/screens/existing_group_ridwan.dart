@@ -8,14 +8,14 @@ import 'package:catch_up/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
-class IndividualGroup extends StatefulWidget {
-  const IndividualGroup({super.key});
+class ExistingGroup extends StatefulWidget {
+  const ExistingGroup({super.key});
 
   @override
-  State<IndividualGroup> createState() => _IndividualGroupState();
+  State<ExistingGroup> createState() => _ExistingGroupState();
 }
 
-class _IndividualGroupState extends State<IndividualGroup> {
+class _ExistingGroupState extends State<ExistingGroup> {
   @override
   Widget build(BuildContext context) {
     int totalTime = (3 * 3600) + (30 * 60) + 15;
