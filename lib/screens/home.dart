@@ -5,14 +5,13 @@ import 'package:catch_up/screens/camerapage.dart';
 import 'package:catch_up/screens/individual_group.dart';
 import 'package:catch_up/screens/join_add_group.dart';
 import 'package:catch_up/screens/main_profile.dart';
-import 'package:catch_up/screens/send_page.dart';
 import 'package:catch_up/screens/videopage.dart';
 import 'package:catch_up/screens/voice_page.dart';
 import 'package:catch_up/screens/videopage.dart';
 import 'package:catch_up/screens/voice_page.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
-
+import 'dart:async';
 import 'friends.dart';
 
 @immutable
@@ -234,6 +233,56 @@ class ActionButton extends StatelessWidget {
   }
 }
 
+class CountdownTimer extends StatefulWidget {
+  final int duration;
+  CountdownTimer({this.duration = 60});
+
+  @override
+  _CountdownTimerState createState() => _CountdownTimerState();
+}
+
+class _CountdownTimerState extends State<CountdownTimer> {
+  int _secondsRemaining = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _secondsRemaining = widget.duration;
+    Timer.periodic(Duration(seconds: 1), (timer) {
+      setState(() {
+        _secondsRemaining--;
+      });
+      if (_secondsRemaining == 0) {
+        timer.cancel();
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    int hours = (_secondsRemaining / 3600).floor();
+    int minutes = ((_secondsRemaining / 60) % 60).floor();
+    int seconds = _secondsRemaining % 60;
+    return Text(
+      '$hours:${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}',
+      textAlign: TextAlign.center,
+      style: TextStyle(
+        fontWeight: FontWeight.bold,
+        fontSize: 70,
+        fontFamily: 'Cartis-Beautyful-serif',
+        color: Color(0xffD79784),
+        shadows: [
+          Shadow(
+              offset: Offset(0, 2),
+              blurRadius: 4,
+              // ignore: use_full_hex_values_for_flutter_colors
+              color: Color(0xff40000000))
+        ],
+      ),
+    );
+  }
+}
+
 class Home extends StatefulWidget {
   const Home({super.key});
 
@@ -242,8 +291,45 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  /*
+  int _seconds = 0;
+  int _minutes = 0;
+  int _hours = 0;
+
+  bool _isRunning = true;
+
+  Timer? _timer;
+
+  void _startTimer() {
+    setState(() {
+      _isRunning = true;
+    });
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      setState(() {
+        if (_seconds > 0) {
+          _seconds--;
+        } else {
+          if (_minutes > 0) {
+            _minutes--;
+            _seconds = 59;
+          } else {
+            if (_hours > 0) {
+              _hours--;
+              _minutes = 59;
+              _seconds = 59;
+            } else {
+              _isRunning = false;
+              _timer?.cancel();
+            }
+          }
+        }
+      });
+    });
+  }*/
+
   @override
   Widget build(BuildContext context) {
+    int totalTime = (3 * 3600) + (30 * 60) + 15;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xffEFEDE7),
@@ -345,9 +431,7 @@ class _HomeState extends State<Home> {
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: ((BuildContext context) {
-                            //change back when done testing
-                            //return const IndividualGroup();
-                            return const SendPage();
+                            return const IndividualGroup();
                           })));
                         },
                         style: ElevatedButton.styleFrom(
@@ -570,9 +654,13 @@ class _HomeState extends State<Home> {
                           color: Color(0xffEFEDE7),
                         ),
                       ),
-                      SizedBox(height: 30),
-                      const Text(
-                        '7:31 hours',
+                      SizedBox(height: 20),
+                      CountdownTimer(
+                        duration: totalTime,
+                      ),
+
+                      /*Text(
+                        '${_hours.toString()}:${_minutes.toString().padLeft(2, '0')}:${_seconds.toString().padLeft(2, '0')}',
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -587,7 +675,7 @@ class _HomeState extends State<Home> {
                                 color: Color(0xff40000000))
                           ],
                         ),
-                      ),
+                      ), */
                     ],
                   ),
                 )
