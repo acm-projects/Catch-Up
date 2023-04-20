@@ -1,9 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_local_variable, unnecessary_new, sort_child_properties_last, sized_box_for_whitespace, library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
-import 'package:catch_up/screens/individual_group.dart';
-
-import 'join_add_group.dart';
 
 class FriendsPage extends StatefulWidget {
   const FriendsPage({Key? key}) : super(key: key);
@@ -151,7 +148,7 @@ class _FriendsPageState extends State<FriendsPage> {
                           ),
                           SizedBox(width: 35),
                           const Text(
-                            'Friend 1',
+                            'Safa',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontWeight: FontWeight.normal,
@@ -204,7 +201,7 @@ class _FriendsPageState extends State<FriendsPage> {
                           ),
                           SizedBox(width: 35),
                           const Text(
-                            'Friend 2',
+                            'Kanchan',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontWeight: FontWeight.normal,
@@ -257,7 +254,7 @@ class _FriendsPageState extends State<FriendsPage> {
                           ),
                           SizedBox(width: 35),
                           const Text(
-                            'Friend 3',
+                            'Reiki',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontWeight: FontWeight.normal,
@@ -304,14 +301,14 @@ class _FriendsPageState extends State<FriendsPage> {
                               ),
                               shape: BoxShape.circle,
                               image: const DecorationImage(
-                                image: AssetImage('assets/group1.png'),
+                                image: AssetImage('assets/gabby.jpg'),
                                 fit: BoxFit.cover,
                               ),
                             ),
                           ),
                           SizedBox(width: 35),
                           const Text(
-                            'Friend 4',
+                            'Gabby',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontWeight: FontWeight.normal,
@@ -364,7 +361,7 @@ class _FriendsPageState extends State<FriendsPage> {
                           ),
                           SizedBox(width: 35),
                           const Text(
-                            'Friend 5',
+                            'Sanika',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontWeight: FontWeight.normal,
@@ -417,7 +414,7 @@ class _FriendsPageState extends State<FriendsPage> {
                           ),
                           SizedBox(width: 35),
                           const Text(
-                            'Friend 6',
+                            'Kenneth',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontWeight: FontWeight.normal,
@@ -438,7 +435,323 @@ class _FriendsPageState extends State<FriendsPage> {
                       endIndent: 30,
                     ),
 
-                    SizedBox(height: 20),
+                    //card #5
+                    SizedBox(height: 10),
+                    Container(
+                      width: 350.0,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(14),
+                        ),
+                        color: Colors.transparent,
+                      ),
+                      child: Row(
+                        children: [
+                          SizedBox(width: 40),
+                          //avatar
+                          Container(
+                            width: 60,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                // border color and width around the profile image
+                                width: 4,
+                                color: Color(0xff82B977),
+                              ),
+                              shape: BoxShape.circle,
+                              image: const DecorationImage(
+                                image: AssetImage('assets/group1.png'),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 35),
+                          const Text(
+                            'Kenny',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              fontSize: 26,
+                              fontFamily: 'Poppins',
+                              color: Color(0xff82B977),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    //second divider
+                    SizedBox(height: 10),
+                    Divider(
+                      thickness: 1,
+                      indent: 30,
+                      endIndent: 30,
+                    ),
+
+                    //card #5
+                    SizedBox(height: 10),
+                    Container(
+                      width: 350.0,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(14),
+                        ),
+                        color: Colors.transparent,
+                      ),
+                      child: Row(
+                        children: [
+                          SizedBox(width: 40),
+                          //avatar
+                          Container(
+                            width: 60,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                // border color and width around the profile image
+                                width: 4,
+                                color: Color(0xff82B977),
+                              ),
+                              shape: BoxShape.circle,
+                              image: const DecorationImage(
+                                image: AssetImage('assets/group1.png'),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 35),
+                          const Text(
+                            'Akshay',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              fontSize: 26,
+                              fontFamily: 'Poppins',
+                              color: Color(0xff82B977),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    //second divider
+                    SizedBox(height: 10),
+                    Divider(
+                      thickness: 1,
+                      indent: 30,
+                      endIndent: 30,
+                    ),
+
+                    //card #5
+                    SizedBox(height: 10),
+                    Container(
+                      width: 350.0,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(14),
+                        ),
+                        color: Colors.transparent,
+                      ),
+                      child: Row(
+                        children: [
+                          SizedBox(width: 40),
+                          //avatar
+                          Container(
+                            width: 60,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                // border color and width around the profile image
+                                width: 4,
+                                color: Color(0xff82B977),
+                              ),
+                              shape: BoxShape.circle,
+                              image: const DecorationImage(
+                                image: AssetImage('assets/group1.png'),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 35),
+                          const Text(
+                            'John',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              fontSize: 26,
+                              fontFamily: 'Poppins',
+                              color: Color(0xff82B977),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    //second divider
+                    SizedBox(height: 10),
+                    Divider(
+                      thickness: 1,
+                      indent: 30,
+                      endIndent: 30,
+                    ),
+
+                    //card #5
+                    SizedBox(height: 10),
+                    Container(
+                      width: 350.0,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(14),
+                        ),
+                        color: Colors.transparent,
+                      ),
+                      child: Row(
+                        children: [
+                          SizedBox(width: 40),
+                          //avatar
+                          Container(
+                            width: 60,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                // border color and width around the profile image
+                                width: 4,
+                                color: Color(0xff82B977),
+                              ),
+                              shape: BoxShape.circle,
+                              image: const DecorationImage(
+                                image: AssetImage('assets/group1.png'),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 35),
+                          const Text(
+                            'Brian',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              fontSize: 26,
+                              fontFamily: 'Poppins',
+                              color: Color(0xff82B977),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    //second divider
+                    SizedBox(height: 10),
+                    Divider(
+                      thickness: 1,
+                      indent: 30,
+                      endIndent: 30,
+                    ),
+
+                    //card #5
+                    SizedBox(height: 10),
+                    Container(
+                      width: 350.0,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(14),
+                        ),
+                        color: Colors.transparent,
+                      ),
+                      child: Row(
+                        children: [
+                          SizedBox(width: 40),
+                          //avatar
+                          Container(
+                            width: 60,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                // border color and width around the profile image
+                                width: 4,
+                                color: Color(0xff82B977),
+                              ),
+                              shape: BoxShape.circle,
+                              image: const DecorationImage(
+                                image: AssetImage('assets/group1.png'),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 35),
+                          const Text(
+                            'Andrew',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              fontSize: 26,
+                              fontFamily: 'Poppins',
+                              color: Color(0xff82B977),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    //second divider
+                    SizedBox(height: 10),
+                    Divider(
+                      thickness: 1,
+                      indent: 30,
+                      endIndent: 30,
+                    ),
+
+                    //card #5
+                    SizedBox(height: 10),
+                    Container(
+                      width: 350.0,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(14),
+                        ),
+                        color: Colors.transparent,
+                      ),
+                      child: Row(
+                        children: [
+                          SizedBox(width: 40),
+                          //avatar
+                          Container(
+                            width: 60,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                // border color and width around the profile image
+                                width: 4,
+                                color: Color(0xff82B977),
+                              ),
+                              shape: BoxShape.circle,
+                              image: const DecorationImage(
+                                image: AssetImage('assets/group1.png'),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 35),
+                          const Text(
+                            'Brian',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              fontSize: 26,
+                              fontFamily: 'Poppins',
+                              color: Color(0xff82B977),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    //second divider
+                    SizedBox(height: 10),
+                    Divider(
+                      thickness: 1,
+                      indent: 30,
+                      endIndent: 30,
+                    ),
 
                     SizedBox(height: 30),
 
