@@ -8,6 +8,8 @@ import 'package:cloud_firestore/cloud_firestore.dart'; //firestore
 
 class SignUpPage extends StatefulWidget {
   static late String uid;
+  static late String name;
+
   const SignUpPage({Key? key}) : super(key: key);
 
   @override
@@ -38,6 +40,7 @@ class _SignUpPageState extends State<SignUpPage> {
         'email': _controllerEmail.text,
         'name': _controllerName.text,
       };
+      SignUpPage.name = _controllerName.text;
 
       //Add user data to user document in user collection
       DocumentReference _docRef =
