@@ -2,13 +2,10 @@
 
 import 'package:catch_up/screens/friends.dart';
 import 'package:catch_up/screens/join_add_group.dart';
-import 'package:catch_up/screens/join_group_page.dart';
-import 'package:catch_up/screens/login_options.dart';
 import 'package:catch_up/screens/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:catch_up/services/auth.dart';
-import 'package:catch_up/screens/sign_up_page.dart';
 
 class ProfilePage extends StatelessWidget {
   ProfilePage({super.key});
@@ -112,7 +109,7 @@ class ProfilePage extends StatelessWidget {
             Container(
               alignment: Alignment.topLeft,
               padding: const EdgeInsets.only(
-                  left: 16, top: 50, right: 16, bottom: 100),
+                  left: 16, top: 50, right: 16, bottom: 150),
               decoration: BoxDecoration(
                 shape: BoxShape.rectangle,
                 borderRadius: BorderRadius.circular(15),

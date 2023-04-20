@@ -357,13 +357,14 @@ class _HomeState extends State<Home> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Spacer(),
+                    //Spacer(),
+                    SizedBox(width: 170),
                     Image.asset(
                       'assets/cream-logo.png',
                       height: 75,
                       width: 75,
                     ),
-                    SizedBox(width: 110),
+                    SizedBox(width: 100),
                     Column(
                       children: [
                         Row(
