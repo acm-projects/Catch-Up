@@ -406,11 +406,11 @@ class _HomeState extends State<Home> {
                   height: 0,
                 ),
                 const Text(
-                  'Good news',
+                  'Something fun \n you saw',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
-                    fontSize: 40,
+                    fontSize: 34,
                     fontFamily: 'Poppins',
                     shadows: [
                       Shadow(
@@ -422,7 +422,7 @@ class _HomeState extends State<Home> {
                     color: Color(0xffE9CFC3),
                   ),
                 ),
-                const SizedBox(height: 105),
+                const SizedBox(height: 80),
                 SizedBox(
                   height: 192.54,
                   child: ListView(

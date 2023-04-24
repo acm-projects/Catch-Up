@@ -154,7 +154,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 border: Border.all(
                                   // border color and width around the profile image
                                   width: 4,
-                                  color: Color(0xff82B977),
+                                  color: Color(0xff8D79784),
                                 ),
                                 shape: BoxShape.circle,
                                 image: const DecorationImage(
@@ -224,7 +224,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 border: Border.all(
                                   // border color and width around the profile image
                                   width: 4,
-                                  color: Color(0xff82B977),
+                                  color: Color(0xffD79784),
                                 ),
                                 shape: BoxShape.circle,
                                 image: const DecorationImage(
@@ -294,7 +294,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 border: Border.all(
                                   // border color and width around the profile image
                                   width: 4,
-                                  color: Color(0xff82B977),
+                                  color: Color(0xffD79784),
                                 ),
                                 shape: BoxShape.circle,
                                 image: const DecorationImage(
@@ -365,7 +365,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 border: Border.all(
                                   // border color and width around the profile image
                                   width: 4,
-                                  color: Color(0xff82B977),
+                                  color: Color(0xffD79784),
                                 ),
                                 shape: BoxShape.circle,
                                 image: const DecorationImage(
@@ -435,7 +435,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 border: Border.all(
                                   // border color and width around the profile image
                                   width: 4,
-                                  color: Color(0xff82B977),
+                                  color: Color(0xffD79784),
                                 ),
                                 shape: BoxShape.circle,
                                 image: const DecorationImage(
