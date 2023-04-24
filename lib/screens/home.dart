@@ -365,32 +365,7 @@ class _HomeState extends State<Home> {
                       height: 75,
                       width: 75,
                     ),
-                    SizedBox(width: 100),
-                    Column(
-                      children: [
-                        Row(
-                          children: [
-                            FloatingActionButton.small(
-                              onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: ((BuildContext context) {
-                                  return ProfilePage();
-                                })));
-                              },
-                              elevation: 1,
-                              child: Icon(
-                                Icons.person,
-                                color: Colors.white,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 20,
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 30),
-                      ],
-                    ),
+                    SizedBox(width: 165),
                   ],
                 ),
                 const SizedBox(height: 5),
@@ -697,12 +672,12 @@ class _HomeState extends State<Home> {
               onPressed: () {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: ((BuildContext context) {
-                  return const VoicePage();
+                  return ProfilePage();
                 })));
               },
               icon: const Icon(
-                Icons.mic,
-                size: 35,
+                Icons.account_circle,
+                size: 40,
               ),
             ),
           ),

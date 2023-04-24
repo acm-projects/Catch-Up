@@ -351,7 +351,7 @@ class _GroupCatchUpState extends State<GroupCatchUp> {
                             borderRadius: BorderRadius.circular(20),
                           )),
                       child: Text(
-                        'Join Group',
+                        'Generate QR Code',
                         style: TextStyle(
                           color: const Color(0xffEFEDE7),
                           fontWeight: FontWeight.bold,
