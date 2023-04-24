@@ -21,7 +21,7 @@ class ProfilePage extends StatelessWidget {
 
   Widget _userUid() {
     return Text(
-      user?.email ?? 'User email',
+      user?.email ?? 'ridwan.amin41@gmail.com',
       style: TextStyle(
           fontSize: 15,
           fontWeight: FontWeight.normal,
@@ -33,7 +33,7 @@ class ProfilePage extends StatelessWidget {
 
   Widget _userName() {
     return Text(
-      'John Doe',
+      'Ridwan Amin',
       style: TextStyle(
           fontSize: 45,
           fontWeight: FontWeight.bold,
@@ -83,7 +83,7 @@ class ProfilePage extends StatelessWidget {
                       ],
                       shape: BoxShape.circle,
                       image: const DecorationImage(
-                        image: AssetImage('assets/profile.png'),
+                        image: AssetImage('assets/ridwan.jpg'),
                         fit: BoxFit.cover,
                       ),
                     ),

@@ -141,7 +141,7 @@ class _FriendsPageState extends State<FriendsPage> {
                               ),
                               shape: BoxShape.circle,
                               image: const DecorationImage(
-                                image: AssetImage('assets/group1.png'),
+                                image: AssetImage('assets/safa.jpg'),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -194,7 +194,7 @@ class _FriendsPageState extends State<FriendsPage> {
                               ),
                               shape: BoxShape.circle,
                               image: const DecorationImage(
-                                image: AssetImage('assets/group1.png'),
+                                image: AssetImage('assets/kanchan.jpg'),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -247,7 +247,7 @@ class _FriendsPageState extends State<FriendsPage> {
                               ),
                               shape: BoxShape.circle,
                               image: const DecorationImage(
-                                image: AssetImage('assets/group1.png'),
+                                image: AssetImage('assets/reiki.jpg'),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -354,7 +354,7 @@ class _FriendsPageState extends State<FriendsPage> {
                               ),
                               shape: BoxShape.circle,
                               image: const DecorationImage(
-                                image: AssetImage('assets/group1.png'),
+                                image: AssetImage('assets/sanika.jpg'),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -407,7 +407,7 @@ class _FriendsPageState extends State<FriendsPage> {
                               ),
                               shape: BoxShape.circle,
                               image: const DecorationImage(
-                                image: AssetImage('assets/group1.png'),
+                                image: AssetImage('assets/kenneth.jpg'),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -460,7 +460,7 @@ class _FriendsPageState extends State<FriendsPage> {
                               ),
                               shape: BoxShape.circle,
                               image: const DecorationImage(
-                                image: AssetImage('assets/group1.png'),
+                                image: AssetImage('assets/kenny.jpg'),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -513,7 +513,7 @@ class _FriendsPageState extends State<FriendsPage> {
                               ),
                               shape: BoxShape.circle,
                               image: const DecorationImage(
-                                image: AssetImage('assets/group1.png'),
+                                image: AssetImage('assets/akshay.jpg'),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -566,7 +566,7 @@ class _FriendsPageState extends State<FriendsPage> {
                               ),
                               shape: BoxShape.circle,
                               image: const DecorationImage(
-                                image: AssetImage('assets/group1.png'),
+                                image: AssetImage('assets/john.jpg'),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -619,7 +619,7 @@ class _FriendsPageState extends State<FriendsPage> {
                               ),
                               shape: BoxShape.circle,
                               image: const DecorationImage(
-                                image: AssetImage('assets/group1.png'),
+                                image: AssetImage('assets/brian.jpg'),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -672,7 +672,7 @@ class _FriendsPageState extends State<FriendsPage> {
                               ),
                               shape: BoxShape.circle,
                               image: const DecorationImage(
-                                image: AssetImage('assets/group1.png'),
+                                image: AssetImage('assets/andrew.jpg'),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -725,14 +725,14 @@ class _FriendsPageState extends State<FriendsPage> {
                               ),
                               shape: BoxShape.circle,
                               image: const DecorationImage(
-                                image: AssetImage('assets/group1.png'),
+                                image: AssetImage('assets/jackson.jpg'),
                                 fit: BoxFit.cover,
                               ),
                             ),
                           ),
                           SizedBox(width: 35),
                           const Text(
-                            'Brian',
+                            'Jackson',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontWeight: FontWeight.normal,

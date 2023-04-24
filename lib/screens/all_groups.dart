@@ -228,7 +228,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 ),
                                 shape: BoxShape.circle,
                                 image: const DecorationImage(
-                                  image: AssetImage('assets/group1.png'),
+                                  image: AssetImage('assets/basketball.jpg'),
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -298,7 +298,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 ),
                                 shape: BoxShape.circle,
                                 image: const DecorationImage(
-                                  image: AssetImage('assets/group1.png'),
+                                  image: AssetImage('assets/roommates.png'),
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -439,7 +439,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 ),
                                 shape: BoxShape.circle,
                                 image: const DecorationImage(
-                                  image: AssetImage('assets/group1.png'),
+                                  image: AssetImage('assets/cs1337.png'),
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -509,7 +509,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 ),
                                 shape: BoxShape.circle,
                                 image: const DecorationImage(
-                                  image: AssetImage('assets/group1.png'),
+                                  image: AssetImage('assets/hateclubpfp.jpg'),
                                   fit: BoxFit.cover,
                                 ),
                               ),

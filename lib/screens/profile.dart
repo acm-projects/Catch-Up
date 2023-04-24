@@ -88,7 +88,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                         ],
                         shape: BoxShape.circle,
                         image: const DecorationImage(
-                          image: AssetImage('assets/profile.png'),
+                          image: AssetImage('assets/ridwan.jpg'),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -127,10 +127,10 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    buildUserInfoField("First Name", "John", false),
-                    buildUserInfoField("Last Name", "Doe", false),
+                    buildUserInfoField("First Name", "Ridwan", false),
+                    buildUserInfoField("Last Name", "Amin", false),
                     buildUserInfoField(
-                        "Edit Email", "someEmail@gmail.com", false),
+                        "Edit Email", "ridwan.amin41@gmail.com", false),
                     buildUserInfoField("Edit Password", "**********", true),
                     const SizedBox(
                       height: 25,

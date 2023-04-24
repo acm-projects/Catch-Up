@@ -271,6 +271,7 @@ class _CountdownTimerState extends State<CountdownTimer> {
         fontSize: 70,
         fontFamily: 'Cartis-Beautyful-serif',
         color: Colors.white,
+        // ignore: prefer_const_literals_to_create_immutables
         shadows: [
           Shadow(
               offset: Offset(0, 2),
@@ -527,7 +528,7 @@ class _HomeState extends State<Home> {
                                   ],
                                   shape: BoxShape.circle,
                                   image: const DecorationImage(
-                                    image: AssetImage('assets/group1.png'),
+                                    image: AssetImage('assets/basketball.jpg'),
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -589,7 +590,8 @@ class _HomeState extends State<Home> {
                                       ],
                                       shape: BoxShape.circle,
                                       image: const DecorationImage(
-                                        image: AssetImage('assets/group1.png'),
+                                        image:
+                                            AssetImage('assets/roommates.png'),
                                         fit: BoxFit.cover,
                                       ),
                                     ),

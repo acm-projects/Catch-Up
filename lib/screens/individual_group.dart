@@ -99,7 +99,7 @@ class _ExistingGroupState extends State<ExistingGroup> {
                                       ),
                                       shape: BoxShape.circle,
                                       image: const DecorationImage(
-                                        image: AssetImage('assets/group1.png'),
+                                        image: AssetImage('assets/ridwan.jpg'),
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -204,8 +204,8 @@ class _ExistingGroupState extends State<ExistingGroup> {
                                       ),
                                       shape: BoxShape.circle,
                                       image: const DecorationImage(
-                                        image: AssetImage('assets/sanika.jpg'),
-                                        fit: BoxFit.fill,
+                                        image: AssetImage('assets/safa.jpg'),
+                                        fit: BoxFit.cover,
                                       ),
                                     ),
                                   ),
