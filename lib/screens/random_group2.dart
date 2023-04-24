@@ -99,7 +99,7 @@ class _RandomGroup2State extends State<RandomGroup2> {
                                       ),
                                       shape: BoxShape.circle,
                                       image: const DecorationImage(
-                                        image: AssetImage('assets/group1.png'),
+                                        image: AssetImage('assets/ridwan.jpg'),
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -134,7 +134,7 @@ class _RandomGroup2State extends State<RandomGroup2> {
                                       ),
                                       shape: BoxShape.circle,
                                       image: const DecorationImage(
-                                        image: AssetImage('assets/group1.png'),
+                                        image: AssetImage('assets/kenny.jpg'),
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -169,7 +169,7 @@ class _RandomGroup2State extends State<RandomGroup2> {
                                       ),
                                       shape: BoxShape.circle,
                                       image: const DecorationImage(
-                                        image: AssetImage('assets/group1.png'),
+                                        image: AssetImage('assets/andrew.jpg'),
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -204,7 +204,7 @@ class _RandomGroup2State extends State<RandomGroup2> {
                                       ),
                                       shape: BoxShape.circle,
                                       image: const DecorationImage(
-                                        image: AssetImage('assets/group1.png'),
+                                        image: AssetImage('assets/john.jpg'),
                                         fit: BoxFit.cover,
                                       ),
                                     ),

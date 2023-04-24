@@ -99,7 +99,7 @@ class _RandomGroup3State extends State<RandomGroup3> {
                                       ),
                                       shape: BoxShape.circle,
                                       image: const DecorationImage(
-                                        image: AssetImage('assets/group1.png'),
+                                        image: AssetImage('assets/ridwan.jpg'),
                                         fit: BoxFit.cover,
                                       ),
                                     ),

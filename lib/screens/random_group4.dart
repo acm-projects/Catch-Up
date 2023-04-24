@@ -99,7 +99,7 @@ class _RandomGroup4State extends State<RandomGroup4> {
                                       ),
                                       shape: BoxShape.circle,
                                       image: const DecorationImage(
-                                        image: AssetImage('assets/group1.png'),
+                                        image: AssetImage('assets/ridwan.jpg'),
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -134,7 +134,7 @@ class _RandomGroup4State extends State<RandomGroup4> {
                                       ),
                                       shape: BoxShape.circle,
                                       image: const DecorationImage(
-                                        image: AssetImage('assets/group1.png'),
+                                        image: AssetImage('assets/kanchan.jpg'),
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -169,7 +169,7 @@ class _RandomGroup4State extends State<RandomGroup4> {
                                       ),
                                       shape: BoxShape.circle,
                                       image: const DecorationImage(
-                                        image: AssetImage('assets/group1.png'),
+                                        image: AssetImage('assets/reiki.jpg'),
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -204,7 +204,7 @@ class _RandomGroup4State extends State<RandomGroup4> {
                                       ),
                                       shape: BoxShape.circle,
                                       image: const DecorationImage(
-                                        image: AssetImage('assets/group1.png'),
+                                        image: AssetImage('assets/john.jpg'),
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -239,7 +239,7 @@ class _RandomGroup4State extends State<RandomGroup4> {
                                       ),
                                       shape: BoxShape.circle,
                                       image: const DecorationImage(
-                                        image: AssetImage('assets/group1.png'),
+                                        image: AssetImage('assets/akshay.jpg'),
                                         fit: BoxFit.cover,
                                       ),
                                     ),
