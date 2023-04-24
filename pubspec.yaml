@@ -48,6 +48,9 @@ dependencies:
   firebase_storage: ^11.1.0
   path_provider: ^2.0.14
   slide_countdown: ^0.5.0
+  flutter_ffmpeg: ^0.4.2
+  mobile_scanner: ^3.2.0
+  qr_flutter: ^4.0.0
 
     
 

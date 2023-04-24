@@ -13,6 +13,8 @@ import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import 'dart:async';
 import 'friends.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 @immutable
 class ExpandableFab extends StatefulWidget {
@@ -292,6 +294,89 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+Future<String> generatePrompt(String prompt) async {
+  final String apiKey = '<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>';
+  final String endpoint = 'https://api.openai.com/v1/engines/davinci-codex/completions';
+  final data = {
+    //prompt
+    'prompt': prompt,
+    'max_tokens': 50,
+    'n': 1,
+    'stop': '\n',
+  };
+  final response = await http.post(Uri.parse(endpoint),
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer $apiKey',
+      },
+      
+      body: jsonEncode(data));
+  if (response.statusCode == 200) {
+    final responseData = jsonDecode(response.body);
+    final text = responseData['choices'][0]['text'];
+    //print('\x1B[33m${text}\x1B[0m');
+    return text;
+
+  } else {
+    throw Exception('Failed to generate prompt.');
+  }
+}
+
+Future<void> printPrompt() async {
+  String generatedText = await generatePrompt('Give me a topic to talk about with my friends');
+  //print(generatedText);
+  print('\x1B[33m${generatedText}\x1B[0m');
+}
+
+
+//   Future<String> generatePrompt(String prompt) async {
+//   final String apiKey = '<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>';
+//   final String endpoint = 'https://api.openai.com/v1/engines/davinci-codex/completions';
+//   //final url = 'https://api.openai.com/v1/engines/davinci-codex/completions';
+//   //final prompt = 'Give me a topic to talk about with my friends';
+
+//   // final headers = {
+//   //   'Content-Type': 'application/json',
+//   //   'Authorization': 'Bearer $apiKey',
+//   // };
+
+//   final data = {
+//     'prompt': prompt,
+//     'max_tokens': 50,
+//     'n': 1,
+//     'stop': '\n',
+//   };
+
+//   final response = await http.post(Uri.parse(endpoint), headers: {
+//     'Content-Type': 'application/json',
+//     'Authorization': 'Bearer $apiKey',
+//   }, body: jsonEncode({
+//     data,
+//     // 'prompt': prompt,
+//     // 'max_tokens': 100,
+//     // 'temperature': 0.5,
+//     // 'n': 1,
+//     // 'stop': ['\n']
+    
+//   }
+//   ));
+
+//   print(response.body);
+//   //return response.body;
+
+//   if (response.statusCode == 200) {
+//     final data = jsonDecode(response.body);
+//     final text = data['choices'][0]['text'];
+//     return text;
+//   } else {
+//     throw Exception('Failed to generate prompt.');
+//   }
+// }
+
+
+  //generatePrompt('The quick brown fox');
+ //print(generatedText);
   /*
   int _seconds = 0;
   int _minutes = 0;
@@ -550,10 +635,13 @@ class _HomeState extends State<Home> {
                       const SizedBox(width: 0),
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: ((BuildContext context) {
-                            return const IndividualGroup();
-                          })));
+                          generatePrompt('Give us a topic to discuss with friends');
+                
+    
+                          // Navigator.of(context).push(MaterialPageRoute(
+                          //     builder: ((BuildContext context) {
+                          //   return const IndividualGroup();
+                          // })));
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.transparent,

@@ -1,10 +1,12 @@
+import 'package:catch_up/screens/createGroupPage.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:flutter/material.dart';
 
 class QRImage extends StatefulWidget {
-  const QRImage(TextEditingController controller, {super.key});
+   final String groupId = CreateGroup.groupId;
+   QRImage(String groupId, {super.key}); //group Id generated when creating a group
 
-  final TextEditingController controller = TextEditingController();
+  //final TextEditingController controller = TextEditingController();
 
   @override
   State<QRImage> createState() => _QRImageState();
@@ -20,7 +22,7 @@ class _QRImageState extends State<QRImage> {
         ),
         body: Center(
           child: QrImage(
-            data: widget.controller.text,
+            data: widget.groupId,
             size: 280,
             // You can include embeddedImageStyle Property if you 
             //wanna embed an image from your Asset folder

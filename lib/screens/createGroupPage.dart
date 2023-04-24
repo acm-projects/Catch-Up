@@ -28,6 +28,7 @@ To do:
 
 
 class CreateGroup extends StatefulWidget {
+  static late String groupId; 
   const CreateGroup({Key? key}) : super(key: key);
 
 
@@ -62,13 +63,15 @@ class _CreateGroupState extends State<CreateGroup> {
 
     //add group to groups collection
     DocumentReference _docRef = await _firestore.collection('groups').add(groupDataToSave); //DocRef is so we can get groupId from firebase
-    String groupId = _docRef.id;
+    CreateGroup.groupId = _docRef.id;
     
     //add group to group collection in user's collection
     _firestore.collection('users').doc(uid).collection('groups').add({
       'groupName': _groupName.text,
-      'groupId': groupId,
+      'groupId': CreateGroup.groupId,
     });
+
+    //generate qr code
 
   }
   

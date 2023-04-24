@@ -65,6 +65,8 @@ class _CameraPageState extends State<CameraPage> {
         fullscreenDialog: true,
         builder: (_) => VideoPage(filePath: file.path),
       );
+      print('\x1B[33m${file.path}\x1B[0m');
+      
       Navigator.push(context, route);
     } else {
       await _cameraController.prepareForVideoRecording();

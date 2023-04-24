@@ -9,38 +9,46 @@ import 'package:catch_up/screens/featurebuttonsview.dart';
 import 'cloudrecordlistview.dart';
 class VideoPage extends StatefulWidget {
   //static late
+ 
   final String filePath;
-  const VideoPage({Key? key, required this.filePath}) : super(key: key);
+  VideoPage({Key? key, required this.filePath}) : super(key: key);
   @override
   _VideoPageState createState() => _VideoPageState();
 }
 class _VideoPageState extends State<VideoPage> {
   late VideoPlayerController _videoPlayerController;
 List<Reference> references = [];
+ final List<String> urls = [];
+ //String url = "123";
+
+
 @override
 void initState() {
   super.initState();
   _onUploadComplete();
 }
+
   @override
   void dispose() {
     _videoPlayerController.dispose();
     super.dispose();
   }
   Future _initVideoPlayer() async {
-    _videoPlayerController = VideoPlayerController.file(File(widget.filePath));
+    _videoPlayerController = VideoPlayerController.file(File(widget.filePath)); 
     await _videoPlayerController.initialize();
     await _videoPlayerController.setLooping(true);
     await _videoPlayerController.play();
   }
- Future<void> _onUploadComplete() async {
+ Future<void> _onUploadComplete() async {  //String url
   FirebaseStorage firebaseStorage = FirebaseStorage.instance;
   ListResult listResult =
     await firebaseStorage.ref().child('upload-video-firebase').list();
   setState(() {
     references = listResult.items;
+    //urls.add(url);
   });
  }
+
 @override
 Widget build(BuildContext context) {
     return SafeArea(
@@ -73,7 +81,8 @@ Widget build(BuildContext context) {
             Expanded(
               flex: 2,
               child: FeatureButtonsView(
-                onUploadComplete: _onUploadComplete, filePath: widget.filePath,
+                onUploadComplete: _onUploadComplete, filePath: widget.filePath, 
+                //urls: urls,
               ),
             ),
           ],
