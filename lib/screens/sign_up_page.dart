@@ -255,6 +255,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       child: Padding(
                         padding: const EdgeInsets.only(left: 20.0),
                         child: TextField(
+                          obscureText: true,
                           decoration: InputDecoration(
                             hintStyle: TextStyle(
                               //fontWeight: FontWeight.w500,
