@@ -74,12 +74,36 @@ class _FeatureButtonsViewState extends State<FeatureButtonsView> {
                   //   icon: Icon(_isPlaying ? Icons.pause : Icons.play_arrow),
                   //   onPressed: _onPlayButtonPressed,
                   // ),
-                  ElevatedButton.icon(
-                    // upload video button (frontend)
-                    //color:Colors.green,
-                    icon: Icon(Icons.upload), //Icons.upload_file),
-                    label: Text("Upload"),
-                    onPressed: _onFileUploadButtonPressed,
+
+                  //Upload
+
+//sign in button
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 150.0),
+                    child: ElevatedButton(
+                      onPressed: _onFileUploadButtonPressed,
+                      style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          backgroundColor: const Color(0xff82B977),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          )),
+                      child: Row(
+                        // ignore: prefer_const_literals_to_create_immutables
+                        children: [
+                          Icon(Icons.upload),
+                          Text(
+                            'Upload',
+                            style: TextStyle(
+                              color: const Color(0xffEFEDE7),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14,
+                              fontFamily: 'Poppins',
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ],
               )
