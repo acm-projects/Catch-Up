@@ -174,7 +174,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 color: Color(0xff82B977),
                               ),
                             ),
-                            SizedBox(width: 48),
+                            SizedBox(width: 43),
                             Icon(
                               Icons.arrow_forward_ios,
                               color: Color(0xff82B977),
@@ -244,7 +244,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 color: Color(0xff82B977),
                               ),
                             ),
-                            SizedBox(width: 105),
+                            SizedBox(width: 100),
                             Icon(
                               Icons.arrow_forward_ios,
                               color: Color(0xff82B977),
@@ -314,7 +314,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 color: Color(0xff82B977),
                               ),
                             ),
-                            SizedBox(width: 86),
+                            SizedBox(width: 81),
                             Icon(
                               Icons.arrow_forward_ios,
                               color: Color(0xff82B977),
@@ -385,7 +385,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 color: Color(0xff82B977),
                               ),
                             ),
-                            SizedBox(width: 145),
+                            SizedBox(width: 140),
                             Icon(
                               Icons.arrow_forward_ios,
                               color: Color(0xff82B977),
@@ -455,7 +455,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 color: Color(0xff82B977),
                               ),
                             ),
-                            SizedBox(width: 127),
+                            SizedBox(width: 122),
                             Icon(
                               Icons.arrow_forward_ios,
                               color: Color(0xff82B977),
@@ -525,7 +525,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 color: Color(0xff82B977),
                               ),
                             ),
-                            SizedBox(width: 13),
+                            SizedBox(width: 8),
                             Icon(
                               Icons.arrow_forward_ios,
                               color: Color(0xff82B977),
