@@ -279,7 +279,16 @@ void checkMainFilePath(String filePath) async {
         //
         print('\x1B[33m${File(outputPath)}\x1B[0m');
 
-         _onFileUploadButtonPressed(File(outputPath));
+         //_onFileUploadButtonPressed(File(outputPath));
+
+          
+        FirebaseStorage firebaseStorage = FirebaseStorage.instance;
+         final storageReference = await firebaseStorage
+          .ref('upload-video-firebase')
+          .child(outputPath.substring(
+              outputPath.lastIndexOf('/'), outputPath.length));
+          UploadTask uploadTask = storageReference.putFile(File(outputPath));
+          await uploadTask.whenComplete((){ });
         
 
         
