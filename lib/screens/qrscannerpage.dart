@@ -62,7 +62,7 @@ class _QRScannerPageState extends State<QRScannerPage> {
     );
   }
 
-  void _foundBarcode(Barcode barcode, MobileScannerArguments? args) {
+  void _foundBarcode(BarcodeCapture barcode) { //MobileScannerArguments? args
     /// open screen
     if (!_screenOpened) {
       final String groupId = barcode.rawValue ?? "---"; //gets group id from qr code

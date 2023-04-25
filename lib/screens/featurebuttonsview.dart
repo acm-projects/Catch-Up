@@ -7,8 +7,8 @@ import 'package:catch_up/screens/videopage.dart';
 import 'package:path_provider/path_provider.dart'; 
 import 'package:video_player/video_player.dart';
 import 'dart:io';
+//import 'package:ffmpeg/ffmpeg.dart';
 import 'package:flutter_ffmpeg/flutter_ffmpeg.dart';
-//import 'package:path_provider_ex/path_provider_ex.dart';
 
 
 /*
@@ -25,6 +25,7 @@ For merging videos:
 
 class FeatureButtonsView extends StatefulWidget {
   static String mainUrl = 'not real url';
+  static String mainFilePath = 'empty'; //for ffmpeg
   final Function onUploadComplete;
   final String filePath;
   //final List<String> urls;
@@ -136,33 +137,9 @@ class _FeatureButtonsViewState extends State<FeatureButtonsView> {
 
           String url = await storageReference.getDownloadURL();
 
-          checkMainUrl(url);
+          checkMainFilePath(widget.filePath);
 
-
-          // final file = await _localFile;
-
-          // // Write the file
-          // file.writeAsString('$url');
-
-          //await urlsFile.writeAsString(url + '\n', mode: FileMode.append);
-
-          //get path to text file
-          // final Directory directory = await getApplicationDocumentsDirectory();
-          // final File file = File('${directory.path}/urls.txt');
-          // await file.writeAsString(url);
-
-          ///Users/kanchanj/Desktop/ACM_Projects/Catch-Up/lib/screens/pathFile.txt
-          // final file = await File('Users/kanchanj/Desktop/ACM_Projects/Catch-Up/lib/screens/pathFile.txt');
-
-          // //Write the file
-          // file.writeAsString('$url', mode: FileMode.append);
-
-          //var file = await File('urls.txt').writeAsString('Hi');
-
-          //list of urls uploaded to firebase
-          //VideoPage.urls.add(url);
-          //widget.onUploadComplete(url); //add a url to list everytime a vid is uploaded
-          //videoCount++; 
+          //checkMainUrl(url);
 
           //print('\x1B[33m${widget.urls[0]}\x1B[0m');
           //return  await storageReference.getDownloadURL();
@@ -209,56 +186,99 @@ class _FeatureButtonsViewState extends State<FeatureButtonsView> {
 //    return videoUrls;
 //  }
 
-void checkMainUrl(String url) async {
+void checkMainFilePath(String filePath) async {
   try {
-  if (FeatureButtonsView.mainUrl == 'not real url') { //if main url is empty, set new url to it and don't merge anything
-        String text = 'main Url was null';
+  if (FeatureButtonsView.mainFilePath == 'empty') { //if main url is empty, set new url to it and don't merge anything
+        String text = 'main file path was null';
         print('\x1B[33m$text\x1B[0m');
 
-        FeatureButtonsView.mainUrl = url;
+        FeatureButtonsView.mainFilePath = filePath; 
+        print('\x1B[33m${FeatureButtonsView.mainFilePath}\x1B[0m');
+
         ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('main Url was null'),
+          content: Text('main file path was null'),
         ),
       );
       }
-      else { //if there is a value in mainUrl, merge that url with the new url
-        String text = 'main Url has value';
+      else { //if there is a value in mainFilePath, merge that file path with the new file path
+        String text = 'main file path has value';
         print('\x1B[33m$text\x1B[0m');
-        _videoMerger(url); //call function to merge videos
+        _videoMerger(filePath); //call function to merge videos
     }
 
   } catch (error) {
-      String text = 'Error occured with mainUrl';
+      String text = 'Error occured with main file path';
      print('\x1B[33m$text\x1B[0m ${error.toString()}');
      ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('Error occured with main Url'),
+          content: Text('Error occured with main file path'),
         ),
       );
   }
 }
 
+// void checkMainUrl(String url) async {
+//   try {
+//   if (FeatureButtonsView.mainUrl == 'not real url') { //if main url is empty, set new url to it and don't merge anything
+//         String text = 'main Url was null';
+//         print('\x1B[33m$text\x1B[0m');
 
- void _videoMerger(String url) async {
+//         FeatureButtonsView.mainUrl = url;
+//         ScaffoldMessenger.of(context).showSnackBar(
+//         const SnackBar(
+//           content: Text('main Url was null'),
+//         ),
+//       );
+//       }
+//       else { //if there is a value in mainUrl, merge that url with the new url
+//         String text = 'main Url has value';
+//         print('\x1B[33m$text\x1B[0m');
+//         _videoMerger(url); //call function to merge videos
+//     }
+
+//   } catch (error) {
+//       String text = 'Error occured with mainUrl';
+//      print('\x1B[33m$text\x1B[0m ${error.toString()}');
+//      ScaffoldMessenger.of(context).showSnackBar(
+//         const SnackBar(
+//           content: Text('Error occured with main Url'),
+//         ),
+//       );
+//   }
+// }
+
+
+ void _videoMerger(String filePath) async {  //String url
+
+    //File? outputVideo;
+  //ideoPlayerController? outputVidController;
+
+    List<String> videoPaths = [
+      FeatureButtonsView.mainFilePath,
+      filePath,
+    ];
 
     final appDir = await getApplicationDocumentsDirectory();
     String rawDocumentPath = appDir.path;
     final outputPath = '$rawDocumentPath/output.mp4';
 
+    //final ffmpeg = Fmpeg();
     final FlutterFFmpeg _flutterFFmpeg = new FlutterFFmpeg();
 
     try {
-        String commandToExecute = '-i ${FeatureButtonsView.mainUrl} -i ${url} -filter_complex \'[0:0][1:0]concat=n=2:v=1:a=0[out]\' -map \'[out]\' $outputPath';
+        // String commandToExecute = '-i ${FeatureButtonsView.mainFilePath} -i ${filePath} -filter_complex \'[0:0][1:0]concat=n=2:v=1:a=0[out]\' -map \'[out]\' $outputPath';
+        // _flutterFFmpeg.execute(commandToExecute).then((rc) => print("FFmpeg process exited with rc $rc"));
+        // print('\x1B[33m$outputPath\x1B[0m');\
+    
+
+        String commandToExecute = '-y -i ${FeatureButtonsView.mainFilePath} -i ${filePath} -r 24000/1001 -filter_complex \'[0:v:0][0:a:0][1:v:0][1:a:0]concat=n=2:v=1:a=1[out]\' -map \'[out]\' $outputPath';
+        // String commandToExecute = '-y -i ${FeatureButtonsView.mainFilePath} -i ${filePath} -filter_complex \'[0:0][1:0]concat=n=2:v=1:a=0[out]\' -map \'[out]\' $outputPath';
         _flutterFFmpeg.execute(commandToExecute).then((rc) => print("FFmpeg process exited with rc $rc"));
-        print('\x1B[33m$outputPath\x1B[0m');
-
-
-        // String outputFilePath = '/data/user/0/com.example.catch_up/app_flutter/output.mp4';
-        // RegExp exp = RegExp(r'\/app_flutter\/(.*)');
-        // Match match = exp.firstMatch(outputFilePath) as Match;
-        // String? outputUrl = match.group(1);
-        // print('\x1B[33m$outputUrl\x1B[0m'); // prints "output.mp4"
+        //
+        //
+        print('\x1B[33m${File(outputPath)}\x1B[0m');
+        
 
         
     } catch (error) {
@@ -270,41 +290,13 @@ void checkMainUrl(String url) async {
       );
     }
 
-    FeatureButtonsView.mainUrl = outputPath; //set new merged video to main url
+    FeatureButtonsView.mainFilePath = outputPath; //set new merged video to main url
 
   }
 
 }
 
-//Uploads Video File to Firebase
-  // Future<void> _onFileUploadButtonPressed() async {
-  //   FirebaseStorage firebaseStorage = FirebaseStorage.instance;
-  //   setState(() {
-  //     _isUploading = true;
-  //   });
-  //   try {
-  //     //uploads file
-  //     await firebaseStorage
-  //         .ref('upload-video-firebase')
-  //         .child(widget.filePath.substring(
-  //             widget.filePath.lastIndexOf('/'), widget.filePath.length))
-  //         .putFile(File(widget.filePath));
-  //     widget.onUploadComplete();
 
-  //   } catch (error) {
-  //     // error, only execute if it does not upload
-  //     print('Error occured while uplaoding to Firebase ${error.toString()}');
-  //     ScaffoldMessenger.of(context).showSnackBar(
-  //       SnackBar(
-  //         content: Text('Error occured while uplaoding'),
-  //       ),
-  //     );
-  //   } finally {
-  //     setState(() {
-  //       _isUploading = false;
-  //     });
-  //   }
-  // }
 
 
 
@@ -328,39 +320,6 @@ void checkMainUrl(String url) async {
   //   setState(() {});
   // }
 
-  // void _onPlayButtonPressed() {
-  //   if (!_isPlaying) {
-  //     _isPlaying = true;
-  //  _videoPlayerController.initialize();
-  //  _videoPlayerController.setLooping(true); // pause or loop? fix later
-  //  _videoPlayerController.play();
-  //       setState(() {
-  //         _isPlaying = false;
-  //       });
-  //   } else {
-  //     _videoPlayerController.pause();
-  //     _isPlaying = false;
-  //   }
-  //   setState(() {});
-  // }
-  // Future<void> _startRecording() async {
-  //   if (_isRecorded) {
-  //     // true ?
-  //     Directory directory = await getApplicationDocumentsDirectory();
-  //     String filepath = directory.path +
-  //         '/' +
-  //         DateTime.now().millisecondsSinceEpoch.toString() +
-  //         '.mp4';
-  //     _videoPlayerController =
-  //         VideoPlayerController.file(File(widget.filePath));
-  //     //FlutterAudioRecorder2(filepath, audioFormat: AudioFormat.AAC);
-  //     await _videoPlayerController.initialize;
-  //     _videoPlayerController.play();
-  //     //_filePath = filepath;
-  //     setState(() {});
-  //   } else {
-  //     content:
-  //     Center(child: Text('The video was not able to be recorded'));
-  //   }
-  // }
+
+ 
 

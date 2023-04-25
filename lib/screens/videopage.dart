@@ -9,6 +9,7 @@ import 'package:catch_up/screens/featurebuttonsview.dart';
 import 'cloudrecordlistview.dart';
 class VideoPage extends StatefulWidget {
   //static late
+
  
   final String filePath;
   VideoPage({Key? key, required this.filePath}) : super(key: key);
