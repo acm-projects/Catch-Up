@@ -330,7 +330,7 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    int totalTime = (3 * 3600) + (30 * 60) + 15;
+    int totalTime = (23 * 3600) + (30 * 60) + 15;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xffEFEDE7),

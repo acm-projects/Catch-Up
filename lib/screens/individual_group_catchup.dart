@@ -1,10 +1,12 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:catch_up/screens/chewie_item.dart';
 import 'package:catch_up/screens/friends.dart';
 import 'package:flutter/material.dart';
-
+import 'package:video_player/video_player.dart';
 import 'home.dart';
 import 'join_group_page.dart';
+import 'package:chewie/chewie.dart';
 
 class GroupCatchUp extends StatefulWidget {
   const GroupCatchUp({super.key});
@@ -14,7 +16,6 @@ class GroupCatchUp extends StatefulWidget {
 }
 
 class _GroupCatchUpState extends State<GroupCatchUp> {
-  @override
   Widget build(BuildContext context) {
     int totalTime = (3 * 3600) + (30 * 60) + 15;
     return Scaffold(
@@ -326,6 +327,15 @@ class _GroupCatchUpState extends State<GroupCatchUp> {
                           offset: const Offset(0, 10),
                         ),
                       ]),
+                  child: Center(
+                    child: ChewieListItem(
+                      videoPlayerController: VideoPlayerController.asset(
+                        'assets/selfie.mp4',
+                      ),
+                      looping: true,
+                      key: null,
+                    ),
+                  ),
                 ),
                 SizedBox(height: 20),
                 //Join group button
