@@ -129,8 +129,8 @@ class _AllGroupsState extends State<AllGroups> {
                       onPressed: () {
                         Navigator.of(context).push(
                             MaterialPageRoute(builder: ((BuildContext context) {
-                          return const SendPage();
-                          //return const ExistingGroup();
+                          //return const SendPage();
+                          return const ExistingGroup();
                         })));
                       },
                       style: ElevatedButton.styleFrom(

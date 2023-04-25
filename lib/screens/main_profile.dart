@@ -2,6 +2,7 @@
 
 import 'package:catch_up/screens/friends.dart';
 import 'package:catch_up/screens/join_add_group.dart';
+import 'package:catch_up/screens/login_options.dart';
 import 'package:catch_up/screens/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -251,7 +252,12 @@ class ProfilePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       ElevatedButton(
-                        onPressed: signOut,
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: ((BuildContext context) {
+                            return const LoginOptions();
+                          })));
+                        },
                         style: ElevatedButton.styleFrom(
                             padding: EdgeInsets.symmetric(horizontal: 20),
                             backgroundColor: Color(0xff82B977),

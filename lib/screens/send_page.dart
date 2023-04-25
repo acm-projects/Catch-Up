@@ -495,7 +495,7 @@ class _SendPageState extends State<SendPage> {
                                     color: Color(0xffEFEDE7),
                                   ),
                                 ),
-                                SizedBox(width: 13),
+                                SizedBox(width: 11),
                                 Icon(
                                   (click6 == false)
                                       ? Icons.radio_button_unchecked
