@@ -163,7 +163,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 ),
                               ),
                             ),
-                            SizedBox(width: 25),
+                            SizedBox(width: 20),
                             const Text(
                               'ACM Overlords',
                               textAlign: TextAlign.center,
@@ -174,7 +174,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 color: Color(0xff82B977),
                               ),
                             ),
-                            SizedBox(width: 48),
+                            SizedBox(width: 43),
                             Icon(
                               Icons.arrow_forward_ios,
                               color: Color(0xff82B977),
@@ -233,7 +233,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 ),
                               ),
                             ),
-                            SizedBox(width: 25),
+                            SizedBox(width: 20),
                             const Text(
                               'Basketball',
                               textAlign: TextAlign.center,
@@ -244,7 +244,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 color: Color(0xff82B977),
                               ),
                             ),
-                            SizedBox(width: 105),
+                            SizedBox(width: 100),
                             Icon(
                               Icons.arrow_forward_ios,
                               color: Color(0xff82B977),
@@ -303,7 +303,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 ),
                               ),
                             ),
-                            SizedBox(width: 25),
+                            SizedBox(width: 20),
                             const Text(
                               'Roommates',
                               textAlign: TextAlign.center,
@@ -314,7 +314,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 color: Color(0xff82B977),
                               ),
                             ),
-                            SizedBox(width: 86),
+                            SizedBox(width: 81),
                             Icon(
                               Icons.arrow_forward_ios,
                               color: Color(0xff82B977),
@@ -374,7 +374,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 ),
                               ),
                             ),
-                            SizedBox(width: 25),
+                            SizedBox(width: 20),
                             const Text(
                               'Familia',
                               textAlign: TextAlign.center,
@@ -385,7 +385,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 color: Color(0xff82B977),
                               ),
                             ),
-                            SizedBox(width: 145),
+                            SizedBox(width: 140),
                             Icon(
                               Icons.arrow_forward_ios,
                               color: Color(0xff82B977),
@@ -444,7 +444,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 ),
                               ),
                             ),
-                            SizedBox(width: 25),
+                            SizedBox(width: 20),
                             const Text(
                               'CS 1337',
                               textAlign: TextAlign.center,
@@ -455,7 +455,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 color: Color(0xff82B977),
                               ),
                             ),
-                            SizedBox(width: 127),
+                            SizedBox(width: 122),
                             Icon(
                               Icons.arrow_forward_ios,
                               color: Color(0xff82B977),
@@ -514,7 +514,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 ),
                               ),
                             ),
-                            SizedBox(width: 25),
+                            SizedBox(width: 20),
                             const Text(
                               'Ridwan Hate Club',
                               textAlign: TextAlign.center,
@@ -525,7 +525,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 color: Color(0xff82B977),
                               ),
                             ),
-                            SizedBox(width: 13),
+                            SizedBox(width: 8),
                             Icon(
                               Icons.arrow_forward_ios,
                               color: Color(0xff82B977),
