@@ -3,6 +3,7 @@
 import 'package:catch_up/screens/individual_group_catchup.dart';
 import 'package:catch_up/screens/random_group1.dart';
 import 'package:catch_up/screens/random_group2.dart';
+import 'package:catch_up/screens/send_page.dart';
 import 'package:flutter/material.dart';
 import 'package:catch_up/screens/individual_group.dart';
 import 'random_group3.dart';
@@ -128,7 +129,8 @@ class _AllGroupsState extends State<AllGroups> {
                       onPressed: () {
                         Navigator.of(context).push(
                             MaterialPageRoute(builder: ((BuildContext context) {
-                          return const ExistingGroup();
+                          return const SendPage();
+                          //return const ExistingGroup();
                         })));
                       },
                       style: ElevatedButton.styleFrom(

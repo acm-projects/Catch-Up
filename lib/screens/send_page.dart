@@ -123,14 +123,14 @@ class _SendPageState extends State<SendPage> {
                                     ),
                                     shape: BoxShape.circle,
                                     image: const DecorationImage(
-                                      image: AssetImage('assets/group1.png'),
+                                      image: AssetImage('assets/acm-logo.png'),
                                       fit: BoxFit.cover,
                                     ),
                                   ),
                                 ),
-                                SizedBox(width: 25),
+                                SizedBox(width: 20),
                                 const Text(
-                                  'Group #1',
+                                  'ACM Overlords',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
@@ -139,7 +139,7 @@ class _SendPageState extends State<SendPage> {
                                     color: Color(0xffEFEDE7),
                                   ),
                                 ),
-                                SizedBox(width: 75),
+                                SizedBox(width: 20),
                                 Icon(
                                   (click1 == false)
                                       ? Icons.radio_button_unchecked
@@ -194,14 +194,15 @@ class _SendPageState extends State<SendPage> {
                                     ),
                                     shape: BoxShape.circle,
                                     image: const DecorationImage(
-                                      image: AssetImage('assets/group1.png'),
+                                      image:
+                                          AssetImage('assets/basketball.jpg'),
                                       fit: BoxFit.cover,
                                     ),
                                   ),
                                 ),
-                                SizedBox(width: 25),
+                                SizedBox(width: 20),
                                 const Text(
-                                  'Group #2',
+                                  'Basketball',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
@@ -265,14 +266,14 @@ class _SendPageState extends State<SendPage> {
                                     ),
                                     shape: BoxShape.circle,
                                     image: const DecorationImage(
-                                      image: AssetImage('assets/group1.png'),
+                                      image: AssetImage('assets/roommates.png'),
                                       fit: BoxFit.cover,
                                     ),
                                   ),
                                 ),
-                                SizedBox(width: 25),
+                                SizedBox(width: 20),
                                 const Text(
-                                  'Group #3',
+                                  'Roommates',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
@@ -281,7 +282,7 @@ class _SendPageState extends State<SendPage> {
                                     color: Color(0xffEFEDE7),
                                   ),
                                 ),
-                                SizedBox(width: 75),
+                                SizedBox(width: 57),
                                 Icon(
                                   (click3 == false)
                                       ? Icons.radio_button_unchecked
@@ -341,9 +342,9 @@ class _SendPageState extends State<SendPage> {
                                     ),
                                   ),
                                 ),
-                                SizedBox(width: 25),
+                                SizedBox(width: 20),
                                 const Text(
-                                  'Group #4',
+                                  'Familia',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
@@ -352,7 +353,7 @@ class _SendPageState extends State<SendPage> {
                                     color: Color(0xffEFEDE7),
                                   ),
                                 ),
-                                SizedBox(width: 75),
+                                SizedBox(width: 112),
                                 Icon(
                                   (click4 == false)
                                       ? Icons.radio_button_unchecked
@@ -407,14 +408,14 @@ class _SendPageState extends State<SendPage> {
                                     ),
                                     shape: BoxShape.circle,
                                     image: const DecorationImage(
-                                      image: AssetImage('assets/group1.png'),
+                                      image: AssetImage('assets/cs1337.png'),
                                       fit: BoxFit.cover,
                                     ),
                                   ),
                                 ),
-                                SizedBox(width: 25),
+                                SizedBox(width: 20),
                                 const Text(
-                                  'Group #5',
+                                  'CS 1337',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
@@ -423,7 +424,7 @@ class _SendPageState extends State<SendPage> {
                                     color: Color(0xffEFEDE7),
                                   ),
                                 ),
-                                SizedBox(width: 75),
+                                SizedBox(width: 97),
                                 Icon(
                                   (click5 == false)
                                       ? Icons.radio_button_unchecked
@@ -483,18 +484,18 @@ class _SendPageState extends State<SendPage> {
                                     ),
                                   ),
                                 ),
-                                SizedBox(width: 25),
+                                SizedBox(width: 10),
                                 const Text(
-                                  'Group #6',
+                                  'Ridwan Hate Club',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 24,
+                                    fontSize: 22,
                                     fontFamily: 'Poppins',
                                     color: Color(0xffEFEDE7),
                                   ),
                                 ),
-                                SizedBox(width: 75),
+                                SizedBox(width: 13),
                                 Icon(
                                   (click6 == false)
                                       ? Icons.radio_button_unchecked
