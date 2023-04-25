@@ -278,6 +278,8 @@ void checkMainFilePath(String filePath) async {
         //
         //
         print('\x1B[33m${File(outputPath)}\x1B[0m');
+
+         _onFileUploadButtonPressed(File(outputPath));
         
 
         
