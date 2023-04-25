@@ -261,7 +261,7 @@ void checkMainFilePath(String filePath) async {
 
     final appDir = await getApplicationDocumentsDirectory();
     String rawDocumentPath = appDir.path;
-    final outputPath = '$rawDocumentPath/output.mp4';
+    final outputPath = '$rawDocumentPath/output1.mp4';
 
     //final ffmpeg = Fmpeg();
     final FlutterFFmpeg _flutterFFmpeg = new FlutterFFmpeg();
@@ -278,6 +278,8 @@ void checkMainFilePath(String filePath) async {
         //
         //
         print('\x1B[33m${File(outputPath)}\x1B[0m');
+
+
 
          //_onFileUploadButtonPressed(File(outputPath));
 
