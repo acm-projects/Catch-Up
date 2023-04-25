@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:camera/camera.dart';
 import 'package:catch_up/screens/send_page.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -75,7 +77,7 @@ class _FeatureButtonsViewState extends State<FeatureButtonsView> {
                   ElevatedButton.icon(
                     // upload video button (frontend)
                     //color:Colors.green,
-                    icon: Icon(Icons.rectangle), //Icons.upload_file),
+                    icon: Icon(Icons.upload), //Icons.upload_file),
                     label: Text("Upload"),
                     onPressed: _onFileUploadButtonPressed,
                   ),

@@ -163,7 +163,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 ),
                               ),
                             ),
-                            SizedBox(width: 25),
+                            SizedBox(width: 20),
                             const Text(
                               'ACM Overlords',
                               textAlign: TextAlign.center,
@@ -233,7 +233,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 ),
                               ),
                             ),
-                            SizedBox(width: 25),
+                            SizedBox(width: 20),
                             const Text(
                               'Basketball',
                               textAlign: TextAlign.center,
@@ -303,7 +303,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 ),
                               ),
                             ),
-                            SizedBox(width: 25),
+                            SizedBox(width: 20),
                             const Text(
                               'Roommates',
                               textAlign: TextAlign.center,
@@ -374,7 +374,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 ),
                               ),
                             ),
-                            SizedBox(width: 25),
+                            SizedBox(width: 20),
                             const Text(
                               'Familia',
                               textAlign: TextAlign.center,
@@ -444,7 +444,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 ),
                               ),
                             ),
-                            SizedBox(width: 25),
+                            SizedBox(width: 20),
                             const Text(
                               'CS 1337',
                               textAlign: TextAlign.center,
@@ -514,7 +514,7 @@ class _AllGroupsState extends State<AllGroups> {
                                 ),
                               ),
                             ),
-                            SizedBox(width: 25),
+                            SizedBox(width: 20),
                             const Text(
                               'Ridwan Hate Club',
                               textAlign: TextAlign.center,
