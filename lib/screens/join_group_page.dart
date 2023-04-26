@@ -103,7 +103,7 @@ class _JoinGroupPageState extends State<JoinGroupPage> {
                             MaterialPageRoute(
                               builder: (BuildContext context) {
                                 //change to new page
-                                return ScannerPage(title: 'Scanner');
+                                return QRScanner(title: 'Scanner');
                               },
                             ),
                           );
