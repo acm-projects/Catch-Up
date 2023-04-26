@@ -1,5 +1,6 @@
 import 'package:camera/camera.dart';
 import 'package:catch_up/screens/homepage.dart';
+import 'package:catch_up/screens/temporarydisplay.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:catch_up/screens/camerapage.dart';
@@ -44,6 +45,7 @@ class _FeatureButtonsViewState extends State<FeatureButtonsView> {
   //final File file = File('Users/kanchanj/Desktop/ACM_Projects/Catch-Up/lib/screens/pathFile.txt');
   int videoCount = 0;
   //List<String> urls = [];
+  late String displayFile;
   List<File> _videos = [];
   late bool _isPlaying;
   late bool _isUploading;
@@ -82,10 +84,14 @@ class _FeatureButtonsViewState extends State<FeatureButtonsView> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  // IconButton(
-                  //   icon: Icon(Icons.replay),
-                  //   onPressed: _onRecordAgainButtonPressed,
-                  // ),
+                  ElevatedButton(
+                  onPressed: (){
+                     Navigator.push(context, MaterialPageRoute(fullscreenDialog: true,
+        builder: (_) => TemporaryPage(filePath: FeatureButtonsView.mainFilePath),)
+                     );
+                  }, 
+                  child: Text("Go to Next Page")
+                ),
                   // IconButton(
                   //   icon: Icon(_isPlaying ? Icons.pause : Icons.play_arrow),
                   //   onPressed: _onPlayButtonPressed,
@@ -109,13 +115,14 @@ class _FeatureButtonsViewState extends State<FeatureButtonsView> {
   }
 
   Future<void> uploadFile() async {
+     downloadVideoURL();
     _onFileUploadButtonPressed(File(widget.filePath));
    // uploadFiles(_videos);
   }
 
 
-  //upload to specific group
-  Future<String> _onFileUploadButtonPressed(File video) async {
+ 
+   Future<String> _onFileUploadButtonPressed(File video) async {
     String videoUrl = "";
     FirebaseStorage firebaseStorage = FirebaseStorage.instance;
     setState(() {
@@ -162,29 +169,6 @@ class _FeatureButtonsViewState extends State<FeatureButtonsView> {
   }
 
 
-  // Future<String> get _localPath async {
-  //   final directory = await getApplicationDocumentsDirectory();
-
-  //   return directory.path;
-  // }
-
-  // Future<File> get _localFile async {
-  //   final path = await _localPath;
-  //   return File('$path/pathFile.txt');
-  // }
-
-
-
-
-//   Future<List<String>> uploadFiles(List<File> _videos) async {
-//    var videoUrls = await Future.wait(_videos.map((_video) => _onFileUploadButtonPressed(_video)));
-   
-//    //print(videoUrls);
-//     String text = "WORKING";
-//    print('\x1B[33m$text\x1B[0m');
-
-//    return videoUrls;
-//  }
 
 void checkMainFilePath(String filePath) async {
   try {
@@ -261,7 +245,7 @@ void checkMainFilePath(String filePath) async {
 
     final appDir = await getApplicationDocumentsDirectory();
     String rawDocumentPath = appDir.path;
-    final outputPath = '$rawDocumentPath/output1.mp4';
+    final outputPath = '$rawDocumentPath/output2.mp4';
 
     //final ffmpeg = Fmpeg();
     final FlutterFFmpeg _flutterFFmpeg = new FlutterFFmpeg();
@@ -279,9 +263,7 @@ void checkMainFilePath(String filePath) async {
         //
         print('\x1B[33m${File(outputPath)}\x1B[0m');
 
-
-
-         //_onFileUploadButtonPressed(File(outputPath));
+        
 
           
         FirebaseStorage firebaseStorage = FirebaseStorage.instance;
@@ -291,7 +273,14 @@ void checkMainFilePath(String filePath) async {
               outputPath.lastIndexOf('/'), outputPath.length));
           UploadTask uploadTask = storageReference.putFile(File(outputPath));
           await uploadTask.whenComplete((){ });
-        
+
+
+         final file = File(outputPath);
+
+      
+         displayFile = file.path;
+
+         FeatureButtonsView.mainFilePath = outputPath; //set new merged video to main url
 
         
     } catch (error) {
@@ -303,13 +292,31 @@ void checkMainFilePath(String filePath) async {
       );
     }
 
-    FeatureButtonsView.mainFilePath = outputPath; //set new merged video to main url
+    
 
   }
-
 }
 
+//download merged video
+Future<String> downloadVideoURL() async {
+  FirebaseStorage firebaseStorage = FirebaseStorage.instance;
+  //final gsReference = FirebaseStorage.instance.refFromURL("gs://catch-up-b338c.appspot.com/upload-video-firebase/output1.mp4");
+  
 
+    try {
+      String downloadURL =
+          await firebaseStorage.ref('${FeatureButtonsView.mainFilePath}').getDownloadURL();
+      //String downloadURL = gsReference.getDownloadURL() as String;
+      // ignore: avoid_print
+      print('\x1B[33m${downloadURL}\x1B[0m');
+     // print(downloadURL);
+      return downloadURL;
+    } on FirebaseException catch (e) {
+      // ignore: avoid_print
+      print(e);
+    }
+    return '';
+  }
 
 
 

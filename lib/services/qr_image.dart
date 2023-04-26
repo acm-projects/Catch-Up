@@ -3,7 +3,7 @@ import 'package:qr_flutter/qr_flutter.dart';
 import 'package:flutter/material.dart';
 
 class QRImage extends StatefulWidget {
-   final String groupId = CreateGroup.groupId;
+   final String groupId = 'vOL17NCFPrdZ78zfRVDV';
    QRImage(String groupId, {super.key}); //group Id generated when creating a group
 
   //final TextEditingController controller = TextEditingController();

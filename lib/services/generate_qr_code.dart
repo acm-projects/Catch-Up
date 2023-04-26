@@ -47,7 +47,7 @@ class _GenerateQRCodeState extends State<GenerateQRCode> {
                   context,
                   MaterialPageRoute(
                     builder: ((context) {
-                      return QRImage(CreateGroup.groupId); //This should go on the groups page
+                      return QRImage('vOL17NCFPrdZ78zfRVDV'); //This should go on the groups page
                     }),
                   ),
                 );

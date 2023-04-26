@@ -1,81 +1,86 @@
+import 'package:catch_up/screens/home.dart';
 import 'package:catch_up/screens/qrjoingrouppage.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:visibility_detector/visibility_detector.dart';
+import 'package:flutter_barcode_listener/flutter_barcode_listener.dart';
 
-class QRScannerPage extends StatefulWidget {
-  const QRScannerPage({super.key});
 
+class Scanner extends StatelessWidget {
+  // This widget is the root of your application.
   @override
-  State<QRScannerPage> createState() => _QRScannerPageState();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'QR Scanner',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: ScannerPage(title: 'QR Scanner'),
+    );
+  }
 }
 
-class _QRScannerPageState extends State<QRScannerPage> {
-    MobileScannerController scannerController = MobileScannerController();
-    bool _screenOpened = false;
+class ScannerPage extends StatefulWidget {
+  ScannerPage({Key? key, required this.title}) : super(key: key);
 
+  final String title;
+  static late String id;
+
+  @override
+  _ScannerPageState createState() => _ScannerPageState();
+}
+
+class _ScannerPageState extends State<ScannerPage> {
+  late String _barcode;
+  late bool visible;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Mobile Scanner"),
-        actions: [
-          IconButton(
-            color: Colors.white,
-            icon: ValueListenableBuilder(
-              valueListenable: scannerController.torchState,
-              builder: (context, state, child) {
-                switch (state as TorchState) {
-                  case TorchState.off:
-                    return const Icon(Icons.flash_off, color: Colors.grey);
-                  case TorchState.on:
-                    return const Icon(Icons.flash_on, color: Colors.yellow);
-                }
-              },
-            ),
-            iconSize: 32.0,
-            onPressed: () => scannerController.toggleTorch(),
-          ),
-          IconButton(
-            color: Colors.white,
-            icon: ValueListenableBuilder(
-              valueListenable: scannerController.cameraFacingState,
-              builder: (context, state, child) {
-                switch (state as CameraFacing) {
-                  case CameraFacing.front:
-                    return const Icon(Icons.camera_front);
-                  case CameraFacing.back:
-                    return const Icon(Icons.camera_rear);
-                }
-              },
-            ),
-            iconSize: 32.0,
-            onPressed: () => scannerController.switchCamera(),
-          ),
-        ],
+        title: Text(widget.title),
       ),
-      body: MobileScanner(
-        //allowDuplicates: true,
-        controller: scannerController,
-        onDetect: _foundBarcode,
+      body: Center(
+        // Add visiblity detector to handle barcode
+        // values only when widget is visible
+        child: VisibilityDetector(
+          onVisibilityChanged: (VisibilityInfo info) {
+            visible = info.visibleFraction > 0;
+          },
+          key: Key('visible-detector-key'),
+          child: BarcodeKeyboardListener(
+            bufferDuration: Duration(milliseconds: 200),
+            onBarcodeScanned: (barcode) {
+              if (!visible) return;
+              print(barcode);
+              setState(() {
+                _barcode = barcode;
+                ScannerPage.id = barcode;
+              });
+            },
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  _barcode == null ? 'SCAN BARCODE' : 'BARCODE: ${ScannerPage.id}',
+                  style: Theme.of(context).textTheme.headlineSmall,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: ElevatedButton(
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  QRJoinGroup())),
+                      child: Center(child: Text('Second screen'))),
+                )
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
-
-  void _foundBarcode(BarcodeCapture barcode) { //MobileScannerArguments? args
-    /// open screen
-    if (!_screenOpened) {
-      final String groupId = barcode.rawValue ?? "---"; //gets group id from qr code
-      debugPrint('Group Id found! $groupId');
-      _screenOpened = true;
-
-      Navigator.push(context, MaterialPageRoute(builder: (context) =>
-          QRJoinGroup(screenClosed: _screenWasClosed, groupId: groupId),)); //passes that group Id into qrjoingrouppage
-    }
-  }
-
-  void _screenWasClosed() {
-    _screenOpened = false;
-  }
 }
-

@@ -8,7 +8,6 @@ import 'package:catch_up/screens/camerapage.dart';
 import 'package:catch_up/screens/featurebuttonsview.dart';
 import 'cloudrecordlistview.dart';
 class VideoPage extends StatefulWidget {
-  //static late
 
  
   final String filePath;
@@ -20,7 +19,6 @@ class _VideoPageState extends State<VideoPage> {
   late VideoPlayerController _videoPlayerController;
 List<Reference> references = [];
  final List<String> urls = [];
- //String url = "123";
 
 
 @override
@@ -35,7 +33,7 @@ void initState() {
     super.dispose();
   }
   Future _initVideoPlayer() async {
-    _videoPlayerController = VideoPlayerController.file(File(widget.filePath)); 
+    _videoPlayerController = VideoPlayerController.file(File(widget.filePath)); //
     await _videoPlayerController.initialize();
     await _videoPlayerController.setLooping(true);
     await _videoPlayerController.play();

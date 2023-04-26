@@ -52,6 +52,9 @@ dependencies:
   mobile_scanner: ^3.2.0
   qr_flutter: ^4.0.0
   ffmpeg: ^0.0.1
+  qr_code_scanner: ^1.0.1
+  visibility_detector: ^0.4.0+2
+  flutter_barcode_listener: ^0.1.3
 
     
 

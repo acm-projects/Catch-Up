@@ -1,6 +1,7 @@
 //New Login Page
 import 'package:catch_up/screens/createGroupPage.dart';
 import 'package:catch_up/services/auth.dart'; //auth services class
+import 'package:catch_up/services/generate_qr_code.dart';
 import 'package:cloud_firestore/cloud_firestore.dart'; //firestore
 import 'package:flutter/material.dart'; 
 import 'package:firebase_auth/firebase_auth.dart'; //auth package
@@ -114,7 +115,7 @@ class _LoginPageState extends State<LoginPage> {
         Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (BuildContext context) {
-                            return CreateGroup();
+                            return GenerateQRCode(); //originally CreateGroup
                           },
                         ),
                       );
