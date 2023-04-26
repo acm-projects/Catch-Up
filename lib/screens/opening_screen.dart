@@ -5,6 +5,7 @@ import 'package:catch_up/Widgets/widgetTree.dart';
 import 'package:catch_up/screens/camerapage.dart';
 import 'package:catch_up/screens/login_options.dart';
 import 'package:catch_up/screens/login_register_page.dart';
+import 'package:catch_up/services/generate_qr_code.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -49,6 +50,7 @@ class SplashScreen extends StatelessWidget {
       ),
       backgroundColor: Colors.white,
       nextScreen: const WidgetTree(),
+      //nextScreen: const GenerateQRCode(),
       splashIconSize: double.infinity,
     );
   }

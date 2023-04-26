@@ -234,7 +234,7 @@ class ActionButton extends StatelessWidget {
 
 class CountdownTimer extends StatefulWidget {
   final int duration;
-  final int totalTime = (3 * 3600) + (30 * 60) + 15;
+  final int totalTime = (23 * 3600) + (57 * 60) + 29;
   CountdownTimer({this.duration = 60});
 
   @override
@@ -330,7 +330,7 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    int totalTime = (3 * 3600) + (30 * 60) + 15;
+    int totalTime = (23 * 3600) + (57 * 60) + 29;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xffEFEDE7),
