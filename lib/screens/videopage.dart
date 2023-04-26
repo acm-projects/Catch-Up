@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:catch_up/screens/camerapage.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
@@ -52,7 +54,7 @@ class _VideoPageState extends State<VideoPage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Upload Example'),
+          title: Text('Upload Catch Up'),
         ),
         body: Column(
           children: [

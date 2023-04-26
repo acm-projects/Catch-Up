@@ -59,7 +59,7 @@ class _FeatureButtonsViewState extends State<FeatureButtonsView> {
                   Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: LinearProgressIndicator()),
-                  Text('Uplaoding to Firebase'),
+                  Text('Uploading to Firebase'),
                 ],
               )
             : Row(
@@ -79,11 +79,12 @@ class _FeatureButtonsViewState extends State<FeatureButtonsView> {
 
 //sign in button
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 150.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 130.0),
                     child: ElevatedButton(
                       onPressed: _onFileUploadButtonPressed,
                       style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 20),
                           backgroundColor: const Color(0xff82B977),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
@@ -91,13 +92,16 @@ class _FeatureButtonsViewState extends State<FeatureButtonsView> {
                       child: Row(
                         // ignore: prefer_const_literals_to_create_immutables
                         children: [
-                          Icon(Icons.upload),
+                          Icon(
+                            Icons.upload,
+                            size: 30,
+                          ),
                           Text(
                             'Upload',
                             style: TextStyle(
                               color: const Color(0xffEFEDE7),
                               fontWeight: FontWeight.bold,
-                              fontSize: 14,
+                              fontSize: 16,
                               fontFamily: 'Poppins',
                             ),
                           ),
