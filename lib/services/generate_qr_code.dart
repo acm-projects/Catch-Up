@@ -1,3 +1,4 @@
+import 'package:catch_up/screens/createGroupPage.dart';
 import 'package:flutter/material.dart';
 import 'package:catch_up/services/qr_image.dart';
 import 'package:qr_flutter/qr_flutter.dart';
@@ -8,6 +9,8 @@ import 'package:qr_flutter/qr_flutter.dart';
 //instead of entering group name, you scan it 
 //so if you click "go" to take you to the group's join page, scan replaces the go button
 
+
+//don't need this page in final app, this just asks user to enter url and user clicks button that goes to a qr code with that utl
 
 class GenerateQRCode extends StatefulWidget {
   const GenerateQRCode({super.key});
@@ -44,7 +47,7 @@ class _GenerateQRCodeState extends State<GenerateQRCode> {
                   context,
                   MaterialPageRoute(
                     builder: ((context) {
-                      return QRImage(controller);
+                      return QRImage('vOL17NCFPrdZ78zfRVDV'); //This should go on the groups page
                     }),
                   ),
                 );

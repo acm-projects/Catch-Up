@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_local_variable, unnecessary_new, sort_child_properties_last, sized_box_for_whitespace
 
+import 'package:catch_up/screens/qrscannerpage.dart';
 import 'package:flutter/material.dart';
 
 class JoinGroupPage extends StatefulWidget {
@@ -97,7 +98,16 @@ class _JoinGroupPageState extends State<JoinGroupPage> {
                   padding: const EdgeInsets.symmetric(horizontal: 130.0),
                   child: ElevatedButton(
                     //make it go to group page
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (BuildContext context) {
+                                //change to new page
+                                return ScannerPage(title: 'Scanner');
+                              },
+                            ),
+                          );
+                    },
                     style: ElevatedButton.styleFrom(
                         padding: EdgeInsets.symmetric(horizontal: 20),
                         backgroundColor: const Color(0xff82B977),
