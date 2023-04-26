@@ -79,7 +79,7 @@ class _FeatureButtonsViewState extends State<FeatureButtonsView> {
 
 //sign in button
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 130.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 125.0),
                     child: ElevatedButton(
                       onPressed: _onFileUploadButtonPressed,
                       style: ElevatedButton.styleFrom(
