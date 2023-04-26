@@ -37,14 +37,14 @@ class _QRJoinGroupState extends State<QRJoinGroup> {
     members.add(uid);
 
     //update members list in group's doc in groups collection
-    await _firestore.collection('groups').doc(ScannerPage.id).update({
+    await _firestore.collection('groups').doc(QRScanner.groupId).update({
         'members': FieldValue.arrayUnion(members), //adds list of one member to array of members
     });
 
     //add group to groups collection in user collection
     Map<String, dynamic> userDataToSave = {
       //'groupName': _groupName.text,
-      'grouId': ScannerPage.id,
+      'groupId': QRScanner.groupId,
     };
 
     //add group to user's groups collection
@@ -76,7 +76,7 @@ class _QRJoinGroupState extends State<QRJoinGroup> {
             children: [
               Text("Scanned Code:", style: TextStyle(fontSize: 20,),),
               SizedBox(height: 20,),
-              Text(ScannerPage.id, style: TextStyle(fontSize: 16,),),
+              Text(QRScanner.groupId, style: TextStyle(fontSize: 16,),),
             ],
           ),
         ),
