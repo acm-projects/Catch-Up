@@ -479,7 +479,8 @@ class _SendPageState extends State<SendPage> {
                                     ),
                                     shape: BoxShape.circle,
                                     image: const DecorationImage(
-                                      image: AssetImage('assets/group1.png'),
+                                      image:
+                                          AssetImage('assets/hateclubpfp.jpg'),
                                       fit: BoxFit.cover,
                                     ),
                                   ),

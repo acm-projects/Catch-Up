@@ -17,7 +17,7 @@ class GroupCatchUp extends StatefulWidget {
 
 class _GroupCatchUpState extends State<GroupCatchUp> {
   Widget build(BuildContext context) {
-    int totalTime = (3 * 3600) + (30 * 60) + 15;
+    int totalTime = (24 * 3600) + (0 * 60) + 15;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xffEFEDE7),
