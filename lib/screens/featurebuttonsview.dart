@@ -79,7 +79,7 @@ class _FeatureButtonsViewState extends State<FeatureButtonsView> {
 
 //sign in button
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 130.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 125.0),
                     child: ElevatedButton(
                       onPressed: _onFileUploadButtonPressed,
                       style: ElevatedButton.styleFrom(
@@ -94,14 +94,14 @@ class _FeatureButtonsViewState extends State<FeatureButtonsView> {
                         children: [
                           Icon(
                             Icons.upload,
-                            size: 30,
+                            color: const Color(0xffEFEDE7),
                           ),
                           Text(
-                            'Upload',
+                            'Upload Video',
                             style: TextStyle(
                               color: const Color(0xffEFEDE7),
                               fontWeight: FontWeight.bold,
-                              fontSize: 16,
+                              fontSize: 14,
                               fontFamily: 'Poppins',
                             ),
                           ),
@@ -135,10 +135,10 @@ class _FeatureButtonsViewState extends State<FeatureButtonsView> {
       widget.onUploadComplete();
     } catch (error) {
       // error, only execute if it does not upload
-      print('Error occured while uplaoding to Firebase ${error.toString()}');
+      print('Error occured while uploading to Firebase ${error.toString()}');
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('Error occured while uplaoding'),
+          content: Text('Error occured while uploading'),
         ),
       );
     } finally {

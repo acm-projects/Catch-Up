@@ -17,7 +17,7 @@ class GroupCatchUp extends StatefulWidget {
 
 class _GroupCatchUpState extends State<GroupCatchUp> {
   Widget build(BuildContext context) {
-    int totalTime = (3 * 3600) + (30 * 60) + 15;
+    int totalTime = (24 * 3600) + (0 * 60) + 15;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: const Color(0xffEFEDE7),
@@ -237,6 +237,33 @@ class _GroupCatchUpState extends State<GroupCatchUp> {
 
                 SizedBox(height: 10),
                 Container(
+                  height: 180,
+                  width: 366,
+                  decoration: BoxDecoration(
+                      color: Color(0xffD79784),
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      boxShadow: [
+                        BoxShadow(
+                          spreadRadius: 2,
+                          blurRadius: 5,
+                          color: Colors.black.withOpacity(0.1),
+                          offset: const Offset(0, 10),
+                        ),
+                      ]),
+                  child: Center(
+                    child: ChewieListItem(
+                      videoPlayerController: VideoPlayerController.asset(
+                        'assets/gabby.mp4',
+                      ),
+                      looping: true,
+                      key: null,
+                    ),
+                  ),
+                ),
+
+                //movie preview box
+                SizedBox(height: 30),
+                Container(
                   height: 240,
                   width: 366,
                   decoration: BoxDecoration(
@@ -308,33 +335,6 @@ class _GroupCatchUpState extends State<GroupCatchUp> {
                         ],
                       ),
                     ],
-                  ),
-                ),
-
-                //movie preview box
-                SizedBox(height: 30),
-                Container(
-                  height: 180,
-                  width: 366,
-                  decoration: BoxDecoration(
-                      color: Color(0xffD79784),
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
-                      boxShadow: [
-                        BoxShadow(
-                          spreadRadius: 2,
-                          blurRadius: 5,
-                          color: Colors.black.withOpacity(0.1),
-                          offset: const Offset(0, 10),
-                        ),
-                      ]),
-                  child: Center(
-                    child: ChewieListItem(
-                      videoPlayerController: VideoPlayerController.asset(
-                        'assets/selfie.mp4',
-                      ),
-                      looping: true,
-                      key: null,
-                    ),
                   ),
                 ),
                 SizedBox(height: 20),
