@@ -59,7 +59,7 @@ class _FeatureButtonsViewState extends State<FeatureButtonsView> {
                   Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: LinearProgressIndicator()),
-                  Text('Uplaoding to Firebase'),
+                  Text('Uploading to Firebase'),
                 ],
               )
             : Row(
@@ -135,10 +135,10 @@ class _FeatureButtonsViewState extends State<FeatureButtonsView> {
       widget.onUploadComplete();
     } catch (error) {
       // error, only execute if it does not upload
-      print('Error occured while uplaoding to Firebase ${error.toString()}');
+      print('Error occured while uploading to Firebase ${error.toString()}');
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('Error occured while uplaoding'),
+          content: Text('Error occured while uploading'),
         ),
       );
     } finally {
